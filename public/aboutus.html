@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>ArtVisio</title>
+	<link rel="styleSheet" href="../styling/main.css">
+
+<style>
+    /* container */
+.two-columns-grids {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+width: 100%;
+padding-left: 10%;
+padding-right: 10%;
+background: linear-gradient(to top right, #055494, #063965, #001b2c, #000305);
+
+}
+
+.two-columns-grids div {
+  padding: 5%;
+  text-align: center;
+}
+
+.two-columns-grids div h2 {
+  font-style: italic;
+  font-size: 2.2em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.two-columns-grids div p {
+  font-style: italic;
+  font-size: 1.9em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.two-columns-grids img {
+  width: 100%; /* Set the width to 100% */
+  max-width: 100%; /* Ensure the image doesn't exceed its natural size */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove default image spacing */
+  margin: 0 auto 1rem; /* Center the image and add margin */
+}
+
+/* columns */
+.two-columns-grids > * {
+  padding: 1rem;
+  box-sizing: border-box; /* Include padding in the total width */
+  height: auto;
+}
+</style>
+	</head>
+	<body>
+	
+		<div>
+			<nav id="navbar">
+				<div class="logo">
+					<!-- FontAwesome icon (you'll need to include FontAwesome's CSS) -->
+					<i class="fa fa-artstation" style="color: #ebf2ff; padding-top: 0.5%; width: 35%; height: 35%;"></i>
+					<h1 class="text-light"><a href="../index.html"><span style="font-size:2em">ArtVisio</span></a></h1>
+				</div>
+				<div class="hamburger">
+					<div class="line1"></div>
+					<div class="line2"></div>
+					<div class="line3"></div>
+				</div>
+				<ul class="nav-links">
+					<li class="a"><a href="../index.html">Home</a></li>
+					<li class="a"><a href="login.html">How to Use the website</a></li>
+					<li class="a"><a href="contactus.html">Contact Us</a></li>
+					<li class="a"><a href="aboutus.html">About Us</a></li>
+					<li><a href="./public/login.html"><button class="login-button">Login/Register</button></a></li>
+				</ul>
+			</nav>
+		</div>
+        <div className="Containers" style="padding-top:50px">
+
+            <div className="section-title">
+                 <h2>About us</h2>
+                
+        
+       <div class="two-columns-grids">
+       <div>
+           <h2>Crafting Connections through Code: The Story of Mohamed Mohamed</h2>
+       
+       <p>Greetings! I am Mohamed Mohamed, the mind behind this digital haven where art from around 
+           the world converges. This website is not just a project; it's a culmination of passion and dedication.
+            I embarked on this journey during my final year, driven by a singular goal - 
+            to connect the diverse realms of world art through the language of code.
+             The genesis of this platform was rooted in a desire to push the boundaries of my own understanding and skillset.
+              Leveraging the power of three.js alongside the efficiency of Vite and React, 
+              I sculpted a digital space that transcends geographic borders, uniting artistic expressions 
+              from every corner of the globe. This venture was more than just a technological exploration;
+               it was a deliberate effort to enhance my proficiency in React and delve into the captivating world of three.js.
+                As you navigate through this virtual gallery, know that every pixel, every line of code, was crafted with the 
+                intention of fostering a global connection through the beauty of art and the artistry of technology. Welcome
+                 to a digital canvas that mirrors my journey, a testament to the endless possibilities when passion meets innovation.</p>
+           </div>
+       <div> 
+           <img src="../assets/images/aboutus1.jpg" className="img-fluid" alt="" style="width:60%, height=auto"/>
+       
+       </div>
+           <div>
+           <h2> Unveiling a Tapestry of Global Art: Bridging Cultures, Inspiring Minds</h2>
+       
+           <p>At the heart of our mission is a fervent commitment to enriching the learning experience by 
+               seamlessly weaving together diverse art styles from every corner of the world. Our vision is to
+                create a vibrant tapestry that brings together the essence of various cultures, enabling an immersive 
+                educational journey for both students and art enthusiasts alike. We aspire to be the global hub where the rich
+                 tapestry of world art converges, fostering an environment where learning knows no boundaries. Artists will 
+                 find a haven where they can delve into different techniques, broadening their skill sets while gaining a profound
+                  appreciation for the myriad styles that exist. By offering a comprehensive platform, we seek to elevate artistic 
+                  education to its zenith, ensuring that learners embark on a journey that not only hones their craft but also expands their cultural horizons.
+       
+       Our inclusive approach extends beyond the realm of artists and students, reaching out to a broad spectrum of audiences.
+        From the casual enthusiast to esteemed art galleries and accomplished artists, our aim is to bridge the gaps that separate 
+        individuals and communities around the globe. We believe in the transformative power of art to connect people, transcend boundaries,
+         and foster a shared appreciation for the beauty that emanates from diverse perspectives. Join us in this global endeavor, where creativity
+          knows no borders, and the world's artistic treasures find a common home, inspiring minds and creating bridges that unite us all.   </p>
+       
+           </div>
+       
+       </div>
+       
+       </div>
+       
+            </div>
+       
+					<footer>
+						<div class="footer">
+					 
+						
+						<div class="row">
+						<ul>
+						<li><a href="#">Contact us</a></li>
+						<li><a href="#">Our Services</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Career</a></li>
+						</ul>
+						</div>
+						
+						
+						</div>
+						</footer>
+	</body>
+</html>

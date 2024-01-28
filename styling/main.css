@@ -1,0 +1,836 @@
+.two-columns-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .two-columns-grid div {
+    padding: 5%;
+    text-align: center;
+  }
+  
+  .two-columns-grid div h2 {
+    font-style: italic;
+    font-size: 2.2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .two-columns-grid div p {
+    font-style: italic;
+    font-size: 1.7em;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* columns */
+  .two-columns-grid > * {
+    padding: 1rem;
+    height: auto;
+  }
+  
+  /* Section title styling */
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .section-title h2::before,
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
+  
+  /* Mission and Features section styling */
+  .section-content {
+    padding: 60px 5%;
+  }
+  
+  .titlepage p {
+    font-size: 17px;
+    padding-top: 15px;
+    color: #2b2b2b;
+  }
+  
+  .content-box {
+    border-radius: 10px;
+    margin-bottom: 30px;
+    transition: ease-in all 0.5s;
+    padding: 40px 5% 75px 5%;
+  }
+  
+  .content-box h3 {
+    font-size: 25px;
+    transition: ease-in all 0.5s;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 30px 0;
+  }
+  
+  .content-box p {
+    font-size: 16px;
+    line-height: 28px;
+    transition: ease-in all 0.5s;
+  }
+  
+  .blue {
+    background: #3e0bce;
+  }
+  
+  .margi_bottom {
+    margin-bottom: 30px;
+  }
+  
+  /* Features section styling */
+  .features {
+    text-align: center;
+  }
+  
+  .features h3 {
+    font-weight: 400;
+    font-size: 24px;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features ul li {
+    padding-bottom: 10px;
+  }
+  
+  .features ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #68A4C4;
+  }
+  
+  .features p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Section feature styling */
+  .rowss {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .sectionfeature {
+    height: auto;
+  }
+  
+  .rowss h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3.75em;
+    margin: 0.6em 0;
+    font-weight: 600;
+    color: #f85e38;
+  }
+  
+  .column {
+    padding: 1em;
+  }
+  
+  .card {
+    padding: 2.5em 1.25em;
+    text-align: center;
+    background: linear-gradient(0deg, #f65f39 10px, transparent 10px);
+    background-repeat: no-repeat;
+    background-position: 0 0.62em;
+    box-shadow: 0 0 2.5em rgba(177, 50, 50, 0.15);
+    border-radius: 0.5em;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-bottom: 2em;
+  }
+  
+  .card .icon {
+    font-size: 2.5em;
+    height: 2em;
+    width: 2em;
+    margin: auto;
+    background-color: #0b1c3b;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+  }
+  
+  .icon:before {
+    position: absolute;
+    content: "";
+    height: 1.5em;
+    width: 1.5em;
+    border: 0.12em solid #397ef6;
+    border-radius: 50%;
+    transition: 0.5s;
+  }
+  
+  .card h3 {
+    font-size: 1.3em;
+    margin: 1em 0 1.4em 0;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #070024;
+  }
+  
+  .card p {
+    line-height: 2em;
+    color: #625a71;
+  }
+  
+  .card:hover {
+    background-position: 0;
+  }
+  
+  .card:hover .icon:before {
+    height: 2.25em;
+    width: 2.25em;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .two-columns-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .section-content,
+    .sectionfeature {
+      padding: 80px 5%;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    .two-columns-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .section-content,
+    .sectionfeature {
+      padding: 140px 5%;
+    }
+  
+    .card {
+      padding: 3.1em 1.25em;
+    }
+  
+    .column {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      padding: 0 1em;
+    }
+  }
+  
+  
+  /* Contents of Footer.css */
+  
+      
+      .footer{
+      background:#001b2c;
+      padding:30px 0px;
+      font-family: 'Play', sans-serif;
+      text-align:center;
+      }
+      
+      .footer .row{
+      width:100%;
+      margin:0.2% 0%;
+      padding:0.2% 0%;
+      color:gray;
+      font-size:0.8em;
+      height:9vh;
+      }
+      
+      .footer .row a{
+      text-decoration:none;
+      color:gray;
+      transition:0.5s;
+      }
+      
+      .footer .row a:hover{
+      color:#fff;
+      }
+      
+      .footer .row ul{
+      width:100%;
+      }
+      
+      .footer .row ul li{
+      display:inline-block;
+      margin:0px 30px;
+      }
+      
+      .footer .row a i{
+      font-size:2em;
+      margin:0% 1%;
+      }
+      
+      @media (max-width:800px){
+      .footer{
+      text-align:left;
+      padding:2%;
+      }
+      .footer .row ul li{
+      display:block;
+      margin:10px 0px;
+      text-align:left;
+      }
+      .footer .row a i{
+      margin:0% 1%;
+  height: auto;
+  
+      }
+      .footer .row{
+          width:100%;
+  
+          color:gray;
+          font-size:0.8em;
+          height:auto;
+          }
+      }
+  
+  /* Contents of HeroSections.css */
+  #hero {
+    height:100vh;
+    width:100%;
+    background:red;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+
+
+#hero::after {
+width:100%;
+height:100%;
+content: '';
+position:absolute;
+z-index:10;
+top:0;
+left:0;
+background:rgba(0,0,0,0.5)
+}
+
+
+#hero video {
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+z-index:5;
+object-fit:cover;
+font-family:'object-fit: cover';
+}
+
+
+#hero .texture {
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+z-index:15;
+background:url('../texture.png');
+}
+
+
+#hero .caption {
+
+position:relative;
+z-index:20;
+text-align:center;
+color:#ffffff;
+}
+
+
+
+#hero .caption h1 {
+
+text-transform: uppercase;
+font-size:2em;
+font-family: 'Oswald', sans-serif;
+margin-bottom:0.5rem;
+}
+
+#hero .caption h2 {
+font-weight:400;
+font-size:1.5rem;
+margin:0;
+font-family: 'PT Sans', sans-serif;
+}
+
+
+
+
+@media screen and (min-width:768px)
+{
+#hero .caption h1 {
+    font-size:2.5rem;
+}
+
+#hero .caption h2 {
+    font-size:1.75rem;
+}
+}
+
+
+
+
+@media screen and (min-width:992px)
+{
+#hero .caption h1 {
+    font-size:3rem;
+}
+
+#hero .caption h2 {
+    font-size:2rem;
+}
+}
+
+
+
+@media screen and (min-width:1200px)
+{
+#hero .caption h1 {
+    font-size:4rem;
+}
+
+#hero .caption h2 {
+    font-size:2.5rem;
+}
+}
+  
+  /* Contents of Login.css */
+  nav{
+      height: 6rem;
+      width: 100vw;
+      background-color: transparent;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      position: fixed;
+      z-index: 101;
+    }
+    
+    /*Styling logo*/
+    .logo {
+      padding: 0.2vh 2vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .logo img {
+      height: 5rem;
+      width: 5rem;
+      margin-right: 10px; 
+    }
+    
+    .logo h1 {
+      padding-left: 15%;
+      margin: 0;
+      color: #ebf2ff;
+      
+      font-size: 1.5rem;
+    }
+    /*Styling Links*/
+    .nav-links{
+      display: flex;
+      list-style: none; 
+      width: 88vw;
+      padding: 5vh 0.7vw;
+      justify-content: space-evenly;
+      align-items: center;
+      text-transform: uppercase;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      width: 88vw;
+      padding: 5vh 0.7vw;
+      justify-content: space-evenly;
+      align-items: center;
+      text-transform: uppercase;
+    }
+    
+    .nav-links li.a a {
+      text-decoration: none;
+      margin: 0 0.7vw;
+      color: white;
+    }
+    
+    .nav-links li.a a:hover {
+      color: #61DAFB;
+    }
+    
+    .nav-links li.a {
+      position: relative;
+    }
+    
+    .nav-links li.a a::before {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 0%;
+      background-color: #61DAFB;
+      position: absolute;
+      transition: all ease-in-out 250ms;
+      margin: 0 0 0 10%;
+    }
+    
+    .nav-links li.a a:hover::before {
+      width: 80%;
+    }
+    
+    
+    .login-button{
+      margin-left: 2vw;
+      padding: 10px 20px;
+      border: none;
+      font-size: 17px;
+      color: #fff;
+      border-radius: 7px;
+      width:100%;
+      height: 4vh;
+      letter-spacing: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: 0.5s;
+      transition-property: box-shadow;
+    }
+    .login-button{
+      background: rgb(0,140,255);
+      box-shadow: 0 0 25px rgb(0,140,255);
+    }
+    
+    .login-button:hover {
+      box-shadow: 0 0 5px rgb(0,140,255),
+                  0 0 25px rgb(0,140,255),
+                  0 0 50px rgb(0,140,255),
+                  0 0 100px rgb(0,140,255);
+    }
+    
+    
+    /*Styling Hamburger Icon*/
+    .hamburger div{
+      width: 30px;
+      height:3px;
+      background: #f2f5f7;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+    .hamburger{
+      display: none;
+    }
+    
+    /*Stying for small screens*/
+    @media screen and (max-width: 800px){
+      nav{
+          position: fixed;
+          z-index: 3;
+      }
+      .hamburger{
+          display:block;
+          position: absolute;
+          cursor: pointer;
+          right: 5%;
+          top: 50%;
+          transform: translate(-5%, -50%);
+          z-index: 2;
+          transition: all 0.7s ease;
+      }
+      .nav-links{
+          position: fixed;
+          background: #131418;
+          height: 100vh;
+          width: 100%;
+          flex-direction: column;
+          clip-path: circle(50px at 90% -20%);
+          -webkit-clip-path: circle(50px at 90% -10%);
+          transition: all 1s ease-out;
+          pointer-events: none;
+      }
+      .nav-links.open{
+          clip-path: circle(1000px at 90% -10%);
+          -webkit-clip-path: circle(1000px at 90% -10%);
+          pointer-events: all;
+      }
+      .nav-links li{
+          opacity: 0;
+      }
+      .nav-links li:nth-child(1){
+          transition: all 0.5s ease 0.2s;
+      }
+      .nav-links li:nth-child(2){
+          transition: all 0.5s ease 0.4s;
+      }
+      .nav-links li:nth-child(3){
+          transition: all 0.5s ease 0.6s;
+      }
+      .nav-links li:nth-child(4){
+          transition: all 0.5s ease 0.7s;
+      }
+      .nav-links li:nth-child(5){
+          transition: all 0.5s ease 0.8s;
+      }
+      .nav-links li:nth-child(6){
+          transition: all 0.5s ease 0.9s;
+          margin: 0;
+      }
+      .nav-links li:nth-child(7){
+          transition: all 0.5s ease 1s;
+          margin: 0;
+      }
+      li.fade{
+          opacity: 1;
+      }
+    }
+    /*Animating Hamburger Icon on Click*/
+    .toggle .line1{
+      transform: rotate(-45deg) translate(-5px,6px);
+    }
+    .toggle .line2{
+      transition: all 0.7s ease;
+      width:0;
+    }
+    .toggle .line3{
+      transform: rotate(45deg) translate(-5px,-6px);
+    }
+  
+  /* Contents of main.css */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: #f2f5f7;
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      font-weight: 300;
+  }
+  
+  body {
+      background: linear-gradient(to top right, #055494, #063965, #001b2c, #000305);
+      min-height: 100vh;
+      width: 100%; /* Change from 100vw to 100% */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Contents of NavBar.css */
+  .nav {
+    display: block;
+    height: 10vh;
+
+  }
+  
+  nav{
+    background: linear-gradient(to top right, #055494, #063965, #001b2c, #000305);
+
+    height: 6rem;
+    width: 100vw;
+    background-color: transparent;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 101;
+  }
+  
+  /*Styling logo*/
+  .logo {
+    padding: 0.2vh 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .logo img {
+    height: 5rem;
+    width: 5rem;
+    margin-right: 10px; 
+  }
+  
+  .logo h1 {
+    padding-left: 15%;
+    margin: 0;
+    padding-top: 5px;
+    color: #ebf2ff;
+    
+    font-size: 1.5rem;
+  }
+  /*Styling Links*/
+  .nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 5vh 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 5vh 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  
+  .nav-links li.a a {
+    font-size: 25px;
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: white;
+  }
+  
+  .nav-links li.a a:hover {
+    color: #61DAFB;
+  }
+  
+  .nav-links li.a {
+    position: relative;
+  }
+  
+  .nav-links li.a a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #61DAFB;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+  }
+  
+  .nav-links li.a a:hover::before {
+    width: 80%;
+  }
+  
+  
+  .login-button{
+    margin-left: 2vw;
+    padding: 10px 20px;
+    border: none;
+    font-size: 25px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+  }
+  .login-button{
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+  }
+  
+  .login-button:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
+  }
+  
+  
+  /*Styling Hamburger Icon*/
+  .hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  .hamburger{
+    display: none;
+  }
+  
+  /*Stying for small screens*/
+  @media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+  }
+  /*Animating Hamburger Icon on Click*/
+  .toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+  }
+  .toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+  }
+  .toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+  }
+  
+
+
+  
