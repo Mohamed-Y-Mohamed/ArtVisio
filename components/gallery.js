@@ -9,7 +9,6 @@ import { createBoundingBoxes } from "./modules/boundingBox.js";
 import { setupRendering } from "./modules/rendering.js";
 import { setupEventListeners } from "./modules/eventListeners.js";
 import { addObjectsToScene } from "./modules/sceneHelpers.js";
-import { setupPlayButton } from "./modules/menu.js";
 import { clickHandling } from "./modules/clickHandling.js";
 
 let { camera, controls, renderer } = setupScene();
@@ -28,7 +27,6 @@ createBoundingBoxes(paintings);
 
 addObjectsToScene(scene, paintings);
 
-setupPlayButton(controls);
 
 setupEventListeners(controls);
 
