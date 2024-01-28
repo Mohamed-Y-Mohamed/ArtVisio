@@ -7,4 +7,5 @@ export default defineConfig({
       input: "./components/main.js",
     },
   },
+  
 });

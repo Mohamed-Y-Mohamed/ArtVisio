@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "three": "^0.160.1"
+    "lil-gui": "^0.19.1",
+    "three": "^0.160.1",
+    "three-stdlib": "^2.29.4"
   },
   "devDependencies": {
     "vite": "^5.0.12"
