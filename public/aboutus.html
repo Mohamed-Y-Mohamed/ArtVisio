@@ -53,12 +53,11 @@ background: linear-gradient(to top right, #055494, #063965, #001b2c, #000305);
 	</head>
 	<body>
 	
-		<div>
+    <div>
 			<nav id="navbar">
 				<div class="logo">
-					<!-- FontAwesome icon (you'll need to include FontAwesome's CSS) -->
 					<i class="fa fa-artstation" style="color: #ebf2ff; padding-top: 0.5%; width: 35%; height: 35%;"></i>
-					<h1 class="text-light"><a href="../index.html"><span style="font-size:2em">ArtVisio</span></a></h1>
+					<h1 class="text-light"><a href="index.html"><span style="font-size:2em">ArtVisio</span></a></h1>
 				</div>
 				<div class="hamburger">
 					<div class="line1"></div>
@@ -66,13 +65,29 @@ background: linear-gradient(to top right, #055494, #063965, #001b2c, #000305);
 					<div class="line3"></div>
 				</div>
 				<ul class="nav-links">
-					<li class="a"><a href="../index.html">Home</a></li>
-					<li class="a"><a href="login.html">How to Use the website</a></li>
-					<li class="a"><a href="contactus.html">Contact Us</a></li>
-					<li class="a"><a href="aboutus.html">About Us</a></li>
+					<li class="a"><a href="/index.html">Home</a></li>
+					<li class="a"><a href="public/instruction.html">How to Use the website</a></li>
+					<li class="a"><a href="public/contactus.html">Contact Us</a></li>
+					<li class="a"><a href="public/aboutus.html">About Us</a></li>
 					<li><a href="./public/login.html"><button class="login-button">Login/Register</button></a></li>
 				</ul>
 			</nav>
+			<script>
+				const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+});
+			</script>
 		</div>
         <div className="Containers" style="padding-top:50px">
 

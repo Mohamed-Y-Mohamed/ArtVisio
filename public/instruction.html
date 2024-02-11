@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>ArtVisio</title>
+	<link rel="styleSheet" href="../styling/main.css">
+
+
+	</head>
+	<body>
+	
+		<div>
+			<nav id="navbar">
+				<div class="logo">
+					<i class="fa fa-artstation" style="color: #ebf2ff; padding-top: 0.5%; width: 35%; height: 35%;"></i>
+					<h1 class="text-light"><a href="index.html"><span style="font-size:2em">ArtVisio</span></a></h1>
+				</div>
+				<div class="hamburger">
+					<div class="line1"></div>
+					<div class="line2"></div>
+					<div class="line3"></div>
+				</div>
+				<ul class="nav-links">
+					<li class="a"><a href="/index.html">Home</a></li>
+					<li class="a"><a href="public/instruction.html">How to Use the website</a></li>
+					<li class="a"><a href="public/contactus.html">Contact Us</a></li>
+					<li class="a"><a href="public/aboutus.html">About Us</a></li>
+					<li><a href="./public/login.html"><button class="login-button">Login/Register</button></a></li>
+				</ul>
+			</nav>
+			<script>
+				const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+});
+			</script>
+		</div>
+		<div id="hero">
+
+
+			<div class="texture"></div>
+
+			<video
+			loop
+			muted
+			autoplay
+			preload="auto"
+			>
+				  <source src="../assets/VIRTUAL ART GALLERY FOR ARTISTS.mp4" type="video/mp4">
+			</video>
+
+
+
+			
+
+</div>
+
+<h1 style="text-align: center;padding-top: 10%;padding-bottom: 5%;">Instructions</h1>
+<div class="two-columns-grid">
+	<div> 
+		<img src="../assets/images/popup.jpeg" className="img-fluid" alt="" style="width: 100%; margin-bottom: 30vh;"/>
+	
+	</div>
+	<div> 
+	<h2>Getting around.</h2>
+	<hr>
+		<br>		<br>
+
+		 <p>
+			To navigate through the virtual gallery, you will need to use the WASD keys for movement, where each key corresponds 
+			to a specific 
+			direction: 'W' to move forward, 'A' to move left, 'S' to move backward, and 'D' to move right. 
+			Additionally, controlling the direction of your movement and your point of view within this immersive environment requires the use of a mouse.
+			 By moving the mouse, you can adjust your perspective and the direction you are facing, allowing for a more intuitive and engaging exploration of the virtual space. 
+			This combination of keyboard and mouse controls ensures a seamless and interactive experience as you explore the artworks displayed in the virtual gallery.
+</p>
+</div>
+</div>					 
+							
+		
+			<div class="two-columns-grid">
+				<div div>
+				<h2> View Artist and artwork details:</h2>
+				<hr>
+				<br>
+				<br>
+
+				<p>To delve deeper into the details of the artist and their artwork, simply approach the piece that captures your interest within the virtual gallery. 
+					As you get closer to the specific artwork, a pop-up will automatically appear, presenting you with valuable information about both the artist and the artwork itself.
+					 Should you wish to explore further, clicking on the artwork will navigate you to a dedicated page showcasing the artist's biography, 
+					 including their social media links and any additional information they have chosen to share. This feature enriches your experience by providing
+					 an in-depth look at the creative minds behind the art, all at the click of a button and the convenience of your approach.
+					</p>
+			
+				</div>
+			
+				<div> 
+				<img src="../assets/images/movement.jpg" className="img-fluid" alt="" style="width: 100%; margin-bottom: 30vh;"/>
+			
+			</div>
+			</div>
+			 
+			
+			
+			
+			
+					<footer>
+						<div class="footer" style="margin-top: 10%;">
+					 
+						
+						<div class="row">
+						<ul>
+						<li><a href="./public/contactus.html" style="font-size: 1.5em;">Contact us</a></li>
+						<li><a href="#" style="font-size: 1.5em;">Our Services</a></li>
+						<li><a href="#" style="font-size: 1.5em;">Privacy Policy</a></li>
+						<li><a href="#" style="font-size: 1.5em;">Terms & Conditions</a></li>
+						<li><a href="#" style="font-size: 1.5em;" >Career</a></li>
+						</ul>
+						</div>
+						
+						
+						</div>
+						</footer>
+	</body>
+</html>
