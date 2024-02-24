@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "lil-gui": "^0.19.1",
     "three": "^0.160.1",
     "three-stdlib": "^2.29.4"

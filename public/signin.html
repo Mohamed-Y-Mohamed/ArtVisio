@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- title with icon section -->
+    <title>Art Visio</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/artstation.svg">
+    
+    <!-- imported css and text style section -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link href="../styling/custom-style.css" rel="stylesheet">
+    <link href="../styling/bootstrap.min.css" rel="stylesheet">
+    <link href="../styling/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /*---------------------------------------
+      CUSTOM BUTTON               
+    -----------------------------------------*/
+    .custom-btn {
+      background: #EE5007;
+      border: 2px solid transparent;
+      border-radius: 100px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: normal;
+      transition: all 0.3s;
+      padding: 10px 20px;
+    }
+    
+    .custom-btn:hover {
+      background: #c01f27;
+      color: #ffffff;
+    }
+    
+    .custom-border-btn {
+      background: transparent;
+      border: 2px solid #EE5007;
+      color: #EE5007;
+    }
+    
+    .navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
+    .custom-border-btn:hover {
+      background: #c01f27;
+      border-color: transparent;
+      color: #ffffff;
+    }
+    
+    .custom-btn-bg-white {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+
+   <!--------------------------------------------------------------------------
+                    NAVIGATION BAR 
+    ---------------------------------------------------------------------------->
+        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom left,  #000305,#0b1c3b);">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
+                        <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
+                        59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
+                         447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
+                    ARTVISIO
+                </a>
+
+                <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/"  style="color: rgb(201, 247, 247);">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/instruction.html"  style="color: rgb(201, 247, 247);">Instruction</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/aboutus.html"  style="color: rgb(201, 247, 247);">About us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
+                        </li>
+                    </ul>
+
+                    <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+                </div>
+            </div>
+        </nav>
+   <!--------------------------------------------------------------------------
+                    SIGN IN COLUMN
+    ---------------------------------------------------------------------------->
+        <section class="custom-section contact-section section-padding" id="section_6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4" style="color: wheat;">sign in</h2>
+
+                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form">
+                                    <div class="contact-form-body">
+                                    
+
+                                        <input type="email" name="contact-email" id="signin-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" style="height: 40px;" required>
+                                        <input type="password" name="contact-password" id="signin-password" class="form-control" style="height: 40px;" placeholder="Password" required>
+
+                                      
+                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                            <button type="submit" class="form-control">Login</button>
+                                        </div>
+                                        <p class="text-center text-muted mt-5 mb-0"> <a href="#!"
+                                            class="fw-light text-body"><u>Forgot your password</u></a></p>
+                                        <br><br>
+                                        <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="./signup.html"
+                                            class="fw-bold text-body"><u>Register</u></a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <!--------------------------------------------------------------------------
+              FOOTER SECTION      
+    ---------------------------------------------------------------------------->
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">Art VIsio</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Artists</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Schedule</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Pricing</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            090-080-0760
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            hello@company.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        Silang Junction South, Tagaytay, Cavite, Philippines</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>Our Maps</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+    <!-- JAVASCRIPT FILES -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/COMPONENTS/custom.js"></script>
+
+</body>
+
+</html>

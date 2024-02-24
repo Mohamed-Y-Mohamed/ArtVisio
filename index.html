@@ -1,185 +1,615 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>ArtVisio</title>
-	<link rel="styleSheet" href="./styling/main.css">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--------------------------------------------------------------------------
+         title with icon section
+    ---------------------------------------------------------------------------->
+    <title>Art Visio</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/images/artstation.svg">
+    
+    <!--------------------------------------------------------------------------
+         imported css and text style section
+    ---------------------------------------------------------------------------->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="./src/style/bootstrap.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="./styling/custom-style.css" rel="stylesheet">
+    <link href="./styling/bootstrap.min.css" rel="stylesheet">
+    <link href="./styling/bootstrap-icons.css" rel="stylesheet">
+<style>
+    /*---------------------------------------
+  CUSTOM BUTTON               
+-----------------------------------------*/
+.custom-btn {
+  background: #EE5007;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: normal;
+  transition: all 0.3s;
+  padding: 10px 20px;
+}
+
+.custom-btn:hover {
+  background: #c01f27;
+  color: #ffffff;
+}
+
+.custom-border-btn {
+  background: transparent;
+  border: 2px solid #EE5007;
+  color: #EE5007;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
+.custom-border-btn:hover {
+  background: #c01f27;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.custom-btn-bg-white {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+</style>
+</head>
+
+<body>
+    <!--------------------------------------------------------------------------
+         Main section covered entire page except footer
+    ---------------------------------------------------------------------------->
+    <main>
+
+        <!--------------------------------------------------------------------------
+             navigation bar section
+        ---------------------------------------------------------------------------->
+        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom left,  #000305,#0b1c3b);">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
+                        <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
+                        59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
+                         447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
+                    ARTVISIO
+                </a>
+
+                <a href="./index.html" class="btn custom-btn d-lg-none ms-auto me-4"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/"  style="color: rgb(201, 247, 247);">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/instruction.html"  style="color: rgb(201, 247, 247);">Instruction</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/aboutus.html"  style="color: rgb(201, 247, 247);">About us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
+                        </li>
+                    </ul>
+
+                    <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+                </div>
+            </div>
+        </nav>
+
+        <!--------------------------------------------------------------------------
+            hero section
+        ---------------------------------------------------------------------------->
+        <section class="hero-section" id="section_1">
+            <div class="section-overlay"></div>
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <div class="col-12 mt-auto text-center">
+                        <div class="row">
+                            <!--------------------------------------------------------------------------
+                                location of organisation on the hero
+                            ---------------------------------------------------------------------------->
+
+                            <div class="col-md-6 d-flex justify-content-center justify-content-md-start">
+                                <div class="location-wrap mx-auto py-3 py-lg-0">
+                                    <h5 class="text-white">
+                                        <i class="custom-icon bi-geo-alt me-2"></i>
+                                        London, United Kingdom
+                                    </h5>
+                                </div>
+                            </div>
+                           <!--------------------------------------------------------------------------
+                                 Social Share Column
+                            ---------------------------------------------------------------------------->
+                            <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+                                <div class="social-share">
+                                    <ul class="social-icon d-flex align-items-center justify-content-center">
+                                        <span class="text-white me-3">Share:</span>
+                                        <li class="social-icon-item">
+                                            <a href="https://www.facebook.com" target="_blank" class="social-icon-link">
+                                                <span class="bi-facebook"></span>
+                                            </a>
+                                        </li>
+                                        <li class="social-icon-item">
+                                            <a href="https://www.twitter.com" target="_blank" class="social-icon-link">
+                                                <span class="bi-twitter"></span>
+                                            </a>
+                                        </li>
+                                        <li class="social-icon-item">
+                                            <a href="https://www.instagram.com" target="_blank" class="social-icon-link">
+                                                <span class="bi-instagram"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    
+        
+            <!--------------------------------------------------------------------------
+                 background video section
+            ---------------------------------------------------------------------------->
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="./assets/VIRTUAL ART GALLERY FOR ARTISTS.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!--------------------------------------------------------------------------
+             artwork section
+        ---------------------------------------------------------------------------->
+
+        <section class="artists-section section-padding" id="section_3" style="background: linear-gradient(to bottom left,  #000305,#054974,#330867, #30cfd0); ">
+            <div class="container" >
+                <div class="row justify-content-center">
+
+                    <div class="col-12 text-center">
+                        <h1 class="display-1 text-center feature" data-animate="top"> <strong>ARTWORK SAMPLES</strong> </h1>
+                    </div>
+
+                    <div class="col-lg-5 col-12" data-animate="left">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="./assets/images/artists/joecalih-UmTZqmMvQcw-unsplash.jpg"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Name:</strong>
+                                    joecalih
+                                </p>
+
+                                <p>
+                                    <strong>Publish Date:</strong>
+                                    August, 23 , 2011
+                                </p>
+                                <hr>
+                                <p>
+                                    <strong>Artist:</strong>
+                                    unknown
+                                </p>
+                               
+
+                                
+
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12" data-animate="right">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="./assets/images/artists/abstral-official-bdlMO9z5yco-unsplash.jpg"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Name:</strong>
+                                    Starry Night.
+                                </p>
+
+                                <p>
+                                    <strong>release date:</strong>
+                                    Feb 20, 1941
+                                </p>
+                                <hr>
+                                <p>
+                                    <strong>Artist:</strong>
+                                    Vincent van Gogh’s
+                                </p>
+
+                                
+
+                            
+                            </div>
+                        </div>
+
+                        <div class="artists-thumb" data-animate="right">
+                            <img src="./assets/images/artists/soundtrap-rAT6FJ6wltE-unsplash.jpg"
+                                class="artists-image img-fluid">
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Name:</strong>
+                                    Psychedelic Effects                                </p>
+
+                                <p>
+                                    <strong>Birthdate:</strong>
+                                    October 8, 1985
+                                </p>
+                                <hr>
+                                <p>
+                                    <strong>Artist:</strong>
+                                    Dalit Marom
+                                </p>
+
+                             
+
+                              
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!--------------------------------------------------------------------------
+             features section  
+        ---------------------------------------------------------------------------->
+
+        <section class="VirArt-section section-padding" id="section_2" >
+            <h1 class="display-1 text-center feature" data-animate="top"> <strong>Features</strong> </h1>
+            <!--------------------------------------------------------------------------
+                column one -->
+            <div class="container-fluid contaFlu" style="width: 75%;">
+                <div class="row " >
+                    <!--------------------------------------------------------------------------
+                         statement section
+                    ---------------------------------------------------------------------------->
+                    <div class="col-lg-5 col-md-6 col-12 mb-4 d-flex align-items-center RightDistance" data-animate="left">
+                        <div class="services-info">
+                            <h2 class="text-white mb-6">The Future of Art is Changing</h2>
+                            <p class="text-white">
+                                We aim to bring all forms of art, from image artwork to sculpture 
+                                and 3D painting, globally. Our mission is to make art accessible and 
+                                immersive, blending traditional art with digital innovation to keep 
+                                art relevant in our digital era.
+                            </p>
+                            
+                            <h6 class="text-white mt-4">
+                                Experience the Future of Art Today
+                            </h6>
+                            <p class="text-white">
+                                By leveraging virtual reality and web technologies like Three.js, we
+                                 create unparalleled interactive art experiences. This innovative approach
+                                  allows art enthusiasts to engage with art in new, meaningful ways.
+                            </p>
+                            
+                            <h6 class="text-white mt-4">
+                                Showcasing: The Annunciation - Fra Angelico
+                            </h6>
+                            <p class="text-white">
+                                We plan to bring historic artworks like "The Annunciation" to our platform, 
+                                offering a new engagement dimension. This initiative aims to inspire and make 
+                                the richness of art history accessible to everyone.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!--------------------------------------------------------------------------
+                         3d art section section 
+                    ---------------------------------------------------------------------------->
+
+                    <div class="col-lg-7 col-12" data-animate="right">
+                        <div class="VirArt-text-wrap">
+                            <div class="sketchfab-embed-wrapper"> <iframe title="The Annunciation - Fra Angelico" frameborder="0"
+                                 allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                                  allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport
+                                   execution-while-not-rendered web-share src="https://sketchfab.com/models/3eb14c4fcd8a4a56bba23c46c829ac38/embed"
+                                    style="width: 100%;height: 620px;"> </iframe> </div>
+
+                            <div class="VirArt-text-info d-flex">
+                                <div class="d-flex">
+                                    <i class="VirArt-text-icon bi-person"></i>
+                                </div>
+                                <!--------------------------------------------------------------------------
+                                     display massage section 
+                                    ---------------------------------------------------------------------------->
+                                <div class="ms-4">
+                                    <h3>view the future of Art</h3>
+
+                                    <p class="mb-0">click and move while holding mouse click</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+
+                </div>
+            </div>
+            <!--------------------------------------------------------------------------
+                 column two 
+                 ---------------------------------------------------------------------------->
+            <div class="container-fluid "   style="width: 75%;">
+                <div class="row">
+                     
+                     <!-------------------------------------------------------------------------- 
+                        3d art section section
+                     ---------------------------------------------------------------------------->
+
+                    <div class="col-lg-7 col-2 RightDistance" data-animate="left" >
+                        <div class="VirArt-text-wrap">
+                            <div class="sketchfab-embed-wrapper VirArt-video"> 
+                                <iframe
+                                width="100%"
+                                height="570"
+                                src="https://www.youtube.com/embed/h4cPhAfPBX0"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                title="Embedded youtube" style="width: 100%;height: 500;">
+                            </iframe>	
+                                </div>
+
+                           
+                        </div>
+                    </div>
+                    <!-------------------------------------------------------------------------- 
+                         statement section 
+                    ---------------------------------------------------------------------------->
+                    <div class="col-lg-5 col-md-1 col-12 mb-4 d-flex align-items-center" data-animate="right">
+                        <div class="services-info">
+                            <h2 class="text-white mb-6">The Future of Art is Changing</h2>
+                            <p class="text-white">
+                                Our virtual gallery serves as a dynamic platform, seamlessly 
+                                connecting art enthusiasts from around the globe with talented 
+                                artists, fostering a vibrant exchange of creativity and cultural 
+                                perspectives. Through this innovative digital space, users can explore
+                                 a diverse range of artworks, transcending geographical boundaries
+                                  to appreciate the rich tapestry of global artistic expression.
+                                   At the same time, it acts as a conduit for artists to share their 
+                                   creations with an expansive audience, bringing the future of art 
+                                   directly to the fingertips of individuals worldwide. The virtual gallery 
+                                   not only breaks down physical barriers but also nurtures a sense of 
+                                   interconnectedness, where users and artists collaboratively shape the 
+                                   evolving landscape of contemporary art.
+                            </p>
+                          
+                        </div>
+                    </div>
+                      <!-------------------------------------------------------------------------- 
+                      column three
+                      ---------------------------------------------------------------------------->
+
+                        <div class="container "  style="padding-top: 18%; padding-bottom: 15%;">
+                            <div class="row align-items-center">
+                                <!-------------------------------------------------------------------------- 
+                                     Text Column
+                                ---------------------------------------------------------------------------->
+                                <div class="col-md-6 mb-4" data-animate="left">
+                                    <div class="text-white-custom">
+                                        <h2 class="text-white">Empowering Artists to Take Control of Your Artistic Destiny</h2>
+                                        <p class="text-white" >
+                                            In our virtual gallery, we empower artists to seize control of their market and connect directly with their target audience, eliminating the need for intermediaries or the constraints of physical art galleries. Here, artists wield full autonomy over their fate, market presence, fan engagement, and creative work. Our platform is designed to liberate artists, offering them a dynamic space where they can showcase their art on their terms, fostering direct connections and limitless possibilities for artistic expression. Embrace the future of artistry with unparalleled control – your journey, your audience, your masterpiece.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-------------------------------------------------------------------------- 
+                                    Image Column 
+                                ---------------------------------------------------------------------------->
+                                <div class="col-md-6" data-animate="right">
+                                    <img src="./assets/images/artistAndcommunity.jpg" class="img-fluid" alt="Empowering Artist">
+                                </div>
+                            </div>
+                        </div>
+        </section>
 
 
-	</head>
-	<body>
-	
-		<div>
-			<nav id="navbar">
-				<div class="logo">
-					<i class="fa fa-artstation" style="color: #ebf2ff; padding-top: 0.5%; width: 35%; height: 35%;"></i>
-					<h1 class="text-light"><a href="index.html"><span style="font-size:2em">ArtVisio</span></a></h1>
-				</div>
-				<div class="hamburger">
-					<div class="line1"></div>
-					<div class="line2"></div>
-					<div class="line3"></div>
-				</div>
-				<ul class="nav-links">
-					<li class="a"><a href="/index.html">Home</a></li>
-					<li class="a"><a href="public/instruction.html">How to Use the website</a></li>
-					<li class="a"><a href="public/contactus.html">Contact Us</a></li>
-					<li class="a"><a href="public/aboutus.html">About Us</a></li>
-					<li><a href="./public/login.html"><button class="login-button">Login/Register</button></a></li>
-				</ul>
-			</nav>
-			<script>
-				const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
+        <div class="sectifea" >
+            <sections className="sectionfeature" >
+                <h1 class="display-1 text-center feature" data-animate="top"> <strong>Our Mission</strong> </h1>
+                <div class="rowss ">
+                                    <div class="column" data-animate="left">
+                                      <div class="card">
+                                        <div class="icon">
+                                          <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <h3 style="color:white;font-size: 1.6rem;">Global outreach</h3>
+                                                 <p style="color:white;font-size: 1.5rem; font-weight: 300">Virtual art galleries offer a global stage for artists, transcending geographical boundaries to showcase diverse perspectives and cultures. Artists from around the world can reach a broader audience, creating a more interconnected and culturally rich artistic community.  that supplements traditional classroom teachings, enabling learners to delve into the historical context, techniques, and cultural significance of various artworks.</p>
+                                      </div>
+                                    </div>
+                                    <div class="column" data-animate="top">
+                                      <div class="card">
+                                        <div class="icon">
+                                          <i class="fa-solid fa-shield-halved"></i>
+                                        </div>
+                                        <h3 style="color:white;font-size: 1.6rem;">impact on Education</h3>
+                                                 <p style="color:white;font-size: 1.5rem; font-weight: 300">In the realm of education, virtual art galleries provide an accessible platform for students and educators to explore a vast array of artworks, exhibitions, and educational resources. This digital accessibility enhances art learning by offering an immersive experience that supplements traditional classroom teachings, enabling learners to delve into the historical context, techniques, and cultural significance of various artworks. </p>
+                                      </div>
+                                    </div>
+                                    <div class="column" data-animate="right">
+                                      <div class="card">
+                                        <div class="icon">
+                                          <i class="fa-solid fa-headset"></i>
+                                        </div>
+                                        <h3 style="color:white;font-size: 1.6rem;">all users</h3>
+                                                 <p style="color:white;font-size: 1.5rem; font-weight: 300;">
+                            Virtual art galleries offer a global stage for artists, transcending geographical boundaries to showcase diverse perspectives and cultures. Artists from around the world can reach a broader audience, creating a more interconnected and culturally rich artistic community.
+                            
+                            In the realm of education,  art galleries provide an accessible platform for students and educators to explore a vast array of artworks, exhibitions, and educational. </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </sections>
+                            </div>
+        
+    </main>
 
-hamburger.addEventListener('click', ()=>{
-   //Animate Links
-    navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
+    <!--------------------------------------------------------------------------
+         footer section 
+    ---------------------------------------------------------------------------->
 
-    //Hamburger Animation
-    hamburger.classList.toggle("toggle");
-});
-			</script>
-		</div>
-		<div id="hero">
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">Art VIsio</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="https://www.twitter.com" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                     
+
+                            <li class="social-icon-item">
+                                <a href="https://www.instagram.com" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.youtube.com" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.pinterest.com" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="padding-top: 2%;">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="index.html" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/aboutus.html" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/instruction.html" class="site-footer-link">instruction</a>
+                        </li>
+
+                    
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/contactus.html" class="site-footer-link">contactus</a>
+                        </li>
+
+                       
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 020000000" class="site-footer-link">
+                            Tel: 020000000
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="w1830958@my.westminster.ac.uk" class="site-footer-link">
+                            Email: w1830958@my.westminster.ac.uk
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location:</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        115 New Cavendish St, London W1W 6UW</p>
+
+              
+                </div>
+            </div>
+        </div>
+
+        
+    </footer>
 
 
-			<div class="texture"></div>
+    <!--------------------------------------------------------------------------
+         js import section
+    ---------------------------------------------------------------------------->
+    <script src="./COMPONENTS/bootstrap.min.js"></script>
+    <script src="./COMPONENTS/custom.js"></script>
+    <!--------------------------------------------------------------------------
+         animation script code
+    ---------------------------------------------------------------------------->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const direction = entry.target.getAttribute('data-animate');
+                entry.target.classList.add(`slide-in-${direction}`);
+                observer.unobserve(entry.target); 
+              }
+            });
+          }, {
+            threshold: 0.6 
+          });
+        
+          document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+        });
+        </script>
+</body>
 
-			<video
-			loop
-			muted
-			autoplay
-			preload="auto"
-			>
-				  <source src="./assets/VIRTUAL ART GALLERY FOR ARTISTS.mp4" type="video/mp4">
-			</video>
-
-
-
-			
-
-</div>
-
-<h1 style="text-align: center;padding-top: 10%;padding-bottom: 5%;">Features</h1>
-<div class="two-columns-grid">
-	<div>
-		<iframe
-		width="70%"
-		height="570"
-		src="https://www.youtube.com/embed/h4cPhAfPBX0"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-		allowfullscreen
-		title="Embedded youtube" style="width: 100%; margin-bottom: 30vh;">
-	</iframe>	
-	</div>
-	<div> 
-	<h2>Bridging Global Art Communities</h2>
-	<hr>
-		<br>		<br>
-
-		 <p>Our virtual gallery serves as a dynamic platform, seamlessly connecting art enthusiasts from around the globe with talented artists, fostering a vibrant exchange of creativity and cultural perspectives. Through this innovative digital space, users can explore a diverse range of artworks, transcending geographical boundaries to appreciate the rich tapestry of global artistic expression. At the same time, it acts as a conduit for artists to share their creations with an expansive audience, bringing the future of art directly to the fingertips of individuals worldwide. The virtual gallery not only breaks down physical barriers but also nurtures a sense of interconnectedness, where users and artists collaboratively shape the evolving landscape of contemporary art.
-</p>
-</div>
-</div>					 
-							
-		
-			<div class="two-columns-grid">
-				<div div>
-				<h2> Empowering Artists: Take Control of Your Artistic Destiny with Our Virtual Gallery</h2>
-				<hr>
-				<br>
-				<br>
-
-				<p>In our virtual gallery, we empower artists to seize control of their market and connect directly with their target audience, eliminating the need for intermediaries or the constraints of physical art galleries. Here, artists wield full autonomy over their fate, market presence, fan engagement, and creative work. Our platform is designed to liberate artists, offering them a dynamic space where they can showcase their art on their terms, fostering direct connections and limitless possibilities for artistic expression. Embrace the future of artistry with unparalleled control – your journey, your audience, your masterpiece.    </p>
-			
-				</div>
-			
-				<div> 
-				<img src="./assets/images/artistAndcommunity.avif" className="img-fluid" alt="" style="width: 100%; margin-bottom: 30vh;"/>
-			
-			</div>
-			</div>
-			 
-			
-			
-			<div class="two-columns-grid">
-				<div>
-				<img src="./assets/images/connection.jpg" className="img-fluid" alt="" style="width: 80%; margin-bottom: 25vh;"/>
-			
-				</div>
-				<div> 
-				<h2>Bridging Global Art Communities</h2>
-				<hr>
-				<br>
-				<br>
-
-			
-					 <p>Our virtual gallery serves as a dynamic platform, seamlessly connecting art enthusiasts from around the globe with talented artists, fostering a vibrant exchange of creativity and cultural perspectives. Through this innovative digital space, users can explore a diverse range of artworks, transcending geographical boundaries to appreciate the rich tapestry of global artistic expression. At the same time, it acts as a conduit for artists to share their creations with an expansive audience, bringing the future of art directly to the fingertips of individuals worldwide. The virtual gallery not only breaks down physical barriers but also nurtures a sense of interconnectedness, where users and artists collaboratively shape the evolving landscape of contemporary art.
-			</p>
-			</div>
-			</div>
-			
-				<sections className="sectionfeature">
-<h1 style="text-align: center; margin-top: 10vh;margin-bottom: 5vh;">
-	Project aim
-</h1>				  <div class="rowss">
-					<div class="column">
-					  <div class="card">
-						<div class="icon">
-						  <i class="fa-solid fa-user"></i>
-						</div>
-						<h3 style="color:white;font-size: 1.6rem;">Global outreach</h3>
-								 <p style="color:white;font-size: 1.3rem;">Virtual art galleries offer a global stage for artists, transcending geographical boundaries to showcase diverse perspectives and cultures. Artists from around the world can reach a broader audience, creating a more interconnected and culturally rich artistic community.  that supplements traditional classroom teachings, enabling learners to delve into the historical context, techniques, and cultural significance of various artworks.</p>
-					  </div>
-					</div>
-					<div class="column">
-					  <div class="card">
-						<div class="icon">
-						  <i class="fa-solid fa-shield-halved"></i>
-						</div>
-						<h3 style="color:white;font-size: 1.6rem;">impact on Education</h3>
-								 <p style="color:white;font-size: 1.3rem;">In the realm of education, virtual art galleries provide an accessible platform for students and educators to explore a vast array of artworks, exhibitions, and educational resources. This digital accessibility enhances art learning by offering an immersive experience that supplements traditional classroom teachings, enabling learners to delve into the historical context, techniques, and cultural significance of various artworks. </p>
-					  </div>
-					</div>
-					<div class="column">
-					  <div class="card">
-						<div class="icon">
-						  <i class="fa-solid fa-headset"></i>
-						</div>
-						<h3 style="color:white;font-size: 1.6rem;">all users</h3>
-								 <p style="color:white;font-size: 1.3rem;">
-			Virtual art galleries offer a global stage for artists, transcending geographical boundaries to showcase diverse perspectives and cultures. Artists from around the world can reach a broader audience, creating a more interconnected and culturally rich artistic community.
-			
-			In the realm of education,  art galleries provide an accessible platform for students and educators to explore a vast array of artworks, exhibitions, and educational. </p>
-					  </div>
-					</div>
-				  </div>
-				</sections>
-				<br/>
-				<br/>
-				</div>
-					<footer>
-						<div class="footer" style="margin-top: 10%;">
-					 
-						
-						<div class="row">
-						<ul>
-						<li><a href="./public/contactus.html" style="font-size: 1.5em;">Contact us</a></li>
-						<li><a href="#" style="font-size: 1.5em;">Our Services</a></li>
-						<li><a href="#" style="font-size: 1.5em;">Privacy Policy</a></li>
-						<li><a href="#" style="font-size: 1.5em;">Terms & Conditions</a></li>
-						<li><a href="#" style="font-size: 1.5em;" >Career</a></li>
-						</ul>
-						</div>
-						
-						
-						</div>
-						</footer>
-	</body>
 </html>

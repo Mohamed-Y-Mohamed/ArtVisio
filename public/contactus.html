@@ -1,121 +1,270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>My first three.js app</title>
-	<link rel="styleSheet" href="../styling/main.css">
-	<link rel="styleSheet" href="../styling/contactus.css">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--------------------------------------------------------------------------
+        title with icon section 
+    ---------------------------------------------------------------------------->
+    <title>Art Visio</title>
+ <link rel="icon" type="image/svg+xml" href="./src/asset/images/artstation.svg">  
+    <!--------------------------------------------------------------------------
+         CSS FILES
+    ---------------------------------------------------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="../styling/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link href="../styling/custom-style.css" rel="stylesheet">
+ 
+
+</head>
+
+<body>
+
+    <main>
+            <!--------------------------------------------------------------------------
+                navigation bar section
+            ---------------------------------------------------------------------------->
+           <!--  -->
+           <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom left,  #000305,#0b1c3b);">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
+                        <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
+                        59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
+                         447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
+                    ARTVISIO
+                </a>
+
+                <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/"  style="color: rgb(201, 247, 247);">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/instruction.html"  style="color: rgb(201, 247, 247);">Instruction</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/aboutus.html"  style="color: rgb(201, 247, 247);">About us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
+                        </li>
+                    </ul>
+
+                    <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+                </div>
+            </div>
+        </nav>
+
+    <!--------------------------------------------------------------------------
+         Contact us form section
+    ---------------------------------------------------------------------------->
+        <section class="contact-section contact-section section-padding" style="padding-top: 10%;" id="section_6">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4" style="color: wheat;">Got a Qeustion or Issue? Let's talk</h2>
+
+                        <nav class="d-flex justify-content-center">
+                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
+                                role="tablist">
+                                <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactForm" type="button" role="tab"
+                                    aria-controls="nav-ContactForm" aria-selected="false">
+                                    <h5>Contact Form</h5>
+                                </button>
+
+                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
+                                    aria-controls="nav-ContactMap" aria-selected="false">
+                                    <h5>Google Maps</h5>
+                                </button>
+                            </div>
+                        </nav>
+
+                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
+                                aria-labelledby="nav-ContactForm-tab">
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
+                                    role="form">
+                                    <div class="contact-form-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="text" name="contact-name" id="contact-name"
+                                                    class="form-control" placeholder="Full name" required>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="email" name="contact-email" id="contact-email"
+                                                    pattern="[^ @]*@[^ @]*" class="form-control"
+                                                    placeholder="Email address" required>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" name="contact-TITLE" id="contact-TITLE"
+                                            class="form-control" placeholder="Title" required>
+
+                                        <textarea name="contact-message" rows="3" class="form-control"
+                                            id="contact-message" placeholder="Message"></textarea>
+
+                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                            <button type="submit" class="form-control">Send message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
+                                aria-labelledby="nav-ContactMap-tab">
+                                <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0"
+                                     marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=oxford%20Circus,%20London+(Art%20Visio%20)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                                     <a href="https://www.gps.ie/">gps systems</a></iframe>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--------------------------------------------------------------------------
+        FOOTER
+    ---------------------------------------------------------------------------->
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">Art VIsio</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="https://www.twitter.com" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                     
+
+                            <li class="social-icon-item">
+                                <a href="https://www.instagram.com" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.youtube.com" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.pinterest.com" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="padding-top: 2%;">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="index.html" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/aboutus.html" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/instruction.html" class="site-footer-link">instruction</a>
+                        </li>
+
+                    
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/contactus.html" class="site-footer-link">contactus</a>
+                        </li>
+
+                       
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 020000000" class="site-footer-link">
+                            Tel: 020000000
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="w1830958@my.westminster.ac.uk" class="site-footer-link">
+                            Email: w1830958@my.westminster.ac.uk
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location:</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        115 New Cavendish St, London W1W 6UW</p>
+
+              
+                </div>
+            </div>
+        </div>
+
+        
+    </footer>
+
+    <!--------------------------------------------------------------------------
+         JAVASCRIPT FILES
+    ---------------------------------------------------------------------------->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="../components/custom.js"></script>
+    <script src="../components/bootstrap.min.js"></script>
 
 
-	</head>
-	<body>
-		<div>
-			<nav id="navbar">
-				<div class="logo">
-					<i class="fa fa-artstation" style="color: #ebf2ff; padding-top: 0.5%; width: 35%; height: 35%;"></i>
-					<h1 class="text-light"><a href="index.html"><span style="font-size:2em">ArtVisio</span></a></h1>
-				</div>
-				<div class="hamburger">
-					<div class="line1"></div>
-					<div class="line2"></div>
-					<div class="line3"></div>
-				</div>
-				<ul class="nav-links">
-					<li class="a"><a href="/index.html">Home</a></li>
-					<li class="a"><a href="public/instruction.html">How to Use the website</a></li>
-					<li class="a"><a href="public/contactus.html">Contact Us</a></li>
-					<li class="a"><a href="public/aboutus.html">About Us</a></li>
-					<li><a href="./public/login.html"><button class="login-button">Login/Register</button></a></li>
-				</ul>
-			</nav>
-			<script>
-				const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
+</body>
 
-hamburger.addEventListener('click', ()=>{
-   //Animate Links
-    navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
-
-    //Hamburger Animation
-    hamburger.classList.toggle("toggle");
-});
-			</script>
-		</div>
-		<div class="background">
-			<div class="container">
-			  <div class="screen">
-				<div class="screen-header">
-				  <div class="screen-header-left">
-					<div class="screen-header-button close"></div>
-					<div class="screen-header-button maximize"></div>
-					<div class="screen-header-button minimize"></div>
-				  </div>
-				  <div class="screen-header-right">
-					<div class="screen-header-ellipsis"></div>
-					<div class="screen-header-ellipsis"></div>
-					<div class="screen-header-ellipsis"></div>
-				  </div>
-				</div>
-				<div class="screen-body">
-				  <div class="screen-body-item left">
-					<div class="app-title">
-					  <span>CONTACT US</span>
-					  <p style="  display: flex;
-			  flex-direction: column;
-			  position: relative;
-			  color: #eb649a;
-			  font-size: 26px; ">Here to help</p>
-					</div>
-					<div class="app-contact">CONTACT INFO : w1830958@my.westminster.ac.uk</div>
-					
-				  </div>
-				  <div class="screen-body-item">
-					<div class="app-form">
-					  <div class="app-form-group">
-						<input class="app-form-control" placeholder="NAME" />
-					  </div>
-					  <div class="app-form-group">
-						<input class="app-form-control" placeholder="EMAIL"/>
-					  </div>
-					  <div class="app-form-group">
-						<input class="app-form-control" placeholder="CONTACT NO"/>
-					  </div>
-					  <div class="app-form-group message">
-						<input class="app-form-control" placeholder="MESSAGE"/>
-					  </div>
-					  <div class="app-form-group buttons">
-						<button class="app-form-button">CANCEL</button>
-						<button class="app-form-button">SEND</button>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			 
-			</div>
-		  </div>
-		  
-			</div>
-					<footer>
-						<div class="footer">
-					 
-						
-						<div class="row">
-						<ul>
-						<li><a href="#">Contact us</a></li>
-						<li><a href="#">Our Services</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Terms & Conditions</a></li>
-						<li><a href="#">Career</a></li>
-						</ul>
-						</div>
-						
-						
-						</div>
-						</footer>
-	</body>
 </html>

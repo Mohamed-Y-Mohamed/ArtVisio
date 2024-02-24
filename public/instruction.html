@@ -1,135 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>ArtVisio</title>
-	<link rel="styleSheet" href="../styling/main.css">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	</head>
-	<body>
-	
-		<div>
-			<nav id="navbar">
-				<div class="logo">
-					<i class="fa fa-artstation" style="color: #ebf2ff; padding-top: 0.5%; width: 35%; height: 35%;"></i>
-					<h1 class="text-light"><a href="index.html"><span style="font-size:2em">ArtVisio</span></a></h1>
-				</div>
-				<div class="hamburger">
-					<div class="line1"></div>
-					<div class="line2"></div>
-					<div class="line3"></div>
-				</div>
-				<ul class="nav-links">
-					<li class="a"><a href="/index.html">Home</a></li>
-					<li class="a"><a href="public/instruction.html">How to Use the website</a></li>
-					<li class="a"><a href="public/contactus.html">Contact Us</a></li>
-					<li class="a"><a href="public/aboutus.html">About Us</a></li>
-					<li><a href="./public/login.html"><button class="login-button">Login/Register</button></a></li>
-				</ul>
-			</nav>
-			<script>
-				const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- title with icon section -->
+    <title>Art Visio</title>
+    <link rel="icon" type="image/svg+xml" href="./src/asset/images/artstation.svg">
+    
+    <!-- imported css and text style section -->
 
-hamburger.addEventListener('click', ()=>{
-   //Animate Links
-    navLinks.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    //Hamburger Animation
-    hamburger.classList.toggle("toggle");
-});
-			</script>
-		</div>
-		<div id="hero">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../styling/custom-style.css" rel="stylesheet">
+    <link href="../styling/bootstrap.min.css" rel="stylesheet">
+    <link href="../styling/bootstrap-icons.css" rel="stylesheet">
 
-			<div class="texture"></div>
+    <style>
+        /*---------------------------------------
+      CUSTOM BUTTON               
+    -----------------------------------------*/
+    .custom-btn {
+      background: #EE5007;
+      border: 2px solid transparent;
+      border-radius: 100px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: normal;
+      transition: all 0.3s;
+      padding: 10px 20px;
+    }
+    
+    .custom-btn:hover {
+      background: #c01f27;
+      color: #ffffff;
+    }
+    
+    .custom-border-btn {
+      background: transparent;
+      border: 2px solid #EE5007;
+      color: #EE5007;
+    }
+    
+    .navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
+    .custom-border-btn:hover {
+      background: #c01f27;
+      border-color: transparent;
+      color: #ffffff;
+    }
+    
+    .custom-btn-bg-white {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+    </style>
+</head>
 
-			<video
-			loop
-			muted
-			autoplay
-			preload="auto"
-			>
-				  <source src="../assets/VIRTUAL ART GALLERY FOR ARTISTS.mp4" type="video/mp4">
-			</video>
+<body>
+    <!--------------------------------------------------------------------------
+        Main section covered entire page except footer 
+    ---------------------------------------------------------------------------->
+    <main>
+    <!--------------------------------------------------------------------------
+        navigation bar section 
+    ---------------------------------------------------------------------------->
+     <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom left,  #000305,#0b1c3b);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
+                    <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
+                    59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
+                     447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
+                ARTVISIO
+            </a>
 
+            <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-			
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/"  style="color: rgb(201, 247, 247);">Home</a>
+                    </li>
 
-</div>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/instruction.html"  style="color: rgb(201, 247, 247);">Instruction</a>
+                    </li>
 
-<h1 style="text-align: center;padding-top: 10%;padding-bottom: 5%;">Instructions</h1>
-<div class="two-columns-grid">
-	<div> 
-		<img src="../assets/images/popup.jpeg" className="img-fluid" alt="" style="width: 100%; margin-bottom: 30vh;"/>
-	
-	</div>
-	<div> 
-	<h2>Getting around.</h2>
-	<hr>
-		<br>		<br>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/aboutus.html"  style="color: rgb(201, 247, 247);">About us</a>
+                    </li>
 
-		 <p>
-			To navigate through the virtual gallery, you will need to use the WASD keys for movement, where each key corresponds 
-			to a specific 
-			direction: 'W' to move forward, 'A' to move left, 'S' to move backward, and 'D' to move right. 
-			Additionally, controlling the direction of your movement and your point of view within this immersive environment requires the use of a mouse.
-			 By moving the mouse, you can adjust your perspective and the direction you are facing, allowing for a more intuitive and engaging exploration of the virtual space. 
-			This combination of keyboard and mouse controls ensures a seamless and interactive experience as you explore the artworks displayed in the virtual gallery.
-</p>
-</div>
-</div>					 
-							
-		
-			<div class="two-columns-grid">
-				<div div>
-				<h2> View Artist and artwork details:</h2>
-				<hr>
-				<br>
-				<br>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
+                    </li>
+                </ul>
 
-				<p>To delve deeper into the details of the artist and their artwork, simply approach the piece that captures your interest within the virtual gallery. 
-					As you get closer to the specific artwork, a pop-up will automatically appear, presenting you with valuable information about both the artist and the artwork itself.
-					 Should you wish to explore further, clicking on the artwork will navigate you to a dedicated page showcasing the artist's biography, 
-					 including their social media links and any additional information they have chosen to share. This feature enriches your experience by providing
-					 an in-depth look at the creative minds behind the art, all at the click of a button and the convenience of your approach.
-					</p>
-			
-				</div>
-			
-				<div> 
-				<img src="../assets/images/movement.jpg" className="img-fluid" alt="" style="width: 100%; margin-bottom: 30vh;"/>
-			
-			</div>
-			</div>
-			 
-			
-			
-			
-			
-					<footer>
-						<div class="footer" style="margin-top: 10%;">
-					 
-						
-						<div class="row">
-						<ul>
-						<li><a href="./public/contactus.html" style="font-size: 1.5em;">Contact us</a></li>
-						<li><a href="#" style="font-size: 1.5em;">Our Services</a></li>
-						<li><a href="#" style="font-size: 1.5em;">Privacy Policy</a></li>
-						<li><a href="#" style="font-size: 1.5em;">Terms & Conditions</a></li>
-						<li><a href="#" style="font-size: 1.5em;" >Career</a></li>
-						</ul>
-						</div>
-						
-						
-						</div>
-						</footer>
-	</body>
+                <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!--------------------------------------------------------------------------
+        hero section 
+    ---------------------------------------------------------------------------->
+
+        <section class="hero-section" id="section_1">
+            <div class="section-overlay" ></div>
+            <div class="container d-flex justify-content-center align-items-center" >
+                <div class="row">
+                    <div class="col-12 mt-auto text-center">
+                        <div class="row">
+                            <!--------------------------------------------------------------------------
+                                location of organisation on the hero 
+                            ---------------------------------------------------------------------------->
+
+                            <div class="col-md-6 d-flex justify-content-center justify-content-md-start">
+                                <div class="location-wrap mx-auto py-3 py-lg-0">
+                                    <h5 class="text-white">
+                                        <i class="custom-icon bi-geo-alt me-2"></i>
+                                        London, United Kingdom
+                                    </h5>
+                                </div>
+                            </div>
+                            <!--------------------------------------------------------------------------
+                                    Social Share Column
+                            ---------------------------------------------------------------------------->
+                            <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+                                <div class="social-share">
+                                    <ul class="social-icon d-flex align-items-center justify-content-center">
+                                        <span class="text-white me-3">Share:</span>
+                                        <li class="social-icon-item">
+                                            <a href="https://www.facebook.com" target="_blank" class="social-icon-link">
+                                                <span class="bi-facebook"></span>
+                                            </a>
+                                        </li>
+                                        <li class="social-icon-item">
+                                            <a href="https://www.twitter.com" target="_blank" class="social-icon-link">
+                                                <span class="bi-twitter"></span>
+                                            </a>
+                                        </li>
+                                        <li class="social-icon-item">
+                                            <a href="https://www.instagram.com" target="_blank" class="social-icon-link">
+                                                <span class="bi-instagram"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <!--------------------------------------------------------------------------
+                  background video section
+            ---------------------------------------------------------------------------->
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="../assets/VIRTUAL ART GALLERY FOR ARTISTS.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+    <!--------------------------------------------------------------------------
+        vr insturction
+    ---------------------------------------------------------------------------->
+          <section class="VirArt-section section-padding" id="section_2" >
+            <h1 class="display-1 text-center feature"> <strong>Instruction</strong> </h1>
+            <!--------------------------------------------------------------------------
+                column one
+            ---------------------------------------------------------------------------->
+            <div class="container-fluid contaFlu"  style="width: 75%;" >
+                <div class="row">
+                    <!--------------------------------------------------------------------------
+                         statement section
+                    ---------------------------------------------------------------------------->
+                    <div class="col-lg-5 col-md-6 col-12 mb-4 d-flex align-items-center RightDistance" data-animate="left">
+                        <div class="services-info">
+                            <h2 class="text-white mb-6">Navigating the Gallery in VR:</h2>
+          <p class="text-white">
+            Dive into our virtual gallery using VR to experience art like never before. Use the WASD keys for directional movement: 'W' to advance forward, 'A' for left, 'S' to step back, and 'D' to move right. Control your viewpoint with the mouse, moving it to look around. This immersive control scheme brings the virtual gallery to life, allowing you to explore artworks in a dynamic and engaging manner.
+          </p>
+          <h6 class="text-white mt-4">Immerse Yourself in the Artistic Experience</h6>
+          <p class="text-white">
+            Our use of VR and Three.js technology offers a revolutionary way to interact with art, providing depth and a sense of presence that traditional viewing methods cannot match. Step into the future of art exploration with us.
+          </p>
+          <h6 class="text-white mt-4">Featured Artwork: The Annunciation by Fra Angelico</h6>
+          <p class="text-white">
+            Experience historical masterpieces like "The Annunciation" in a new light, making the rich history of art accessible and engaging for all.
+          </p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-lg-7 col-12" data-animate="right">
+                        <div class="VirArt-text-wrap">
+                            <div class="sketchfab-embed-wrapper">
+                            <img class="img-fluid"  src="../assets/images/VR instructions.png"> 
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                  
+
+                </div>
+            </div>
+
+   </section>
+    <!--------------------------------------------------------------------------
+         pc instruction
+    ---------------------------------------------------------------------------->
+    <section class="VirArt-section section-padding aboutcover" id="section_2" >
+        <div class="container-fluid contaFlu" style="width: 75%;" data-animate="left">
+            <div class="row">
+                <!--------------------------------------------------------------------------
+                     image section
+                 ---------------------------------------------------------------------------->
+                <div class="col-lg-7 col-12" data-animate="left">
+                    <div class="VirArt-text-wrap">
+                        <div class="sketchfab-embed-wrapper">
+                        <img class="img-fluid"  src="../assets/images/instruction.jpg"> 
+                        </div>
+
+                       
+                    </div>
+                </div>
+                <!--------------------------------------------------------------------------
+                        statement section
+                ---------------------------------------------------------------------------->
+                <div class="col-lg-5 col-md-6 col-12 mb-4 d-flex align-items-center RightDistance" data-animate="right">
+                    <div class="services-info">
+                        <h2 class="text-white mb-6">Exploring the Gallery on PC:</h2>
+                        <p class="text-white">
+                          PC users can navigate the gallery with a game-like experience. Use the WASD or arrow keys for movement and the mouse to change your viewing angle. This intuitive setup allows for effortless exploration of the gallery, making art more accessible and enjoyable from your desktop.
+                        </p>
+                        <h6 class="text-white mt-4">Bringing Art Closer to You</h6>
+                        <p class="text-white">
+                          Our platform merges technology and art, offering an enriched experience that highlights the beauty and history of artworks from around the world.
+                        </p>
+                    </div>
+                </div>
+                
+
+             
+              
+
+            </div>
+        </div>
+
+</section>
+
+    </main>
+    <!--------------------------------------------------------------------------
+                        footer section
+    ---------------------------------------------------------------------------->
+
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">Art VIsio</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="https://www.twitter.com" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                     
+
+                            <li class="social-icon-item">
+                                <a href="https://www.instagram.com" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.youtube.com" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.pinterest.com" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="padding-top: 2%;">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="index.html" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/aboutus.html" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/instruction.html" class="site-footer-link">instruction</a>
+                        </li>
+
+                    
+
+                        <li class="site-footer-link-item">
+                            <a href="./public/contactus.html" class="site-footer-link">contactus</a>
+                        </li>
+
+                       
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 020000000" class="site-footer-link">
+                            Tel: 020000000
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="w1830958@my.westminster.ac.uk" class="site-footer-link">
+                            Email: w1830958@my.westminster.ac.uk
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location:</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        115 New Cavendish St, London W1W 6UW</p>
+
+              
+                </div>
+            </div>
+        </div>
+
+        
+    </footer>
+
+    <!--------------------------------------------------------------------------
+            js import section
+    ---------------------------------------------------------------------------->
+    <!--  -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/COMPONENTS/custom.js"></script>
+    <!--------------------------------------------------------------------------
+               animation script code     
+    ---------------------------------------------------------------------------->
+      
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    const direction = entry.target.getAttribute('data-animate');
+                    entry.target.classList.add(`slide-in-${direction}`);
+                    observer.unobserve(entry.target); 
+                  }
+                });
+              }, {
+                threshold: 0.6 
+              });
+            
+              document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+            });
+            </script>
+</body>
+
 </html>
