@@ -55,7 +55,7 @@ createUserWithEmailAndPassword(auth, email, password)
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert("unable to create account.\n"+errorCode+"\n"+errorMessage )
+    alert("unablhgjghjybve to create account.\n"+errorCode+"\n"+errorMessage )
   });
 } )
 
