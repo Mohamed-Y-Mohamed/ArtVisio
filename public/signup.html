@@ -70,46 +70,46 @@
    <!--------------------------------------------------------------------------
                     NAVIGATION ABR 
     ---------------------------------------------------------------------------->
-        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom left,  #000305,#0b1c3b);">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
-                        <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
-                        59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
-                         447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
-                    ARTVISIO
-                </a>
+    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom,  #0d63a0,#010f29);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
+                    <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
+                    59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
+                     447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
+                ARTVISIO
+            </a>
+            <a href="/signup.html" class="btn custom-btn d-lg-none ms-auto me-4">Login / Singup</a>
 
-                <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/"  style="color: rgb(201, 247, 247);">Home</a>
-                        </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/"  style="color: rgb(201, 247, 247);">Home</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/instruction.html"  style="color: rgb(201, 247, 247);">Instruction</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/instruction.html"  style="color: rgb(201, 247, 247);">Instruction</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/aboutus.html"  style="color: rgb(201, 247, 247);">About us</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/aboutus.html"  style="color: rgb(201, 247, 247);">About us</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
-                        </li>
-                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
+                    </li>
+                </ul>
 
-                    <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
-                </div>
+                <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
             </div>
-        </nav>
+        </div>
+    </nav>
    <!--------------------------------------------------------------------------
                     REGISTER FORM
     ---------------------------------------------------------------------------->
@@ -133,12 +133,12 @@
                                             </div>
                                         </div>
 
-                                        <input type="email" name="contact-email" id="Signup-Email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" style="height: 40px;" required>
+                                        <input type="email" name="contact-email" id="Signup-Email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address"
+                                         style="height: 40px;" required>
                                         <input type="password" name="contact-password" id="Signup-Pass" class="form-control" style="height: 40px;" placeholder="Password" required>
-
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" id="signup-role" name="darkmode">
-                                            <label class="form-check-label" for="mySwitch" style="padding-bottom: 90px; font-size: 25px;">Are You an Artist</label>
+                                            <label class="form-check-label" for="signup-role" style="padding-bottom: 90px; font-size: 25px;">Are You an Artist</label>
                                         </div>
 
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
@@ -160,6 +160,7 @@
    <!--------------------------------------------------------------------------
                     FOOTER SECTION
     ---------------------------------------------------------------------------->
+   
     <footer class="site-footer">
         <div class="site-footer-top">
             <div class="container">
@@ -172,31 +173,27 @@
                     <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
                         <ul class="social-icon d-flex justify-content-lg-end">
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
+                                <a href="https://www.twitter.com" class="social-icon-link">
                                     <span class="bi-twitter"></span>
                                 </a>
                             </li>
 
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-apple"></span>
-                                </a>
-                            </li>
+                     
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
+                                <a href="https://www.instagram.com" class="social-icon-link">
                                     <span class="bi-instagram"></span>
                                 </a>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
+                                <a href="https://www.youtube.com" class="social-icon-link">
                                     <span class="bi-youtube"></span>
                                 </a>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
+                                <a href="https://www.pinterest.com" class="social-icon-link">
                                     <span class="bi-pinterest"></span>
                                 </a>
                             </li>
@@ -206,7 +203,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" style="padding-top: 2%;">
             <div class="row">
 
                 <div class="col-lg-6 col-12 mb-4 pb-2">
@@ -214,28 +211,24 @@
 
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Home</a>
+                            <a href="index.html" class="site-footer-link">Home</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">About</a>
+                            <a href="/aboutus.html" class="site-footer-link">About</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Artists</a>
+                            <a href="/instruction.html" class="site-footer-link">instruction</a>
                         </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Schedule</a>
-                        </li>
+                    
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
+                            <a href="/contactus.html" class="site-footer-link">contactus</a>
                         </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Contact</a>
-                        </li>
+                       
                     </ul>
                 </div>
 
@@ -243,64 +236,31 @@
                     <h5 class="site-footer-title mb-3">Have a question?</h5>
 
                     <p class="text-white d-flex mb-1">
-                        <a href="tel: 090-080-0760" class="site-footer-link">
-                            090-080-0760
+                        <a href="tel: 020000000" class="site-footer-link">
+                            Tel: 020000000
                         </a>
                     </p>
 
                     <p class="text-white d-flex">
-                        <a href="mailto:hello@company.com" class="site-footer-link">
-                            hello@company.com
+                        <a href="w1830958@my.westminster.ac.uk" class="site-footer-link">
+                            Email: w1830958@my.westminster.ac.uk
                         </a>
                     </p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
-                    <h5 class="site-footer-title mb-3">Location</h5>
+                    <h5 class="site-footer-title mb-3">Location:</h5>
 
                     <p class="text-white d-flex mt-3 mb-2">
-                        Silang Junction South, Tagaytay, Cavite, Philippines</p>
+                        115 New Cavendish St, London W1W 6UW</p>
 
-                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
-                        <span>Our Maps</span>
-                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="16" cy="16" r="15.5"></circle>
-                                <line x1="10" y1="18" x2="16" y2="12"></line>
-                                <line x1="16" y1="12" x2="22" y2="18"></line>
-                            </g>
-                        </svg>
-                    </a>
+              
                 </div>
             </div>
         </div>
 
-        <div class="site-footer-bottom">
-            <div class="container">
-                <div class="row">
-
-                  
-
-                    <div class="col-lg-8 col-12 mt-lg-5">
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Privacy Policy</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Your Feedback</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </footer>
-
     <!--
 
 T e m p l a t e M o
@@ -309,7 +269,8 @@ T e m p l a t e M o
     <!-- JAVASCRIPT FILES -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
    
-        
+    <script src="../components/main.js"></script>
+ 
 </body>
 
 </html>
