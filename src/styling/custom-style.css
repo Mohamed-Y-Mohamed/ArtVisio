@@ -539,7 +539,7 @@ FEATURE TITLE
   outline: none;
 }
 
-.custom-form button[type="submit"] {
+.custom-form button {
   background: #EE5007;
   border: none;
   border-radius: 100px;
@@ -550,8 +550,8 @@ FEATURE TITLE
   margin-bottom: 0;
 }
 
-.custom-form button[type="submit"]:hover,
-.custom-form button[type="submit"]:focus {
+.custom-form button :hover,
+.custom-form button :focus {
   background: #c01f27;
   border-color: transparent;
 }

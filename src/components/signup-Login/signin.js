@@ -20,13 +20,16 @@ function loginUser(email, password) {
 }
 
 // Event listener for the login button
-document.querySelector('button[type="submit"]').addEventListener('click', function() {
-  const email = document.getElementById('signin-email').value;
+document.getElementById("signin-button").addEventListener("click", function(event){
+  event.preventDefault()
+const email = document.getElementById('signin-email').value;
   const password = document.getElementById('signin-password').value;
 
   if (email.trim() === '' || password.trim() === '') {
     alert("Please enter both email and password.");
+  
   } else {
+      alert(email+", "+ password)
     loginUser(email, password);
   }
 });
