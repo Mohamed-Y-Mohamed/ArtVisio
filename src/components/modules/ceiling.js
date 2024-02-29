@@ -4,25 +4,25 @@ import * as THREE from "three";
 export const createCeiling = (scene, textureLoader) => {
   // Load the textures
   const colorTexture = textureLoader.load(
-"../../assets/walls_images/ceiling.jpg" 
+"../../../assets/walls_images/ceiling.jpg" 
  );
   const displacementTexture = textureLoader.load(
     "ceiling.jpg" 
     );
   const aoTexture = textureLoader.load(
-    "../../assets/walls_images/ceiling.jpg" 
+    "../../../assets/walls_images/ceiling.jpg" 
     );
   const emissionTexture = textureLoader.load(
-    "../../assets/walls_images/ceiling.jpg" 
+    "../../../assets/walls_images/ceiling.jpg" 
     );
   const metalnessTexture = textureLoader.load(
-    "../../assets/walls_images/ceiling.jpg" 
+    "../../../assets/walls_images/ceiling.jpg" 
     );
   const normalGLTexture = textureLoader.load(
-    "../../assets/walls_images/ceiling.jpg" 
+    "../../../assets/walls_images/ceiling.jpg" 
     );
   const roughnessTexture = textureLoader.load(
-    "../../assets/walls_images/ceiling.jpg" 
+    "../../../assets/walls_images/ceiling.jpg" 
     );
 
   // Set texture parameters

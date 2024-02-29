@@ -74,10 +74,22 @@
                         </li>
                     </ul>
 
-                    <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Action
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </div>                 
                 </div>
             </div>
         </nav>
+
 
     <!--------------------------------------------------------------------------
          Contact us form section
@@ -126,7 +138,7 @@
                                         </div>
 
                                         <input type="text" name="contact-TITLE" id="contact-TITLE"
-                                            class="form-control" placeholder="Title" style="height: 50px;" required>
+                                            class="form-control" placeholder="Title" required>
 
                                         <textarea name="contact-message" rows="3" class="form-control"
                                             id="contact-message" placeholder="Message"></textarea>
@@ -263,9 +275,13 @@
     ---------------------------------------------------------------------------->
     <script src="../src/components/main.js"></script>
     <script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../src/components/bootstrap/bootstrap.min.js"></script>
 
-
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Include Popper.js (dependency for Bootstrap dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<!-- Include Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

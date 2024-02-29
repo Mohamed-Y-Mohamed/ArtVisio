@@ -1,3 +1,4 @@
+
 export const paintingData = [
   // Front Wall
   ...Array.from({ length: 4 }, (_, i) => ({
