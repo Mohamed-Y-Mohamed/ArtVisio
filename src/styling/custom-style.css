@@ -621,7 +621,7 @@ MISSION SECTION
   .cards {
     padding: 2.5em 1.25em;
     text-align: center;
-    background: linear-gradient(0deg, #f65f39 10px, transparent 10px);
+    background: linear-gradient(0deg, #ce5131,#4e4948 ,#072a41, transparent  );
     background-repeat: no-repeat;
     background-position: 0 0.62em;
     box-shadow: 0 0 2.5em rgba(177, 50, 50, 0.15);
