@@ -618,7 +618,7 @@ MISSION SECTION
     padding: 1em;
   }
   
-  .card {
+  .cards {
     padding: 2.5em 1.25em;
     text-align: center;
     background: linear-gradient(0deg, #f65f39 10px, transparent 10px);
@@ -631,7 +631,7 @@ MISSION SECTION
     margin-bottom: 2em;
   }
   
-  .card .icon {
+  .cards .icon {
     font-size: 2.5em;
     height: 2em;
     width: 2em;
@@ -653,7 +653,7 @@ MISSION SECTION
     transition: 0.5s;
   }
   
-  .card h3 {
+  .cards h3 {
     font-size: 1.3em;
     margin: 1em 0 1.4em 0;
     font-weight: 600;
@@ -661,16 +661,16 @@ MISSION SECTION
     color: #070024;
   }
   
-  .card p {
+  .cards p {
     line-height: 2em;
     color: #625a71;
   }
   
-  .card:hover {
+  .cards:hover {
     background-position: 0;
   }
   
-  .card:hover .icon:before {
+  .cards:hover .icon:before {
     height: 2.25em;
     width: 2.25em;
   }
@@ -696,7 +696,7 @@ MISSION SECTION
       padding: 140px 5%;
     }
   
-    .card {
+    .cards {
       padding: 3.1em 1.25em;
     }
   
@@ -711,7 +711,7 @@ MISSION SECTION
   contact               
 -----------------------------------------*/
 .contact-section {
-  background-image: url('../assets/images/nicholas-green-unsplash-blur.jpg');
+  background-image: url('../../assets/images/nicholas-green-unsplash-blur.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -719,8 +719,8 @@ MISSION SECTION
 }
 
 .contact-form {
-  background: var(--white-color);
-  border-radius: var(--border-radius-medium);
+  background: white;
+  border-radius: 12px;
   padding: 50px;
 }
 
