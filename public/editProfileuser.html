@@ -27,13 +27,14 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <link href="../src/styling/custom-style.css" rel="stylesheet">
- 
+    <script type="module" src="../src/components/Profile/editProfile.js" defer></script>
+
 
 </head>
 
-<body>
+<body style="background-color: lightgray;">
 
-    <main>
+    <main >
             <!--------------------------------------------------------------------------
                 navigation bar section
             ---------------------------------------------------------------------------->
@@ -47,8 +48,17 @@
                          447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
                     ARTVISIO
                 </a>
-                <a href="/signup.html" class="btn custom-btn d-lg-none ms-auto me-4">Login / Singup</a>
-
+                <div class="dropdown">
+                    <button class="btn  custom-btn btn d-lg-none ms-auto me-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      More Options
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">edit profile</a>
+                      <a class="dropdown-item" href="#">reload scene</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">signout</a>
+                    </div>
+                  </div>  
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
@@ -74,96 +84,146 @@
                         </li>
                     </ul>
 
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Action
+                    <div class="dropdown">
+                        <button class="btn  custom-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          More Options
                         </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">edit profile</a>
+                          <a class="dropdown-item" href="#">reload scene</a>
                           <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Separated link</a>
+                          <a class="dropdown-item" href="#">signout</a>
                         </div>
-                      </div>                 
+                      </div>      
                 </div>
             </div>
         </nav>
-
-
     <!--------------------------------------------------------------------------
-         Contact us form section
+         Edit profile section
     ---------------------------------------------------------------------------->
-        <section class="contact-section contact-section section-padding" style="padding-top: 10%;" id="section_6">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4" style="color: wheat;">Got a Qeustion or Issue? Let's talk</h2>
-
-                        <nav class="d-flex justify-content-center">
-                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
-                                role="tablist">
-                                <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-ContactForm" type="button" role="tab"
-                                    aria-controls="nav-ContactForm" aria-selected="false">
-                                    <h5>Contact Form</h5>
-                                </button>
-
-                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
-                                    aria-controls="nav-ContactMap" aria-selected="false">
-                                    <h5>Google Maps</h5>
-                                </button>
+    <br><br><br>
+    <div class="container" >
+		<div class="main-body" style="background-color: white;">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card">
+						<div class="card-body">
+                            <div class=" mb-4 mb-xl-0">
+                                <div class="">Profile Picture</div>
+                                <div class=" text-center">
+                                    <!-- Profile picture image-->
+                                    <img class="rounded-circle p-1 bg-primary" src="../assets/images/defualt-avatar.png" alt="">
+                                    <!-- Profile picture help block-->
+                                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                                    <!-- Profile picture upload button-->
+                                    <button class="btn btn-primary" type="button">Upload new image</button>
+                                </div>
                             </div>
-                        </nav>
-
-                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
-                                aria-labelledby="nav-ContactForm-tab">
-                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
-                                    role="form">
-                                    <div class="contact-form-body">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="text" name="contact-name" id="contact-name"
-                                                    class="form-control" placeholder="Full name" required>
-                                            </div>
-
-                                            <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="email" name="contact-email" id="contact-email"
-                                                    pattern="[^ @]*@[^ @]*" class="form-control"
-                                                    placeholder="Email address" required>
-                                            </div>
-                                        </div>
-
-                                        <input type="text" name="contact-TITLE" id="contact-TITLE"
-                                            class="form-control" placeholder="Title" required>
-
-                                        <textarea name="contact-message" rows="3" class="form-control"
-                                            id="contact-message" placeholder="Message"></textarea>
-
-                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                            <button type="submit" class="form-control">Send message</button>
-                                        </div>
-                                    </div>
-                                </form>
+							<hr class="my-4">
+                            <div class="row mb-3">
+								<div class="col-sm-2">
+									<h6 class="mb-0">First Name:</h6>
+                                    
+								</div>
+								<div class="col-sm-4 text-secondary">
+									<input type="text" class="form-control" id="user-firstname" placeholder="First name" value="">
+								</div>
+                                <div class="col-sm-2">
+									<h6 class="mb-0">Last Name:</h6>
+                                    
+								</div>
+								<div class="col-sm-4 text-secondary">
+									<input type="text" class="form-control" id="user-lastname" placeholder="Last name" value="">
+								</div>
+							</div>
+                            
+							<div class="row mb-3">
+								<div class="col-sm-3">
+									<h6 class="mb-0">Email:</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="text" class="form-control" id="user-email" placeholder="john@example.com" value="">
+								</div>
+							</div>
+                            
+							<div class="row mb-3">
+								<div class="col-sm-3">
+									<h6 class="mb-0">Country:</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="text" class="form-control" id="user-country" placeholder="USA" value="">
+								</div>
+							</div>
+                            
+							<div class="row mb-3">
+								<div class="col-sm-3">
+									<h6 class="mb-0">Date of birth</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+                                    <input type="text" class="form-control" id="user-DOB" placeholder="dd/mm/yyyy" value="" pattern="(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/[0-9]{4}" title="Please enter a date in the format dd/mm/yyyy">
+								</div>
+							</div>
+                            <br>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Biography:</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" id="user-Biography" placeholder="write a biography for others to view when visiting your profile" rows="3" value=""></textarea>
+                                </div>
                             </div>
-
-                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
-                                aria-labelledby="nav-ContactMap-tab">
-                                <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0"
-                                     marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=oxford%20Circus,%20London+(Art%20Visio%20)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                                     <a href="https://www.gps.ie/">gps systems</a></iframe>
-
+                           <br><br>
+                           <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe me-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" id="user-website-Link" placeholder="https://www.google.com" value="">
                             </div>
                         </div>
-                    </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter me-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" id="user-twitter-link" placeholder="https://www.twitter.com" value="">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram me-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" id="user-instagram-link" placeholder="https://www.instagram.com" value="">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook me-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" id="user-facebook-link" placeholder="https://www.Facebook.com" value="">
+                            </div>
+                        </div>
+							
+                            <br><br><br><br>
+							<div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-9 text-secondary">
+                                    <button id="userProfile-saveChange" class="btn btn-primary px-4 mr-2">Save Changes</button>
+                                    <button id="userProfile-cancel" class="btn btn-secondary px-4">Cancel</button>
+                                </div>
+                            </div>
+						</div>
+					</div>
+                    
+				</div>
+               
 
-                </div>
-            </div>
-        </section>
+		</div>
+	</div>
     </main>
+<br><br><br>
 
     <!--------------------------------------------------------------------------
         FOOTER
@@ -282,6 +342,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <!-- Include Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

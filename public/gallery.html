@@ -75,8 +75,17 @@
                    447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
               ARTVISIO
           </a>
-          <a href="/signup.html" class="btn custom-btn d-lg-none ms-auto me-4">Login / Singup</a>
-
+          <div class="dropdown">
+              <button class="btn  custom-btn btn d-lg-none ms-auto me-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More Options
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">edit profile</a>
+                <a class="dropdown-item" href="#">reload scene</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">signout</a>
+              </div>
+            </div>  
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
@@ -102,18 +111,21 @@
                   </li>
               </ul>
 
-              <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+              <div class="dropdown">
+                  <button class="btn  custom-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More Options
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">edit profile</a>
+                    <a class="dropdown-item" href="#">reload scene</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">signout</a>
+                  </div>
+                </div>      
           </div>
       </div>
   </nav>
 
-          <div id="play_button">
-          </div>
-          <div id="about_button_container">
-          </div>
-        </div>
-      </div>
-    </div>
 
     
 
@@ -125,5 +137,14 @@
     </div>
   </main>
     <script type="module" src="../src/components/gallery.js"></script>
+    <script src="../src/components/main.js"></script>
+    <script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Include Popper.js (dependency for Bootstrap dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<!-- Include Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
