@@ -1,7 +1,16 @@
-// Firebase setup and user registration
-import { app } from "./firebase-setup";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, collection, doc, setDoc } from 'firebase/firestore/lite';
+import {
+    app
+} from "../firebase-setup";
+import {
+    getAuth,
+    createUserWithEmailAndPassword
+} from "firebase/auth";
+import {
+    getFirestore,
+    collection,
+    doc,
+    setDoc
+} from 'firebase/firestore/lite';
 
 const auth = getAuth();
 const db = getFirestore(app);
@@ -9,7 +18,7 @@ const db = getFirestore(app);
 // Event listener for sign-up form submission
 const submit = document.getElementById("signup-submit");
 
-submit.addEventListener('click', function(event) {
+submit.addEventListener('click', function (event) {
     event.preventDefault();
 
     // Get user input values
@@ -27,12 +36,20 @@ submit.addEventListener('click', function(event) {
             const user = userCredential.user;
             alert("Creating account. User ID: " + user.uid);
 
-            // Add user data to Firestore
+            // Format the current date as dd/mm/yyyy
+            const currentDate = new Date();
+            const signupDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+                (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+                currentDate.getFullYear();
+
+            // Add user data to Firestore, including formatted signupDate and initializing signInCount
             return setDoc(doc(db, "users", user.uid), {
                 firstName: firstname,
                 lastName: lastname,
                 email: email,
-                role: userRole
+                role: userRole,
+                signupDate: signupDate, // Storing the formatted signup date
+                signInCount: 0 // Initializing the sign-in count
             });
         })
         .then(() => {

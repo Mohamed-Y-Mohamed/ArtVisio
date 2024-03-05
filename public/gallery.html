@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- title with icon section -->
+
+    <!--------------------------------------------------------------------------
+        title with icon section 
+    ---------------------------------------------------------------------------->
     <title>Art Visio</title>
-    <link rel="icon" type="image/svg+xml" href="../src/assets/images/artstation.svg">
-    
-    <!-- imported css and text style section -->
+    <link rel="icon" type="image/svg+xml" href="./src/asset/images/artstation.svg">
+    <!--------------------------------------------------------------------------
+         imported FILES
+    ---------------------------------------------------------------------------->
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -21,130 +30,133 @@
     <link href="../src/styling/bootstrap.min.css" rel="stylesheet">
     <link href="../src/styling/bootstrap-icons.css" rel="stylesheet">
     <style>
-      /*---------------------------------------
+        /*---------------------------------------
     CUSTOM BUTTON               
   -----------------------------------------*/
-  .custom-btn {
-    background: #EE5007;
-    border: 2px solid transparent;
-    border-radius: 100px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: normal;
-    transition: all 0.3s;
-    padding: 10px 20px;
-  }
-  
-  .custom-btn:hover {
-    background: #c01f27;
-    color: #ffffff;
-  }
-  
-  .custom-border-btn {
-    background: transparent;
-    border: 2px solid #EE5007;
-    color: #EE5007;
-  }
-  
-  .navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
-  .custom-border-btn:hover {
-    background: #c01f27;
-    border-color: transparent;
-    color: #ffffff;
-  }
-  
-  .custom-btn-bg-white {
-    border-color: #ffffff;
-    color: #ffffff;
-  }
-  </style>
-  </head>
+        .custom-btn {
+            background: #EE5007;
+            border: 2px solid transparent;
+            border-radius: 100px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: normal;
+            transition: all 0.3s;
+            padding: 10px 20px;
+        }
 
-  <body style="height: 100vh;width: 100vw;margin: 0;padding: 0px;">
+        .custom-btn:hover {
+            background: #c01f27;
+            color: #ffffff;
+        }
+
+        .custom-border-btn {
+            background: transparent;
+            border: 2px solid #EE5007;
+            color: #EE5007;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
+        .custom-border-btn:hover {
+            background: #c01f27;
+            border-color: transparent;
+            color: #ffffff;
+        }
+
+        .custom-btn-bg-white {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+
+<body style="height: 100vh;width: 100vw;margin: 0;padding: 0px;">
     <main>
-      <!--------------------------------------------------------------------------
+        <!--------------------------------------------------------------------------
                     NAVIGATION ABR 
     ---------------------------------------------------------------------------->
-    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom,  #0d63a0,#010f29);">
-      <div class="container">
-          <a class="navbar-brand" href="index.html">
-              <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
-                  <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
+        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom right,  #EE5007,#010f29 );">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
+                        <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
                   59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
-                   447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
-              ARTVISIO
-          </a>
-          <div class="dropdown">
-              <button class="btn  custom-btn btn d-lg-none ms-auto me-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More Options
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">edit profile</a>
-                <a class="dropdown-item" href="#">reload scene</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">signout</a>
-              </div>
-            </div>  
+                   447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z" />
+                    </svg>
+                    ARTVISIO
+                </a>
+                <div class="dropdown">
+                    <button class="btn  custom-btn btn d-lg-none ms-auto me-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More Options
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/editProfileuser.html">edit profile</a>
+                        <a class="dropdown-item" href="/gallery.html">Reload Scene</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">signout</a>
+                    </div>
+                </div>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
-          <span class="navbar-toggler-icon"></span>
-      </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-                  <li class="nav-item">
-                      <a class="nav-link click-scroll" href="/"  style="color: rgb(201, 247, 247);">Home</a>
-                  </li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/" style="color: rgb(201, 247, 247);">Home</a>
+                        </li>
 
-                  <li class="nav-item">
-                      <a class="nav-link click-scroll" href="/instruction.html"  style="color: rgb(201, 247, 247);">Instruction</a>
-                  </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/instruction.html" style="color: rgb(201, 247, 247);">Instruction</a>
+                        </li>
 
-                  <li class="nav-item">
-                      <a class="nav-link click-scroll" href="/aboutus.html"  style="color: rgb(201, 247, 247);">About us</a>
-                  </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/aboutus.html" style="color: rgb(201, 247, 247);">About us</a>
+                        </li>
 
-                  <li class="nav-item">
-                      <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
-                  </li>
-              </ul>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
+                        </li>
+                    </ul>
 
-              <div class="dropdown">
-                  <button class="btn  custom-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More Options
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">edit profile</a>
-                    <a class="dropdown-item" href="#">reload scene</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">signout</a>
-                  </div>
-                </div>      
-          </div>
-      </div>
-  </nav>
-
-
-    
+                    <div class="dropdown">
+                        <button class="btn  custom-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More Options
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/editProfileuser.html">edit profile</a>
+                            <a class="dropdown-item" id="" href="/gallery.html">reload scene</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">signout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
 
-   
 
-    <div id="painting-info">
-      
-    </div>
-  </main>
-    <script type="module" src="../src/components/gallery.js"></script>
+
+
+
+
+        <div id="painting-info">
+
+        </div>
+        <script type="module" src="../src/components/gallery.js"></script>
+
+    </main>
     <script src="../src/components/main.js"></script>
     <script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
 
-<!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<!-- Include Popper.js (dependency for Bootstrap dropdowns) -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<!-- Include Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Include Popper.js (dependency for Bootstrap dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
 </html>

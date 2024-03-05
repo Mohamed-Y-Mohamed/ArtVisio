@@ -1,60 +1,104 @@
-const userData = {};
+// Import necessary Firebase functions
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore/lite';
+import { app } from "../firebase-setup"; // Import your Firebase configuration
 
-document.getElementById("userProfile-saveChange").addEventListener("click", function() {
-    // Get user input data
-    const firstName = document.getElementById("user-firstname").value.trim();
-    const lastName = document.getElementById("user-lastname").value.trim();
-    const email = document.getElementById("user-email").value.trim();
-    const country = document.getElementById("user-country").value.trim();
-    const dob = document.getElementById("user-DOB").value.trim();
-    const biography = document.getElementById("user-Biography").value.trim();
-    const websiteLink = document.getElementById("user-website-Link").value.trim();
-    const twitterLink = document.getElementById("user-twitter-link").value.trim();
-    const instagramLink = document.getElementById("user-instagram-link").value.trim();
-    const facebookLink = document.getElementById("user-facebook-link").value.trim();
-  
-    // Check if any input field is empty
-    if (!firstName || !lastName || !email || !country || !dob || !biography || !websiteLink || !twitterLink || !instagramLink || !facebookLink) {
-      // Change border color of empty input fields to red
-      if (!firstName) document.getElementById("user-firstname").style.borderColor = "red";
-      if (!lastName) document.getElementById("user-lastname").style.borderColor = "red";
-      if (!email) document.getElementById("user-email").style.borderColor = "red";
-      if (!country) document.getElementById("user-country").style.borderColor = "red";
-      if (!dob) document.getElementById("user-DOB").style.borderColor = "red";
-      if (!biography) document.getElementById("user-Biography").style.borderColor = "red";
-      if (!websiteLink) document.getElementById("user-website-Link").style.borderColor = "red";
-      if (!twitterLink) document.getElementById("user-twitter-link").style.borderColor = "red";
-      if (!instagramLink) document.getElementById("user-instagram-link").style.borderColor = "red";
-      if (!facebookLink) document.getElementById("user-facebook-link").style.borderColor = "red";
-      
-      // Alert user to fill in all fields
-      alert("Please fill in all fields.");
-      return; // Exit function if any field is empty
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Firebase Authentication and Firestore
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Check for user's authentication status
+    onAuthStateChanged(auth, user => {
+        if (user) {
+            // Fetch user data if a user is signed in
+            fetchUserData(user.uid, db);
+        } else {
+            console.log("No user is signed in.");
+        }
+    });
+});
+
+// Function to fetch user data from Firestore
+async function fetchUserData(userId, db) {
+    const userRef = doc(db, "users", userId);
+    try {
+        const docSnap = await getDoc(userRef);
+        if (docSnap.exists()) {
+            const userData = docSnap.data();
+            // Populate form fields with fetched user data
+            document.getElementById("user-firstname").value = userData.firstName || '';
+            document.getElementById("user-lastname").value = userData.lastName || '';
+            document.getElementById("user-country").value = userData.country || '';
+            document.getElementById("user-DOB").value = userData.dob || '';
+            document.getElementById("user-Biography").value = userData.biography || '';
+            document.getElementById("user-website-Link").value = userData.websiteLink || '';
+            document.getElementById("user-twitter-link").value = userData.twitterLink || '';
+            document.getElementById("user-instagram-link").value = userData.instagramLink || '';
+            document.getElementById("user-facebook-link").value = userData.facebookLink || '';
+            // Set user profile image or default image
+            const profileImageElement = document.getElementById('user-profile');
+            profileImageElement.src = userData.photoURL || "../../../assets/images/defualt-avatar.png";
+        } else {
+            console.log("No such document!");
+        }
+    } catch (error) {
+        console.error("Error fetching user data:", error);
     }
-  else {
-    // Remove red border color if all fields are filled
-    document.getElementById("user-firstname").style.borderColor = "";
-    document.getElementById("user-lastname").style.borderColor = "";
-    document.getElementById("user-email").style.borderColor = "";
-    document.getElementById("user-country").style.borderColor = "";
-    document.getElementById("user-DOB").style.borderColor = "";
-    const biographyInput = document.getElementById("user-Biography");
-    const biography = biographyInput.value.trim() ? biographyInput.value.trim() : "N/A";
-    document.getElementById("user-website-Link").style.borderColor = "";
-    document.getElementById("user-twitter-link").style.borderColor = "";
-    document.getElementById("user-instagram-link").style.borderColor = "";
-    document.getElementById("user-facebook-link").style.borderColor = "";
+};
 
-     // Update user data object properties
-     userData.firstName = firstName;
-     userData.lastName = lastName;
-     userData.email = email;
-     userData.country = country;
-     userData.dob = dob;
-     userData.biography = biography;
-     userData.websiteLink = websiteLink;
-     userData.twitterLink = twitterLink;
-     userData.instagramLink = instagramLink;
-     userData.facebookLink = facebookLink;
-  }
-})
+// Listen for click event on the "Save Changes" button
+document.getElementById("userProfile-saveChange").addEventListener("click", async function () {
+    // Get file from the file input
+    const fileInput = document.getElementById('formFileLg');
+    const file = fileInput.files[0];
+    // Reinitialize Firebase services
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
+    const user = auth.currentUser;
+    // Use your default image URL use defualt image as backup if no image selected. 
+    let photoURL = document.getElementById('user-profile').src || "../../../assets/images/defualt-avatar.png"; 
+
+
+    if (file) {
+        // If file is selected, upload it to Firebase Storage
+        const storageRef = ref(storage, `profilePictures/${user.uid}`);
+        try {
+            await uploadBytes(storageRef, file);
+            photoURL = await getDownloadURL(storageRef);
+        } catch (error) {
+            console.error("Error uploading file:", error);
+            alert("Error uploading image: " + error.message);
+            return;
+        }
+    }
+
+    // Prepare user data for update
+    const userDataToUpdate = {
+        firstName: document.getElementById("user-firstname").value.trim(),
+        lastName: document.getElementById("user-lastname").value.trim(),
+        country: document.getElementById("user-country").value.trim(),
+        dob: document.getElementById("user-DOB").value.trim(),
+        biography: document.getElementById("user-Biography").value.trim(),
+        websiteLink: document.getElementById("user-website-Link").value.trim(),
+        twitterLink: document.getElementById("user-twitter-link").value.trim(),
+        instagramLink: document.getElementById("user-instagram-link").value.trim(),
+        facebookLink: document.getElementById("user-facebook-link").value.trim(),
+        photoURL: photoURL
+    };
+
+    // Update Firestore document with new user data
+    const userRef = doc(db, "users", user.uid);
+    try {
+        await updateDoc(userRef, userDataToUpdate);
+        alert("Profile updated successfully!");
+         // Reload the page to reflect changes
+        window.location.reload();
+    } catch (error) {
+        console.error("Error updating profile:", error);
+        alert("Error updating profile: " + error.message);
+    }
+});

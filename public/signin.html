@@ -3,13 +3,20 @@
 
 <head>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- title with icon section -->
+
+    <!--------------------------------------------------------------------------
+        title with icon section 
+    ---------------------------------------------------------------------------->
     <title>Art Visio</title>
-    <link rel="icon" type="image/svg+xml" href="../src/assets/images/artstation.svg">
-    
-    <!-- imported css and text style section -->
+    <link rel="icon" type="image/svg+xml" href="./src/asset/images/artstation.svg">
+    <!--------------------------------------------------------------------------
+         imported FILES
+    ---------------------------------------------------------------------------->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -27,92 +34,92 @@
         /*---------------------------------------
       CUSTOM BUTTON               
     -----------------------------------------*/
-    .custom-btn {
-      background: #EE5007;
-      border: 2px solid transparent;
-      border-radius: 100px;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: normal;
-      transition: all 0.3s;
-      padding: 10px 20px;
-    }
-    
-    .custom-btn:hover {
-      background: #c01f27;
-      color: #ffffff;
-    }
-    
-    .custom-border-btn {
-      background: transparent;
-      border: 2px solid #EE5007;
-      color: #EE5007;
-    }
-    
-    .navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
-    .custom-border-btn:hover {
-      background: #c01f27;
-      border-color: transparent;
-      color: #ffffff;
-    }
-    
-    .custom-btn-bg-white {
-      border-color: #ffffff;
-      color: #ffffff;
-    }
+        .custom-btn {
+            background: #EE5007;
+            border: 2px solid transparent;
+            border-radius: 100px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: normal;
+            transition: all 0.3s;
+            padding: 10px 20px;
+        }
+
+        .custom-btn:hover {
+            background: #c01f27;
+            color: #ffffff;
+        }
+
+        .custom-border-btn {
+            background: transparent;
+            border: 2px solid #EE5007;
+            color: #EE5007;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
+        .custom-border-btn:hover {
+            background: #c01f27;
+            border-color: transparent;
+            color: #ffffff;
+        }
+
+        .custom-btn-bg-white {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
     </style>
 </head>
 
-<body>
+
+<body style="background-image: linear-gradient(to bottom right, #010f29,#EE5007);">
 
     <main>
-
-
-   <!--------------------------------------------------------------------------
-                    NAVIGATION BAR 
-    ---------------------------------------------------------------------------->
-    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom,  #0d63a0,#010f29);">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
-                    <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
+        <!--------------------------------------------------------------------------
+                navigation bar section
+            ---------------------------------------------------------------------------->
+        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom right,  #EE5007,#010f29 );">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
+                        <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
                     59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
-                     447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"/></svg>
-                ARTVISIO
-            </a>
-            <a href="/signup.html" class="btn custom-btn d-lg-none ms-auto me-4">Login / Singup</a>
+                     447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z" />
+                    </svg>
+                    ARTVISIO
+                </a>
+                <a href="/signup.html" class="btn custom-btn d-lg-none ms-auto me-4">Login / Singup</a>
 
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="/"  style="color: rgb(201, 247, 247);">Home</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/" style="color: rgb(201, 247, 247);">Home</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="/instruction.html"  style="color: rgb(201, 247, 247);">Instruction</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/instruction.html" style="color: rgb(201, 247, 247);">Instruction</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="/aboutus.html"  style="color: rgb(201, 247, 247);">About us</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/aboutus.html" style="color: rgb(201, 247, 247);">About us</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
+                        </li>
+                    </ul>
 
-                <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+                    <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+                </div>
             </div>
-        </div>
-    </nav>
-   <!--------------------------------------------------------------------------
+        </nav>
+        <!--------------------------------------------------------------------------
                     SIGN IN COLUMN
     ---------------------------------------------------------------------------->
         <section class="custom-section contact-section section-padding" id="section_6">
@@ -125,23 +132,19 @@
                             <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
                                 <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form">
                                     <div class="contact-form-body">
-                                    
 
-                                        <input type="email" name="contact-email" id="signin-email" pattern="[^ @]*@[^ @]*" class="form-control" 
-                                        placeholder="Email address" style="height: 40px;" required>
-                                        <input type="password" name="contact-password" id="signin-password" class="form-control" 
-                                        style="height: 40px;" placeholder="Password" required>
 
-                                      
+                                        <input type="email" name="contact-email" id="signin-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" style="height: 40px;" required>
+                                        <input type="password" name="contact-password" id="signin-password" class="form-control" style="height: 40px;" placeholder="Password" required>
+
+
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                            <button  class="form-control text-white" id="signin-button">Login</button>
+                                            <button class="form-control text-white" id="signin-button">Login</button>
                                         </div>
-                                    
-                                        <p class="text-center text-muted mt-5 mb-0"> <a href="#!"
-                                            class="fw-light text-body"><u>Forgot your password</u></a></p>
+
+                                        <p class="text-center text-muted mt-5 mb-0"> <a href="#!" class="fw-light text-body"><u>Forgot your password</u></a></p>
                                         <br><br>
-                                        <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="/signup.html"
-                                            class="fw-bold text-body"><u>Register</u></a></p>
+                                        <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="/signup.html" class="fw-bold text-body"><u>Register</u></a></p>
                                     </div>
                                 </form>
                             </div>
@@ -152,7 +155,7 @@
         </section>
     </main>
 
-   <!--------------------------------------------------------------------------
+    <!--------------------------------------------------------------------------
               FOOTER SECTION      
     ---------------------------------------------------------------------------->
 
@@ -173,7 +176,7 @@
                                 </a>
                             </li>
 
-                     
+
 
                             <li class="social-icon-item">
                                 <a href="https://www.instagram.com" class="social-icon-link">
@@ -217,13 +220,13 @@
                             <a href="/instruction.html" class="site-footer-link">instruction</a>
                         </li>
 
-                    
+
 
                         <li class="site-footer-link-item">
                             <a href="/contactus.html" class="site-footer-link">contactus</a>
                         </li>
 
-                       
+
                     </ul>
                 </div>
 
@@ -249,12 +252,12 @@
                     <p class="text-white d-flex mt-3 mb-2">
                         115 New Cavendish St, London W1W 6UW</p>
 
-              
+
                 </div>
             </div>
         </div>
 
-        
+
     </footer>
 
     <!--
