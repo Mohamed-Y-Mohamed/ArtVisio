@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 export const setupLighting = (scene, paintings) => {
     // Increased ambient light intensity for overall illumination
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
     scene.add(ambientLight);
 
     // Helper function to create and configure spotlights
