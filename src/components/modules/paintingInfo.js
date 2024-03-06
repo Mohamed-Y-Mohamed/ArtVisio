@@ -8,6 +8,7 @@ export const displayPaintingInfo = (info) => {
     <p>Artist: ${info.artist}</p>
     <p>Description: ${info.description}</p>
     <p>Year: ${info.year}</p>
+    
   `;
     infoElement.classList.add('show'); // Add the 'show' class
 };

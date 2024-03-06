@@ -39,8 +39,8 @@ async function fetchUserData(userId, db) {
             document.getElementById("user-instagram-link").value = userData.instagramLink || '';
             document.getElementById("user-facebook-link").value = userData.facebookLink || '';
             // Set user profile image or default image
-            const profileImageElement = document.getElementById('user-profile');
-            profileImageElement.src = userData.photoURL || "../../../assets/images/defualt-avatar.png";
+            const profileImage = document.getElementById('user-profile');
+            profileImage.src = userData.photoURL || "../../../assets/images/defualt-avatar.png";
         } else {
             console.log("No such document!");
         }
@@ -60,7 +60,7 @@ document.getElementById("userProfile-saveChange").addEventListener("click", asyn
     const storage = getStorage(app);
     const user = auth.currentUser;
     // Use your default image URL use defualt image as backup if no image selected. 
-    let photoURL = document.getElementById('user-profile').src || "../../../assets/images/defualt-avatar.png"; 
+    let profileImage = document.getElementById('user-profile').src || "../../../assets/images/defualt-avatar.png"; 
 
 
     if (file) {
@@ -68,7 +68,7 @@ document.getElementById("userProfile-saveChange").addEventListener("click", asyn
         const storageRef = ref(storage, `profilePictures/${user.uid}`);
         try {
             await uploadBytes(storageRef, file);
-            photoURL = await getDownloadURL(storageRef);
+            profileImage = await getDownloadURL(storageRef);
         } catch (error) {
             console.error("Error uploading file:", error);
             alert("Error uploading image: " + error.message);

@@ -1,16 +1,16 @@
 export const paintingData = [
   // Front Wall
   ...Array.from({
-        length: 4
+        length: 6
     }, (_, i) => ({
         // Array.from creates an array from an array-like object. The first parameter is the array-like object. The second parameter is a map function that is called for each element in the array-like object. The map function takes two parameters: the element and the index. The map function returns the value that will be added to the new array. In this case, we are returning an object with the painting data. `_` is a placeholder for the element. We don't need it because we are not using the element. `i` is the index. We use it to set the painting number.
         imgSrc: `../../assets/artworks/${i + 1}.jpg`, // `i + 1` is the painting number. We add 1 to the index because the index starts at 0 but we want the painting numbers to start at 1.
-        width: 5, // width of the painting
-        height: 3, // height of the painting
+        width: 6, // width of the painting
+        height: 4, // height of the painting
         position: {
-            x: -15 + 10 * i,
+            x: -26 + 10 * i,
             y: 2,
-            z: -19.5
+            z: -34.5
         }, // position of the painting
         rotationY: 0, // rotation of the painting
         info: {
@@ -26,15 +26,15 @@ export const paintingData = [
     })),
   // Back Wall
   ...Array.from({
-        length: 4
+        length: 6
     }, (_, i) => ({
         imgSrc: `../../assets//artworks/${i + 5}.jpg`,
-        width: 5,
-        height: 3,
+        width: 6, // width of the painting
+        height: 4, // height of the painting
         position: {
-            x: -15 + 10 * i,
+            x: -25 + 10 * i,
             y: 2,
-            z: 19.5
+            z: 34.5
         },
         rotationY: Math.PI,
         info: {
@@ -49,15 +49,15 @@ export const paintingData = [
     })),
   // Left Wall
   ...Array.from({
-        length: 4
+        length: 6
     }, (_, i) => ({
         imgSrc: `../../assets//artworks/${i + 9}.jpg`,
-        width: 5,
-        height: 3,
+        width: 6, // width of the painting
+        height: 4, // height of the painting
         position: {
-            x: -19.5,
+            x: -34.6,
             y: 2,
-            z: -15 + 10 * i
+            z: -22 + 10 * i
         },
         rotationY: Math.PI / 2,
         info: {
@@ -72,15 +72,15 @@ export const paintingData = [
     })),
   // Right Wall
   ...Array.from({
-        length: 4
+        length: 6
     }, (_, i) => ({
         imgSrc: `../../assets//artworks/${i + 13}.jpg`,
-        width: 5,
-        height: 3,
+        width: 6, // width of the painting
+        height: 4, // height of the painting
         position: {
-            x: 19.5,
+            x: 33.5,
             y: 2,
-            z: -15 + 10 * i
+            z: -23 + 10 * i
         },
         rotationY: -Math.PI / 2,
         info: {

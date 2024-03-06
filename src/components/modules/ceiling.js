@@ -1,57 +1,45 @@
 import * as THREE from "three";
 
-// create a function that takes a scene and a textureLoader as arguments that will be passed in from main.js where the createCeiling is called
+// Function to create and add a textured ceiling to the scene
 export const createCeiling = (scene, textureLoader) => {
     // Load the textures
-    const colorTexture = textureLoader.load(
-        "../../../assets/walls_images/ceiling.jpg"
-    );
-    const displacementTexture = textureLoader.load(
-        "ceiling.jpg"
-    );
-    const aoTexture = textureLoader.load(
-        "../../../assets/walls_images/ceiling.jpg"
-    );
-    const emissionTexture = textureLoader.load(
-        "../../../assets/walls_images/ceiling.jpg"
-    );
-    const metalnessTexture = textureLoader.load(
-        "../../../assets/walls_images/ceiling.jpg"
-    );
-    const normalGLTexture = textureLoader.load(
-        "../../../assets/walls_images/ceiling.jpg"
-    );
-    const roughnessTexture = textureLoader.load(
-        "../../../assets/walls_images/ceiling.jpg"
-    );
+    const textures = {
+        color: textureLoader.load("../../../assets/walls_images/ceiling.jpg"),
+        displacement: textureLoader.load("../../../assets/walls_images/ceiling.jpg"),
+        ao: textureLoader.load("../../../assets/walls_images/ceiling.jpg"),
+        emission: textureLoader.load("../../../assets/walls_images/ceiling.jpg"),
+        metalness: textureLoader.load("../../../assets/walls_images/ceiling.jpg"),
+        normalGL: textureLoader.load("../../../assets/walls_images/ceiling.jpg"),
+        roughness: textureLoader.load("../../../assets/walls_images/ceiling.jpg"),
+    };
 
-    // Set texture parameters
-    colorTexture.wrapS = colorTexture.wrapT = THREE.RepeatWrapping;
-    displacementTexture.wrapS = displacementTexture.wrapT = THREE.RepeatWrapping;
-    aoTexture.wrapS = aoTexture.wrapT = THREE.RepeatWrapping;
-    emissionTexture.wrapS = emissionTexture.wrapT = THREE.RepeatWrapping;
-    metalnessTexture.wrapS = metalnessTexture.wrapT = THREE.RepeatWrapping;
-    normalGLTexture.wrapS = normalGLTexture.wrapT = THREE.RepeatWrapping;
-    roughnessTexture.wrapS = roughnessTexture.wrapT = THREE.RepeatWrapping;
+    // Configure the textures to repeat
+    Object.values(textures).forEach(texture => {
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+        texture.repeat.set(20,20); // Adjust this value to fit the size of the room
+    });
 
-    const ceilingGeometry = new THREE.PlaneGeometry(45, 54);
+    // Create the ceiling material using the loaded and configured textures
     const ceilingMaterial = new THREE.MeshLambertMaterial({
-        map: colorTexture,
-        displacementMap: displacementTexture,
-        aoMap: aoTexture,
-        emissiveMap: emissionTexture,
-        metalnessMap: metalnessTexture,
-        normalMap: normalGLTexture,
-        normalMapType: THREE.NormalMap,
-        roughnessMap: roughnessTexture,
+        map: textures.color,
+        displacementMap: textures.displacement,
+        aoMap: textures.ao,
+        emissiveMap: textures.emission,
+        metalnessMap: textures.metalness,
+        normalMap: textures.normalGL,
+        roughnessMap: textures.roughness,
         displacementScale: 0.1,
         side: THREE.DoubleSide,
     });
+
+    // Define the geometry of the ceiling
+    const ceilingGeometry = new THREE.PlaneGeometry(85, 70);
     const ceilingPlane = new THREE.Mesh(ceilingGeometry, ceilingMaterial);
 
-    ceilingPlane.rotation.x = Math.PI / 2;
+    // Set the position and orientation of the ceiling
+    ceilingPlane.rotation.x = Math.PI / 2; // Rotate to face downwards
+    ceilingPlane.position.y = 10; // Adjust the height as needed
 
-    ceilingPlane.position.y = 10;
-
+    // Add the ceiling to the scene
     scene.add(ceilingPlane);
 };

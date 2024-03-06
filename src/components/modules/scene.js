@@ -16,13 +16,13 @@ export const setupScene = () => {
         1000
     );
     scene.add(camera);
-    camera.position.set(0, 2, 15);
+    camera.position.set(0, 0, 15);
 
     renderer = new THREE.WebGLRenderer({
         antialias: false
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0xffffff, 1);
+    renderer.setClearColor(0xffffff, 0.5);
     document.body.appendChild(renderer.domElement);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;

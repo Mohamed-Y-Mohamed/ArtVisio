@@ -4,30 +4,20 @@ export const setupFloor = (scene) => {
     const textureLoader = new THREE.TextureLoader();
 
     // Load the textures
-    const colorTexture = textureLoader.load(
-        "../../assets/walls_images/floor.jpg"
-    );
-    const displacementTexture = textureLoader.load(
-        "../../assets/walls_images/floor.jpg"
-    );
-    const normalTexture = textureLoader.load(
-        "../../assets/walls_images/floor.jpg"
-    );
-    const roughnessTexture = textureLoader.load(
-        "../../assets/walls_images/floor.jpg"
-    );
-    const aoTexture = textureLoader.load(
-        "../../assets/walls_images/floor.jpg"
-    );
+    const colorTexture = textureLoader.load("../../assets/walls_images/floor.jpg");
+    const displacementTexture = textureLoader.load("../../assets/walls_images/floor.jpg");
+    const normalTexture = textureLoader.load("../../assets/walls_images/floor.jpg");
+    const roughnessTexture = textureLoader.load("../../assets/walls_images/floor.jpg");
+    const aoTexture = textureLoader.load("../../assets/walls_images/floor.jpg");
 
-    // Set texture parameters
-    colorTexture.wrapS = colorTexture.wrapT = THREE.RepeatWrapping;
-    displacementTexture.wrapS = displacementTexture.wrapT = THREE.RepeatWrapping;
-    normalTexture.wrapS = normalTexture.wrapT = THREE.RepeatWrapping;
-    roughnessTexture.wrapS = roughnessTexture.wrapT = THREE.RepeatWrapping;
-    aoTexture.wrapS = aoTexture.wrapT = THREE.RepeatWrapping;
+    // Set texture parameters and repeat values
+    const repeatValue = 8; // Adjust this value as needed
+    [colorTexture, displacementTexture, normalTexture, roughnessTexture, aoTexture].forEach(texture => {
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+        texture.repeat.set(repeatValue, repeatValue);
+    });
 
-    const planeGeometry = new THREE.PlaneGeometry(45, 45);
+    const planeGeometry = new THREE.PlaneGeometry(70, 70);
     const planeMaterial = new THREE.MeshStandardMaterial({
         map: colorTexture,
         displacementMap: displacementTexture,
@@ -41,7 +31,7 @@ export const setupFloor = (scene) => {
     const floorPlane = new THREE.Mesh(planeGeometry, planeMaterial);
 
     floorPlane.rotation.x = Math.PI / 2;
-    floorPlane.position.y = -Math.PI;
+    floorPlane.position.y = -Math.PI * 2.2;
 
     scene.add(floorPlane);
 };

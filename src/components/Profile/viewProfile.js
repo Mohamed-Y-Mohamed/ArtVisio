@@ -31,8 +31,8 @@ async function fetchUserData(userId, db) {
             document.getElementById("twitter-link").textContent = userData.twitterLink || 'N/A';
             document.getElementById("instagram-link").textContent = userData.instagramLink || 'N/A';
             document.getElementById("facebook-link").textContent = userData.facebookLink || 'N/A';
-            const profileImageElement = document.getElementById('user-profile');
-            profileImageElement.src = userData.photoURL || "../../../assets/images/defualt-avatar.png";
+            const profileImage = document.getElementById('user-profile');
+            profileImage .src = userData.photoURL || "../../../assets/images/defualt-avatar.png";
         } else {
             console.log("No such document exists!");
         }

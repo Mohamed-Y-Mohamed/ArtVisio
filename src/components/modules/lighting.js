@@ -1,75 +1,52 @@
 import * as THREE from "three";
-import {
-    GUI
-} from "lil-gui";
 
 export const setupLighting = (scene, paintings) => {
-
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    // Increased ambient light intensity for overall illumination
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
     scene.add(ambientLight);
 
-
-    function createSpotlight(x, y, z, intensity, targetPosition) {
+    // Helper function to create and configure spotlights
+    function createSpotlight(x, y, z, intensity, targetPosition, distance = 60) {
         const spotlight = new THREE.SpotLight(0xffffff, intensity);
         spotlight.position.set(x, y, z);
         spotlight.target.position.copy(targetPosition);
         spotlight.castShadow = true;
-        spotlight.angle = 1.231;
-        spotlight.penumbra = 0.2;
-        spotlight.decay = 0;
-        spotlight.distance = 40;
-        spotlight.shadow.mapSize.width = 1024;
-        spotlight.shadow.mapSize.height = 1024;
+        spotlight.angle = Math.PI / 4; // Wider angle for more coverage
+        spotlight.penumbra = 0.1; // Soften the edges a bit
+        spotlight.decay = 2; // Adjusted decay for more realistic falloff
+        spotlight.distance = distance; // Increased distance for wider coverage
+        spotlight.shadow.mapSize.width = 2048; // Higher resolution for shadows
+        spotlight.shadow.mapSize.height = 2048;
 
-        // Add spotlight and its target to the scene
         scene.add(spotlight);
         scene.add(spotlight.target);
-
 
         return spotlight;
     }
 
+    // Calculate scale factor based on wall expansion (assuming similar logic as walls)
+    const scaleFactor = Math.sqrt(3);
+
+    // Adjusted positions and intensities for spotlights based on new scene dimensions
     const frontWallSpotlight = createSpotlight(
-        0,
-        8.7,
-        -13,
-        1.15,
-        new THREE.Vector3(0, 0, -20)
+        0, 10, -30 * scaleFactor, 1.5, new THREE.Vector3(0, 0, -40 * scaleFactor), 120 * scaleFactor
     );
 
     const backWallSpotlight = createSpotlight(
-        0,
-        6.7,
-        13,
-        1.15,
-        new THREE.Vector3(0, 0, 20)
+        0, 10, 30 * scaleFactor, 1.5, new THREE.Vector3(0, 0, 40 * scaleFactor), 120 * scaleFactor
     );
 
     const leftWallSpotlight = createSpotlight(
-        -13,
-        6.7,
-        0,
-        1.15,
-        new THREE.Vector3(-20, 0, 0)
+        -30 * scaleFactor, 10, 0, 1.5, new THREE.Vector3(-40 * scaleFactor, 0, 0), 120 * scaleFactor
     );
 
     const rightWallSpotlight = createSpotlight(
-        13,
-        6.7,
-        0,
-        1.15,
-        new THREE.Vector3(20, 0, 0)
+        30 * scaleFactor, 10, 0, 1.5, new THREE.Vector3(40 * scaleFactor, 0, 0), 120 * scaleFactor
     );
 
-    const statueSpotlight = createSpotlight(
-        0,
-        10,
-        0,
-        1,
-        new THREE.Vector3(0, -4.2, 0)
-    ); // Spotlight for the statue
-    statueSpotlight.angle = 0.457;
-    statueSpotlight.decay = 1;
-    statueSpotlight.penumbra = 0.2;
-    statueSpotlight.distance = 0;
+    // Additional spotlights or adjustments may be needed depending on the layout of the scene
+    // For example, a center spotlight for general illumination
+    const centerSpotlight = createSpotlight(
+        0, 15, 0, 2, new THREE.Vector3(0, 0, 0), 150 // A higher intensity and wider coverage for the center of the room
+    );
 };
