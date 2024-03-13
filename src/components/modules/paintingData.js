@@ -1,10 +1,68 @@
+// Assuming Firebase is initialized in firebase-setup.js
+import { getFirestore, query, collectionGroup, getDocs } from "firebase/firestore";
+import { app } from "../firebase-setup";
+
+const db = getFirestore(app);
+
+const DEFAULT_IMAGE_URL = "../../../assets/images/noArtwork.jpg";
+const DEFAULT_ARTWORK_DETAILS = {
+  name: "N/A",
+  type: "N/A",
+  description: "N/A",
+  imageUrl: DEFAULT_IMAGE_URL,
+  // ... any other default values
+};
+
+async function getArtworksWithDetails() {
+  const artworksQuery = query(collectionGroup(db, "artworks"));
+  const querySnapshot = await getDocs(artworksQuery);
+
+  const artworksAndDetails = [];
+
+  querySnapshot.forEach((doc) => {
+    // Extract parent document ID (user ID)
+    const userId = doc.ref.path.split('/')[1];
+    const artworkData = doc.data();
+
+    // Assuming each artwork document contains a field 'imageUrl'
+    if (artworkData.imageUrl) {
+      artworksAndDetails.push({
+        userId: userId,
+        ...artworkData,
+      });
+    }
+  });
+
+  // If there are fewer than 24 artworks, fill the rest with default values
+  for (let i = artworksAndDetails.length; i < 24; i++) {
+    artworksAndDetails.push({
+      userId: "N/A",
+      ...DEFAULT_ARTWORK_DETAILS,
+    });
+  }
+
+  // Now, artworksAndDetails contains at least 24 elements
+  return artworksAndDetails;
+}
+
+// Call the function and handle the results
+getArtworksWithDetails().then((artworksAndDetails) => {
+  // Output the array with artworks and user details
+  console.log('Retrieved artworks and details:', artworksAndDetails);
+}).catch((error) => {
+  console.error("Error getting artworks and details: ", error);
+});
+
+
+
 export const paintingData = [
   // Front Wall
   ...Array.from({
         length: 6
-    }, (_, i) => ({
+    }, (_, i) => ( {
+      
         // Array.from creates an array from an array-like object. The first parameter is the array-like object. The second parameter is a map function that is called for each element in the array-like object. The map function takes two parameters: the element and the index. The map function returns the value that will be added to the new array. In this case, we are returning an object with the painting data. `_` is a placeholder for the element. We don't need it because we are not using the element. `i` is the index. We use it to set the painting number.
-        imgSrc: `../../assets/artworks/${i + 1}.jpg`, // `i + 1` is the painting number. We add 1 to the index because the index starts at 0 but we want the painting numbers to start at 1.
+        imgSrc: artworksAndDetails[i].imageUrl, // `i + 1` is the painting number. We add 1 to the index because the index starts at 0 but we want the painting numbers to start at 1.
         width: 6, // width of the painting
         height: 4, // height of the painting
         position: {

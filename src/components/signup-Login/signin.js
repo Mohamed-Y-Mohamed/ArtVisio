@@ -19,8 +19,7 @@ function loginUser(email, password) {
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            alert("Logging in. User ID: " + user.uid);
-
+alert("you are signed in.")
             // Fetch and update sign-in count
             const userRef = doc(db, "users", user.uid);
             return getDoc(userRef).then((docSnap) => {
@@ -61,7 +60,6 @@ document.getElementById("signin-button").addEventListener("click", function (eve
         alert("Please enter both email and password.");
 
     } else {
-        alert(email + ", " + password)
         loginUser(email, password);
     }
 });

@@ -87,7 +87,7 @@ document.getElementById("userProfile-saveChange").addEventListener("click", asyn
         twitterLink: document.getElementById("user-twitter-link").value.trim(),
         instagramLink: document.getElementById("user-instagram-link").value.trim(),
         facebookLink: document.getElementById("user-facebook-link").value.trim(),
-        photoURL: photoURL
+        photoURL: profileImage
     };
 
     // Update Firestore document with new user data
