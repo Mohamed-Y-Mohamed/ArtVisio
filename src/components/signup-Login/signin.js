@@ -19,13 +19,14 @@ function loginUser(email, password) {
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-alert("you are signed in.")
             // Fetch and update sign-in count
             const userRef = doc(db, "users", user.uid);
             return getDoc(userRef).then((docSnap) => {
                 if (docSnap.exists()) {
                     const signInCount = docSnap.data().signInCount || 0;
                     const newSignInCount = signInCount + 1;
+                    alert("you are signed in.")
+
                     // Update signInCount in Firestore
                     updateDoc(userRef, {
                         signInCount: newSignInCount

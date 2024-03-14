@@ -124,39 +124,49 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Artwork name:</h6>
+                                <form class="needs-validation" novalidate>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Artwork name:</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" class="form-control" id="Artwork-Name" placeholder="Artwork Name" value="" required>
+                                            <div class="invalid-feedback">
+                                                Please provide the artwork name.
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" id="Artwork-Name" placeholder="Artwork Name" value="" required>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Description:</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" class="form-control" id="Artwork-Description" placeholder="Description of artwork" value="" required>
+                                            <div class="invalid-feedback">
+                                                Please provide a description of the artwork.
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Discription:</h6>
+        
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Browse:</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="file" class="form-control" id="user-Artwork" required>
+                                            <div class="invalid-feedback">
+                                                Please upload an artwork file.
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" id="Artwork-Description" placeholder="discription of artwork" value="" required>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Browse:</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="file" class="form-control" id="user-Artwork" required>
-                                    </div>
-                                </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">type of artwork:</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-
+                                        
                                 <select class="form-select" id="Artwork-Type" aria-label="Default select example" required>
-                                    <option selected>Select Artwork Type</option>
+                                    <option value="">Select Artwork Type</option>
                                     <option value="Acrylic">Acrylic </option>
                                     <option value="Abstract">Abstract </option>
                                     <option value="Spray Painting">Spray Painting</option>
@@ -171,14 +181,17 @@
                                     <option value="Other">other</option>
 
                                 </select>
+                                <div class="invalid-feedback">
+                                    Please upload an artwork file.
+                                </div>
                             </div>
 
                                 <br>
                                 <br>
                                 <br>
                                 <div class="row d-flex justify-content-center align-content-center">
-                                        <input type="button" id="Upload-Artwork" class="btn btn-primary px-4" value="Store Artwork">
-                            </div>
+                                    <input type="submit" id="Upload-Artwork" class="btn btn-primary px-4" value="Store Artwork">
+                                </div>
                         </div>
 
                     </div>
@@ -308,7 +321,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <!-- Include Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    (function () {
+  'use strict';
 
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+      }, false);
+    });
+})();
+</script>
 </body>
 
 </html>

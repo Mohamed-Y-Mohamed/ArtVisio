@@ -25,7 +25,6 @@
     <link href="../src/styling/bootstrap.min.css" rel="stylesheet">
     <link href="../src/styling/bootstrap-icons.css" rel="stylesheet">
 
-    <script type="module" src="../src/components/signup-Login/singup.js" defer>
     </script>
     <style>
         /*---------------------------------------
@@ -118,46 +117,59 @@
         <!--------------------------------------------------------------------------
                     REGISTER FORM
     ---------------------------------------------------------------------------->
-        <section class="custom-section contact-section section-padding" id="section_6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4" style="color: wheat;">Register</h2>
-
-                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
-                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form">
-                                    <div class="contact-form-body">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="text" name="signup-First-name" id="Signup-FN" class="form-control" placeholder="First name" required>
-                                            </div>
-
-                                            <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="text" name="Last-name" id="Signup-LN" class="form-control" placeholder="Last name" required>
+    <section class="custom-section contact-section section-padding" id="section_6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 mx-auto">
+                    <h2 class="text-center mb-4" style="color: wheat;">Register</h2>
+    
+                    <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
+                            <form class="custom-form contact-form mb-5 mb-lg-0 needs-validation" action="#" method="post" role="form" novalidate>
+                                <div class="contact-form-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="text" name="signup-First-name" id="Signup-FN" class="form-control" placeholder="First name" required>
+                                            <div class="invalid-feedback">
+                                                Please enter your first name.
                                             </div>
                                         </div>
-
-                                        <input type="email" name="contact-email" id="Signup-Email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" style="height: 40px;" required>
-                                        <input type="password" name="contact-password" id="Signup-Pass" class="form-control" style="height: 40px;" placeholder="Password" required>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="signup-role" name="darkmode">
-                                            <label class="form-check-label" for="signup-role" style="padding-bottom: 90px; font-size: 25px;">Are You an Artist</label>
+    
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="text" name="Last-name" id="Signup-LN" class="form-control" placeholder="Last name" required>
+                                            <div class="invalid-feedback">
+                                                Please enter your last name.
+                                            </div>
                                         </div>
-
-                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                            <button type="submit" id="signup-submit" class="form-control text-white">Singup</button>
-                                        </div>
-
-                                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/signin.html" class="fw-bold text-body"><u>Login here</u></a></p>
                                     </div>
-                                </form>
-                            </div>
+    
+                                    <input type="email" name="contact-email" id="Signup-Email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" style="height: 40px;" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address.
+                                    </div>
+                                    <input type="password" name="contact-password" id="Signup-Pass" class="form-control" style="height: 40px;" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                    <div class="invalid-feedback">
+                                        Password must contain at least 8 characters, including 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="signup-role" name="darkmode">
+                                        <label class="form-check-label" for="signup-role" style="padding-bottom: 90px; font-size: 25px;">Are You an Artist</label>
+                                    </div>
+    
+                                    <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                        <button type="submit" id="signup-submit" class="form-control text-white">Signup</button>
+                                    </div>
+    
+                                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/signin.html" class="fw-bold text-body"><u>Login here</u></a></p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    
     </main>
 
     <!--------------------------------------------------------------------------
@@ -273,7 +285,37 @@ T e m p l a t e M o
     <script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="../src/components/bootstrap/bootstrap.min.js"></script>
     <script src="../src/components/main.js"></script>
-
+    <script>
+        (function () {
+          'use strict';
+        
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.querySelectorAll('.needs-validation');
+        
+          // Function to dynamically load the signup.js script
+          function loadSignupScript() {
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = '../src/components/signup-Login/singup.js';
+            document.head.appendChild(script); // Append to head, but appending to body works too
+          }
+        
+          // Loop over the forms and prevent submission if they are not valid
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                } else {
+                  event.preventDefault(); // Prevent form submission to wait for async script
+                  loadSignupScript();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+        })();
+        </script>
 </body>
 
 </html>
