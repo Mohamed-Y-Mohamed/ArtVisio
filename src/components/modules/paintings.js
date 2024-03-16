@@ -1,15 +1,13 @@
 import * as THREE from 'three';
+import { fetchAndPreparePaintingData } from './paintingData.js';
 
-import {
-    paintingData
-} from './paintingData.js';
-
-export function createPaintings(scene, textureLoader) {
-
+export async function createPaintings(scene, textureLoader) {
+    // Fetch the painting data asynchronously
+    const paintingData = await fetchAndPreparePaintingData();
+    
     let paintings = [];
 
     paintingData.forEach((data) => {
-
         const painting = new THREE.Mesh(
             new THREE.PlaneGeometry(data.width, data.height),
             new THREE.MeshLambertMaterial({
@@ -19,7 +17,6 @@ export function createPaintings(scene, textureLoader) {
 
         painting.position.set(data.position.x, data.position.y, data.position.z);
         painting.rotation.y = data.rotationY;
-
 
         painting.userData = {
             type: 'painting',

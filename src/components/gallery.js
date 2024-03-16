@@ -34,29 +34,31 @@ import {
     clickHandling
 } from "./modules/clickHandling.js";
 
-let {
-    camera,
-    controls,
-    renderer
-} = setupScene();
+async function setupGallery() {
+    let {
+        camera,
+        controls,
+        renderer
+    } = setupScene();
 
+    const textureLoader = new THREE.TextureLoader();
+    const walls = createWalls(scene, textureLoader);
+    const floor = setupFloor(scene);
+    const ceiling = createCeiling(scene, textureLoader);
+    
+    // Asynchronously create paintings
+    const paintings = await createPaintings(scene, textureLoader);
+    const lighting = setupLighting(scene, paintings);
 
-const textureLoader = new THREE.TextureLoader();
+    // Now that paintings are loaded, proceed with operations that depend on them
+    createBoundingBoxes(walls);
+    createBoundingBoxes(paintings);
+    addObjectsToScene(scene, paintings);
 
-const walls = createWalls(scene, textureLoader);
-const floor = setupFloor(scene);
-const ceiling = createCeiling(scene, textureLoader);
-const paintings = createPaintings(scene, textureLoader);
-const lighting = setupLighting(scene, paintings);
+    setupEventListeners(controls);
+    clickHandling(renderer, camera, paintings);
+    setupRendering(scene, camera, renderer, paintings, controls, walls);
+}
 
-createBoundingBoxes(walls);
-createBoundingBoxes(paintings);
-
-addObjectsToScene(scene, paintings);
-
-
-setupEventListeners(controls);
-
-clickHandling(renderer, camera, paintings);
-
-setupRendering(scene, camera, renderer, paintings, controls, walls);
+// Run the setup function to initialize the gallery
+setupGallery().catch(console.error);
