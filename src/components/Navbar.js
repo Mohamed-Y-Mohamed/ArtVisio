@@ -1,9 +1,5 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
-
-
-// Import necessary functions from Firebase SDK
-
 
 import {app} from "./firebase-setup";
 const auth = getAuth(app);
@@ -177,5 +173,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Prevent default link behavior
             event.preventDefault();
         }
-    });
+        let target = event.target;
+
+        if (target.textContent.toLowerCase().includes('signout')) {
+            signOut(auth).then(() => {
+                console.log('Sign-out successful.');
+                // Reload the page or redirect as needed
+                window.location.reload();
+            }).catch((error) => {
+                console.error('Sign-out failed:', error);
+            })
+    };
+});
 });

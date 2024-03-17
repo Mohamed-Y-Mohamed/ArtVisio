@@ -28,6 +28,7 @@
 
     <link href="../src/styling/custom-style.css" rel="stylesheet">
     <script type="module" src="../src/components/artwork/upload-Artwork.js" defer></script>
+    <script type="module" src="../src/components/Navbar.js" ></script>
 
 
 </head>
@@ -39,65 +40,8 @@
         <!--------------------------------------------------------------------------
                 navigation bar section
             ---------------------------------------------------------------------------->
-        <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to bottom right,  #EE5007,#010f29 );">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 1%;height:1em" viewBox="0 0 512 512">
-                        <path fill="#EE5007" d="M2 377.4l43 74.3A51.4 51.4 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 
-                        59.3A51.4 51.4 0 0 0 290.2 32h-88.4l257.3
-                         447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z" />
-                    </svg>
-                    ARTVISIO
-                </a>
-                <div class="dropdown">
-                    <button class="btn  custom-btn btn d-lg-none ms-auto me-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        More Options
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">edit profile</a>
-                        <a class="dropdown-item" href="#">reload scene</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">signout</a>
-                    </div>
-                </div>
+            <div id="navbar"></div> 
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/" style="color: rgb(201, 247, 247);">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/instruction.html" style="color: rgb(201, 247, 247);">Instruction</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/aboutus.html" style="color: rgb(201, 247, 247);">About us</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
-                        </li>
-                    </ul>
-
-                    <div class="dropdown">
-                        <button class="btn  custom-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            More Options
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">edit profile</a>
-                            <a class="dropdown-item" href="#">reload scene</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">signout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
 
         <!--------------------------------------------------------------------------
          back button
