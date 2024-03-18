@@ -16,7 +16,7 @@ async function fetchUserData(userId, db) {
         console.error("Error fetching user data:", error);
     }
 }
-
+    
 // Listen for the DOMContentLoaded event to ensure the HTML is fully loaded before executing the script.
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize the Firebase Authentication service.
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Listen for changes in the authentication state (e.g., user signs in or out).
     onAuthStateChanged(auth, user => {
-        if (user) {
+        if (user) {  
             fetchUserData(user.uid, db);
         } else {
             // No user is signed in. Redirect the user to the sign-in page.
