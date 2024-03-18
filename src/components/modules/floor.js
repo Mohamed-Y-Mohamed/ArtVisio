@@ -31,7 +31,7 @@ export const setupFloor = (scene) => {
     const floorPlane = new THREE.Mesh(planeGeometry, planeMaterial);
 
     floorPlane.rotation.x = Math.PI / 2;
-    floorPlane.position.y = -Math.PI * 2.2;
+    floorPlane.position.y = -Math.PI * 2;
 
     scene.add(floorPlane);
 };

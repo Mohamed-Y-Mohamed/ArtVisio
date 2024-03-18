@@ -29,7 +29,7 @@
     <link href="../src/styling/custom-style.css" rel="stylesheet">
     <script type="module" src="../src/components/Profile/editProfile.js" defer></script>
     <script type="module" src="../src/components/Navbar.js" ></script>
-
+    <script type="module" src="../src/components/access-control.js"></script>
 <style>
     #user-profile {
     width: 200px; /* Width of the container */
@@ -331,7 +331,9 @@
             document.getElementById('user-profile').src = e.target.result;
         };
         reader.readAsDataURL(event.target.files[0]);
-    });</script>
+    });
+    
+    </script>
 </body>
 
 </html>

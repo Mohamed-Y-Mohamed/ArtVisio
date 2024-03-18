@@ -39,8 +39,7 @@ function loginUser(email, password) {
                         }
                     });
                 } else {
-                    // Handle case where user document does not exist
-                    console.error("No such document!");
+                    alert("please check the email and password and try again.")
                 }
             });
         })

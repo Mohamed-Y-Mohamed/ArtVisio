@@ -26,9 +26,7 @@ submit.addEventListener('click', function (event) {
     const password = document.getElementById("Signup-Pass").value;
     const firstname = document.getElementById("Signup-FN").value;
     const lastname = document.getElementById("Signup-LN").value;
-
-    // Determine user role based on checkbox
-    let userRole = document.getElementById('signup-role').checked ? 'artist' : 'art enthusiast';
+    const userType = document.querySelector('#signup-role input[name="radio-stacked"]:checked').value;
 
     // Create user account and add user data to Firestore
     createUserWithEmailAndPassword(auth, email, password)
@@ -47,7 +45,7 @@ submit.addEventListener('click', function (event) {
                 firstName: firstname,
                 lastName: lastname,
                 email: email,
-                role: userRole,
+                role: userType,
                 signupDate: signupDate, // Storing the formatted signup date
                 signInCount: 0 // Initializing the sign-in count
             });
@@ -57,7 +55,7 @@ submit.addEventListener('click', function (event) {
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
+             const errorMessage = error.message;
             alert("Unable to create account.\n" + errorCode + "\n" + errorMessage);
         });
 });

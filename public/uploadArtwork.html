@@ -1,153 +1,131 @@
+
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!--------------------------------------------------------------------------
-        title with icon section 
-    ---------------------------------------------------------------------------->
     <title>Art Visio</title>
-    <link rel="icon" type="image/svg+xml" href="./src/asset/images/artstation.svg">
-    <!--------------------------------------------------------------------------
-         CSS FILES
-    ---------------------------------------------------------------------------->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <link rel="icon" href="./src/asset/images/artstation.svg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
-
     <link href="../src/styling/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="../src/styling/custom-style.css" rel="stylesheet">
-    <script type="module" src="../src/components/artwork/upload-Artwork.js" defer></script>
-    <script type="module" src="../src/components/Navbar.js" ></script>
-
-
+    <script type="module" src="../src/components/Navbar.js" defer></script>
 </head>
-
-
 <body style="background-image: linear-gradient(to bottom right, #010f29,#EE5007);">
-
+  <!--------------------------------------------------------------------------
+         back button
+    ---------------------------------------------------------------------------->
     <main>
-        <!--------------------------------------------------------------------------
+  <!--------------------------------------------------------------------------
                 navigation bar section
             ---------------------------------------------------------------------------->
             <div id="navbar"></div> 
+    <br><br>
+    <div class="container">
+        <div class="main-body">
+            <div class="col-lg-12">
+                <button type="button" class="btn btn-info btn-lg btn-block"> <i class="bi bi-arrow-return-left" style="padding-right: 10px;"></i>Back to gallery</button>
 
-
-        <!--------------------------------------------------------------------------
-         back button
-    ---------------------------------------------------------------------------->
-
-
-        <br><br>
-        <div class="container">
-            <div class="main-body">
-                <div class="col-lg-12">
-                    <button type="button" class="btn btn-info btn-lg btn-block"> <i class="bi bi-arrow-return-left" style="padding-right: 10px;"></i>Back</button>
-
-                </div>
             </div>
         </div>
-        <br>
-        <!--------------------------------------------------------------------------
-         Edit profile section
-    ---------------------------------------------------------------------------->
+    </div>
+    <br>
+    <!--------------------------------------------------------------------------
+     Edit profile section
+---------------------------------------------------------------------------->
+    <div class="container py-5">
+        <div class="bg-white p-5 rounded shadow">
+            <h2 class="text-center mb-4">Upload Artwork</h2>
+            <form class="needs-validation" novalidate>
 
-        <div class="container">
-            <div class="main-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <form class="needs-validation" novalidate>
-                                    <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Artwork name:</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <input type="text" class="form-control" id="Artwork-Name" placeholder="Artwork Name" value="" required>
-                                            <div class="invalid-feedback">
-                                                Please provide the artwork name.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Description:</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <input type="text" class="form-control" id="Artwork-Description" placeholder="Description of artwork" value="" required>
-                                            <div class="invalid-feedback">
-                                                Please provide a description of the artwork.
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                    <div class="row mb-3">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Browse:</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary">
-                                            <input type="file" class="form-control" id="user-Artwork" required>
-                                            <div class="invalid-feedback">
-                                                Please upload an artwork file.
-                                            </div>
-                                        </div>
-                                    </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">type of artwork:</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        
-                                <select class="form-select" id="Artwork-Type" aria-label="Default select example" required>
-                                    <option value="">Select Artwork Type</option>
-                                    <option value="Acrylic">Acrylic </option>
-                                    <option value="Abstract">Abstract </option>
-                                    <option value="Spray Painting">Spray Painting</option>
-                                    <option value="3D Art">3D Art</option>
-                                    <option value="Expressionism">Expressionism </option>
-                                    <option value="Oil paint">Oil paint</option>
-                                    <option value="Realism">Realism </option>
-                                    <option value="Miniature Painting ">Miniature Painting </option>
-                                    <option value="Surrealism">Surrealism </option>
-                                    <option value="Digital painting">Digital painting </option>
-                                    <option value="Encaustic">Encaustic </option>
-                                    <option value="Other">other</option>
 
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please upload an artwork file.
-                                </div>
-                            </div>
 
-                                <br>
-                                <br>
-                                <br>
-                                <div class="row d-flex justify-content-center align-content-center">
-                                    <input type="submit" id="Upload-Artwork" class="btn btn-primary px-4" value="Store Artwork">
-                                </div>
-                        </div>
 
+
+
+                <div class="row mb-3">
+                    <div class="col-sm-2">
+                        <h6 class="mb-0">Artwork Name:</h6>
+                    </div>
+                    <div class="col-sm-10 text-secondary">
+                        <input type="text" class="form-control" id="Artwork-Name" placeholder="Artwork Name" required>
+                        <div class="invalid-feedback">Please provide the artwork name.</div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <!-- Description -->
+                <div class="row mb-3">
+                    <div class="col-sm-2">
+                        <h6 class="mb-0">Description:</h6>
+                    </div>
+                    <div class="col-sm-10 text-secondary">
+                        <input type="text" class="form-control" id="Artwork-Description" placeholder="Description of artwork" required>
+                        <div class="invalid-feedback">Please provide a description of the artwork.</div>
+                    </div>
+                </div>
+                <!-- File Upload -->
+                <div class="row mb-3">
+                    <div class="col-sm-2">
+                        <h6 class="mb-0">Browse:</h6>
+                    </div>
+                    <div class="col-sm-10 text-secondary">
+                        <input type="file" class="form-control" id="user-Artwork" required>
+                        <div class="invalid-feedback">Please upload an artwork file.</div>
+                    </div>
+                </div>
+                <!-- Artwork Type -->
+                <div class="row mb-3">
+                    <div class="col-sm-2">
+                        <h6 class="mb-0">Type of Artwork:</h6>
+                    </div>
+                    <div class="col-sm-10 text-secondary">
+                        <select class="form-select" id="Artwork-Type" required>
+                            <option value="">Select Artwork Type</option>
+                            <option value="Acrylic">Acrylic </option>
+                            <option value="Abstract">Abstract </option>
+                            <option value="Spray Painting">Spray Painting</option>
+                            <option value="3D Art">3D Art</option>
+                            <option value="Expressionism">Expressionism </option>
+                            <option value="Oil paint">Oil paint</option>
+                            <option value="Realism">Realism </option>
+                            <option value="Miniature Painting ">Miniature Painting </option>
+                            <option value="Surrealism">Surrealism </option>
+                            <option value="Digital painting">Digital painting </option>
+                            <option value="Encaustic">Encaustic </option>
+                            <option value="Other">other</option>
+                        </select>
+                        <div class="invalid-feedback">Please select the type of artwork.</div>
+                    </div>
+                </div>
+                <!-- Creation Date -->
+                <div class="row mb-3">
+                    <div class="col-sm-2">
+                        <h6 class="mb-0">Creation Date:</h6>
+                    </div>
+                    <div class="col-sm-10 text-secondary">
+                        <input type="date" class="form-control" id="creation-date" required>
+                        <div class="invalid-feedback">Please select the creation date.</div>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="row">
+                    <div class="col text-center">
+                        <input type="submit" id="Upload-Artwork" class="btn btn-primary px-4" value="Store Artwork">
+                    </div>
+                </div>
+            </form>
 
-    </main>
-    <br><br><br>
 
-    <br><br><br>
 
+
+
+
+            
+        
+    </div>
+    </div>
+</main>
+<br><br><br>
     <!--------------------------------------------------------------------------
         FOOTER
     ---------------------------------------------------------------------------->
@@ -256,36 +234,48 @@
     <!--------------------------------------------------------------------------
          JAVASCRIPT FILES
     ---------------------------------------------------------------------------->
-    <script src="../src/components/main.js"></script>
-    <script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
 
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- Include Popper.js (dependency for Bootstrap dropdowns) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <!-- Include Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    (function () {
-  'use strict';
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.needs-validation');
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        let isFormValid = form.checkValidity();
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation');
+        Array.from(form.elements).forEach(input => {
+            if (!input.checkValidity()) {
+                input.classList.add('is-invalid');
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
+        if (isFormValid) {
+            // Normally, you would submit the form or handle it here
+            console.log('Form is valid. Handling submission...');
+            // For this example, prevent actual submission for demonstration
+            // event.preventDefault();
+            // Dynamically load the upload-Artwork.js if needed
+            const script = document.createElement('script');
+            script.type="module";
+            script.src = '../src/components/artwork/upload-Artwork.js';
+            document.body.appendChild(script);
         }
 
         form.classList.add('was-validated');
-      }, false);
     });
-})();
+});
 </script>
-</body>
+<script src="../src/components/main.js"></script>
+<script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
 
+<!-- Include jQuery -->
+<!-- Include Popper.js (dependency for Bootstrap dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<!-- Include Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
