@@ -38,7 +38,7 @@ async function getArtworksWithDetails() {
         artist: artistFullName || "Unknown Artist", 
         description: artworkData.description || "N/A",
         artworktype: artworkData.type || "N/A",
-        releaseDate: artworkData.date || "N/A",
+        releaseDate: artworkData.creationDate || "N/A",
 
         imageUrl: artworkData.imageUrl,
       });
@@ -110,7 +110,7 @@ export async function fetchAndPreparePaintingData() {
         artist: artwork.artist || "N/A",
         description: artwork.description || "N/A",
         artworktype:artwork.artworktype,
-        releaseDate: artwork.year || "N/A",
+        releaseDate: artwork.releaseDate || "N/A",
         uid: artwork.uid || "",
       },
     };
@@ -138,3 +138,24 @@ async function fetchUserData(userId) {
   }
   return fullName;
 }
+
+
+
+//reset database artwork 
+// async function resetArtworkDisplayedCounts() {
+//   const artworksQuery = query(collectionGroup(db, "artworks"));
+//   const querySnapshot = await getDocs(artworksQuery);
+//   const allDisplayed = querySnapshot.docs.every(doc => doc.data().displayed > 0);
+
+//   if (allDisplayed) {
+//     const batch = db.batch(); // Assuming you're using Firestore version 9 or above
+
+//     querySnapshot.docs.forEach(doc => {
+//       const artworkRef = doc.ref;
+//       batch.update(artworkRef, { displayed: 0 });
+//     });
+
+//     await batch.commit(); // Commit the batch update
+//     console.log('All artwork displayed counts have been reset to 0');
+//   }
+// }

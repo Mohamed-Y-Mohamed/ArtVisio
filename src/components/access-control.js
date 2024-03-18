@@ -1,7 +1,22 @@
+import { app } from "./firebase-setup";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
 
-import {app} from "./firebase-setup";
-import { getAuth,onAuthStateChanged } from "firebase/auth";
-import { getFirestore } from "firebase/firestore/lite";
+// Define the fetchUserData function
+async function fetchUserData(userId, db) {
+    const userRef = doc(db, "users", userId);
+    try {
+        const userSnapshot = await getDoc(userRef);
+        if (userSnapshot.exists()) {
+            const userData = userSnapshot.data();
+        } else {
+            console.log("No such user!");
+        }
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+    }
+}
+
 // Listen for the DOMContentLoaded event to ensure the HTML is fully loaded before executing the script.
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize the Firebase Authentication service.
