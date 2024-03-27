@@ -11,13 +11,13 @@ export const setupFloor = (scene) => {
     const aoTexture = textureLoader.load("../../assets/walls_images/floor.jpg");
 
     // Set texture parameters and repeat values
-    const repeatValue = 8; // Adjust this value as needed
+    const repeatValue = 32; // Adjust this value as needed
     [colorTexture, displacementTexture, normalTexture, roughnessTexture, aoTexture].forEach(texture => {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
         texture.repeat.set(repeatValue, repeatValue);
     });
 
-    const planeGeometry = new THREE.PlaneGeometry(70, 70);
+    const planeGeometry = new THREE.PlaneGeometry(280, 280);
     const planeMaterial = new THREE.MeshStandardMaterial({
         map: colorTexture,
         displacementMap: displacementTexture,
@@ -31,7 +31,7 @@ export const setupFloor = (scene) => {
     const floorPlane = new THREE.Mesh(planeGeometry, planeMaterial);
 
     floorPlane.rotation.x = Math.PI / 2;
-    floorPlane.position.y = -Math.PI * 2;
+    floorPlane.position.y = -10;
 
     scene.add(floorPlane);
 };

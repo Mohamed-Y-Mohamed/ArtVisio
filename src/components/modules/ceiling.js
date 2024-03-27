@@ -16,7 +16,7 @@ export const createCeiling = (scene, textureLoader) => {
     // Configure the textures to repeat
     Object.values(textures).forEach(texture => {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.set(20,20); // Adjust this value to fit the size of the room
+        texture.repeat.set(10,10); // Adjust this value to fit the size of the room
     });
 
     // Create the ceiling material using the loaded and configured textures
@@ -33,7 +33,7 @@ export const createCeiling = (scene, textureLoader) => {
     });
 
     // Define the geometry of the ceiling
-    const ceilingGeometry = new THREE.PlaneGeometry(85, 70);
+    const ceilingGeometry = new THREE.PlaneGeometry(280, 280);
     const ceilingPlane = new THREE.Mesh(ceilingGeometry, ceilingMaterial);
 
     // Set the position and orientation of the ceiling

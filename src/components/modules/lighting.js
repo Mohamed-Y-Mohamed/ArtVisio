@@ -11,7 +11,7 @@ export const setupLighting = (scene, paintings) => {
         spotlight.position.set(x, y, z);
         spotlight.target.position.copy(targetPosition);
         spotlight.castShadow = true;
-        spotlight.angle = Math.PI / 4; // Wider angle for more coverage
+        spotlight.angle = Math.PI / 6; // Wider angle for more coverage
         spotlight.penumbra = 0.1; // Soften the edges a bit
         spotlight.decay = 2; // Adjusted decay for more realistic falloff
         spotlight.distance = distance; // Increased distance for wider coverage

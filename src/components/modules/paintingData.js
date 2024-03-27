@@ -45,15 +45,14 @@ async function getArtworksWithDetails() {
     }
   };
 
-  // If there are fewer than 24 artworks, fill the rest with default values
-  for (let i = artworksAndDetails.length; i < 24; i++) {
+  // If there are fewer than 36 artworks, fill the rest with default values
+  for (let i = artworksAndDetails.length; i < 50; i++) {
     artworksAndDetails.push({
       userId: "N/A",
       ...DEFAULT_ARTWORK_DETAILS,
     });
   }
 console.log(artworksAndDetails);
-  // Now, artworksAndDetails contains at least 24 elements
   return artworksAndDetails;
 }
 
@@ -66,33 +65,117 @@ console.log(artworksAndDetails);
 //lenght is the number of artworks display in a single wall for the loop to itegrate
 const positionsAndRotations = [
   // Front Wall
-  ...Array.from({ length: 6 }, (_, i) => ({
-    x: -26 + 10 * i,
+  ...Array.from({ length: 8 }, (_, i) => ({
+    x: -102 + 29 * i,
     y: 2,
-    z: -34.5,
+    z: -137,
     rotationY: 0,
   })),
   // Back Wall
-  ...Array.from({ length: 6 }, (_, i) => ({
-    x: -25 + 10 * i,
+  ...Array.from({ length: 8 }, (_, i) => ({
+    x: -102 + 29 * i,
     y: 2,
-    z: 34.5,
+    z: 137,
     rotationY: Math.PI,
   })),
   // Left Wall
-  ...Array.from({ length: 6 }, (_, i) => ({
-    x: -34.6,
+  ...Array.from({ length: 8 }, (_, i) => ({
+    x: -136,
     y: 2,
-    z: -22 + 10 * i,
+    z: -102 + 29 * i,
     rotationY: Math.PI / 2,
   })),
   // Right Wall
-  ...Array.from({ length: 6 }, (_, i) => ({
-    x: 33.5,
+  ...Array.from({ length: 8 }, (_, i) => ({
+    x: 138,
     y: 2,
-    z: -23 + 10 * i,
+    z: -102 + 29 * i,
     rotationY: -Math.PI / 2,
+    
   })),
+  
+  //center wall 1 front
+  ...Array.from({ length: 2 }, (_, i) => ({
+    x:-102 + 29 * i,
+    y: 2,
+    z: 56,
+    rotationY: Math.PI,
+    
+  })),
+    //center wall 1 back
+    ...Array.from({ length: 2 }, (_, i) => ({
+      x:-102 + 29 * i,
+      y: 2,
+      z: 58,
+      rotationY: Math.PI*4,
+      
+    })),
+
+  //center wall 2 front
+  ...Array.from({ length: 2 }, (_, i) => ({
+    x:-102 + 29 * i,
+    y: 2,
+    z: -58,
+    rotationY: Math.PI,
+    
+  })),
+    //center wall 2 back
+    ...Array.from({ length: 2 }, (_, i) => ({
+      x:-102 + 29 * i,
+      y: 2,
+      z: -56,
+      rotationY: Math.PI*4,
+      
+    })),
+      //center wall 3 front
+  //center wall 2 front
+  ...Array.from({ length: 2 }, (_, i) => ({
+    x:83 + 29 * i,
+    y: 2,
+    z: -58,
+    rotationY: Math.PI,
+    
+  })),
+    //center wall 3 back
+    ...Array.from({ length: 2 }, (_, i) => ({
+      x:83 + 29 * i,
+      y: 2,
+      z: -56,
+      rotationY: Math.PI*4,
+      
+    })),
+         //center wall 4 front
+  ...Array.from({ length: 2 }, (_, i) => ({
+    x:83 + 29 * i,
+    y: 2,
+    z: 56,
+    rotationY: Math.PI,
+    
+  })),
+    //center wall 4 back
+    ...Array.from({ length: 2 }, (_, i) => ({
+      x:83 + 29 * i,
+      y: 2,
+      z: 58,
+      rotationY: Math.PI*4,
+      
+    })),
+      //center wall 5 front
+  ...Array.from({ length: 1 }, (_, i) => ({
+    x: 0+ 29 * i,
+    y: 2,
+    z: 1,
+    rotationY: Math.PI *4,
+    
+  })),
+    //center wall 5 back
+    ...Array.from({ length: 1 }, (_, i) => ({
+      x:0+ 19 * i,
+      y: 2,
+      z: -1,
+      rotationY: Math.PI,
+      
+    })),
 ];
 
 export async function fetchAndPreparePaintingData() {
@@ -101,8 +184,8 @@ export async function fetchAndPreparePaintingData() {
     const position = positionsAndRotations[index] || { x: 0, y: 0, z: 0, rotationY: 0 }; // Default value
     return {
       imgSrc: artwork.imageUrl || DEFAULT_IMAGE_URL,
-      width: 6,
-      height: 4,
+      width: 9,
+      height: 7,
       position: { x: position.x, y: position.y, z: position.z },
       rotationY: position.rotationY,
       info: {

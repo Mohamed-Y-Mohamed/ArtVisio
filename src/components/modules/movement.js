@@ -14,7 +14,7 @@ export const keysPressed = {
 
 // parameters we get from setupRendering where updateMovement is called. setupRendering gets the parameters from main.jsss
 export const updateMovement = (delta, controls, camera, walls) => {
-    const moveSpeed = 10 * delta;
+    const moveSpeed = 35 * delta;
 
     const previousPosition = camera.position.clone();
 

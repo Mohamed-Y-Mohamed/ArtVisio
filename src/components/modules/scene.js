@@ -16,7 +16,7 @@ export const setupScene = () => {
         1000
     );
     scene.add(camera);
-    camera.position.set(0, 0, 15);
+    camera.position.set(0, -1, 50);
 
     renderer = new THREE.WebGLRenderer({
         antialias: false

@@ -37,7 +37,6 @@ import {
 import {
     clickHandling
 } from "./modules/clickHandling.js";
-
 // Define the asynchronous function to setup the gallery environment.
 async function setupGallery() {
     // Initialize scene components (camera, controls, renderer).
@@ -77,3 +76,5 @@ async function setupGallery() {
 
 // Execute the setup function to initialize and render the gallery. Catch and log any errors that occur.
 setupGallery().catch(console.error);
+
+
