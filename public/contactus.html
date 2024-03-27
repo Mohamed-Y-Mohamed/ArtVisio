@@ -28,7 +28,67 @@
 
     <link href="../src/styling/custom-style.css" rel="stylesheet">
     <script type="module" src="../src/components/Navbar.js" ></script>
+<style>
+          .background-radial-gradient1 {
+  background-color: hsl(218, 41%, 15%);
+  background-image: 
+    radial-gradient(650px circle at 0% 0%, 
+    hsl(218, 87%, 79%) 0%, 
+    hsl(218, 70%, 58%) 25%, 
+    hsl(218, 53%, 27%) 50%, 
+    hsl(218, 61%, 14%) 75%,  
+        transparent 100%),
+    radial-gradient(1050px circle at 100% 100%, 
+        hsl(189, 100%, 77%) 0%, 
+        hsl(182, 75%, 70%) 25%, 
+        hsl(192, 75%, 60%) 50%, 
+        hsl(165, 91%, 43%) 75%, 
+        transparent 100%);
+}
 
+#radius-shape-3{
+   height: 260px;
+   width: 240px;
+   top: 60px;
+   left: 830px;
+   background: radial-gradient(#73cde9, #091fe4);
+   overflow: hidden;
+ }
+ 
+ #radius-shape-4{
+   border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+   bottom: 220px;
+   right:0px;
+   width: 250px;
+   height: 300px;
+   background: radial-gradient(#73cde9, #091fe4);
+   overflow: hidden;
+   
+ }
+ 
+
+.background-radial-gradient2 {
+  background-color: hsl(218, 41%, 15%);
+  background-image: 
+  radial-gradient(1250px circle at 100% 0%, 
+        hsl(189, 100%, 77%) 0%, 
+        hsl(182, 75%, 70%) 25%, 
+        hsl(192, 75%, 60%) 50%, 
+        hsl(165, 91%, 43%) 75%, 
+        transparent 100%),
+    radial-gradient(650px circle at 0% 100%, 
+    hsl(218, 87%, 79%) 0%, 
+    hsl(218, 70%, 58%) 25%, 
+    hsl(218, 53%, 27%) 50%, 
+    hsl(218, 61%, 14%) 75%,  
+        transparent 100%);
+}
+
+
+ 
+ 
+
+</style>
 
 </head>
 
@@ -44,10 +104,11 @@
         <!--------------------------------------------------------------------------
          Contact us form section
     ---------------------------------------------------------------------------->
-        <section class="contact-section contact-section section-padding" style="padding-top: 10%;" id="section_6">
+        <section class="contact-section contact-section section-padding background-radial-gradient1" style="padding-top: 10%;" id="section_6">
             <div class="container">
-                <div class="row">
-
+                <div class="row">       
+                      
+      
                     <div class="col-lg-8 col-12 mx-auto">
                         <h2 class="text-center mb-4" style="color: wheat;">Got a Qeustion or Issue? Let's talk</h2>
 
@@ -64,7 +125,9 @@
                         </nav>
 
                         <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                           
                             <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
+                               
                                 <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form">
                                     <div class="contact-form-body">
                                         <div class="row">

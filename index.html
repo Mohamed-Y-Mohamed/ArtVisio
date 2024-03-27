@@ -70,6 +70,44 @@
             color: #ffffff;
         }
 
+        .background-radial-gradient1 {
+  background-color: hsl(218, 41%, 15%);
+  background-image: 
+    radial-gradient(650px circle at 0% 0%, 
+    hsl(218, 87%, 79%) 0%, 
+    hsl(218, 70%, 58%) 25%, 
+    hsl(218, 53%, 27%) 50%, 
+    hsl(218, 61%, 14%) 75%,  
+        transparent 100%),
+    radial-gradient(1050px circle at 100% 100%, 
+        hsl(189, 100%, 77%) 0%, 
+        hsl(182, 75%, 70%) 25%, 
+        hsl(192, 75%, 60%) 50%, 
+        hsl(165, 91%, 43%) 75%, 
+        transparent 100%);
+}
+
+ 
+
+.background-radial-gradient2 {
+  background-color: hsl(218, 41%, 15%);
+  background-image: 
+  radial-gradient(1050px circle at 100% 0%, 
+        hsl(189, 100%, 77%) 0%, 
+        hsl(182, 75%, 70%) 25%, 
+        hsl(192, 75%, 60%) 50%, 
+        hsl(165, 91%, 43%) 75%, 
+        transparent 100%),
+    radial-gradient(650px circle at 0% 100%, 
+    hsl(218, 87%, 79%) 0%, 
+    hsl(218, 70%, 58%) 25%, 
+    hsl(218, 53%, 27%) 50%, 
+    hsl(218, 61%, 14%) 75%,  
+        transparent 100%);
+   
+      
+ 
+}
     </style>
 </head>
 
@@ -89,6 +127,9 @@
             hero section
         ---------------------------------------------------------------------------->
         <section class="hero-section" id="section_1">
+            <div id="radius-shape-3" className="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-4" className="position-absolute shadow-5-strong"></div>
+
             <div class="section-overlay"></div>
             <div class="container d-flex justify-content-center align-items-center">
                 <div class="row">
@@ -154,7 +195,7 @@
              artwork section
         ---------------------------------------------------------------------------->
 
-        <section class="artists-section section-padding" id="section_3" style="background: linear-gradient(to bottom left,  #000305,#054974,#330867, #30cfd0); ">
+        <section class="artists-section section-padding background-radial-gradient1" id="section_3" >
             <div class="container">
                 <div class="row justify-content-center">
 
@@ -255,7 +296,7 @@
              features section  
         ---------------------------------------------------------------------------->
 
-        <section class="VirArt-section section-padding" id="section_2">
+        <section class="VirArt-section section-padding background-radial-gradient2" >
             <h1 class="display-1 text-center feature" data-animate="top"> <strong>Features</strong> </h1>
             <!--------------------------------------------------------------------------
                 column one -->
@@ -392,7 +433,7 @@
         </section>
 
 
-        <div class="sectifea">
+        <div class="background-radial-gradient1">
             <sections className="sectionfeature">
                 <h1 class="display-1 text-center feature" data-animate="top"> <strong>Our Mission</strong> </h1>
                 <div class="row">
