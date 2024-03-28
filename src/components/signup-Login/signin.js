@@ -1,65 +1,31 @@
-import {
-    app
-} from "../firebase-setup";
-import {
-    getAuth,
-    signInWithEmailAndPassword
-} from "firebase/auth";
-import {
-    getFirestore,
-    doc,
-    getDoc,
-    updateDoc
-} from 'firebase/firestore/lite';
+// signin.js
+import { app } from '../firebase-setup'; // Adjust the import path as needed
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
-const auth = getAuth();
-const db = getFirestore(app);
+// Initialize Firebase Authentication
+const auth = getAuth(app);
 
-function loginUser(email, password) {
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            // Fetch and update sign-in count
-            const userRef = doc(db, "users", user.uid);
-            return getDoc(userRef).then((docSnap) => {
-                if (docSnap.exists()) {
-                    const signInCount = docSnap.data().signInCount || 0;
-                    const newSignInCount = signInCount + 1;
-                    alert("you are signed in.")
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.custom-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
 
-                    // Update signInCount in Firestore
-                    updateDoc(userRef, {
-                        signInCount: newSignInCount
-                    }).then(() => {
-                        // Redirect based on signInCount
-                        if (newSignInCount <= 1) {
-                            window.location.href = '/editProfileuser.html';
-                        } else {
-                            window.location.href = '/gallery.html';
-                        }
-                    });
-                } else {
-                    alert("please check the email and password and try again.")
-                }
-            });
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert("Unable to log in.\n" + errorCode + "\n" + errorMessage);
-        });
-}
+        const email = document.getElementById('signin-email').value;
+        const password = document.getElementById('signin-password').value;
 
-// Event listener for the login button
-document.getElementById("signin-button").addEventListener("click", function (event) {
-    event.preventDefault()
-    const email = document.getElementById('signin-email').value;
-    const password = document.getElementById('signin-password').value;
-
-    if (email.trim() === '' || password.trim() === '') {
-        alert("Please enter both email and password.");
-
-    } else {
-        loginUser(email, password);
-    }
+        // Ensure both email and password fields are not empty
+        if (email.trim() && password.trim()) {
+            signInWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    window.location.href = '/gallery.html';
+                })
+                .catch((error) => {
+                    // Log and alert on any error during the sign-in process
+                    console.error("Error signing in: ", error);
+                    alert("Failed to sign in. Please check your credentials and try again.");
+                });
+        } else {
+            alert("Please enter both email and password.");
+        }
+    });
 });

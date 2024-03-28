@@ -247,41 +247,8 @@ T e m p l a t e M o
     <script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="../src/components/bootstrap/bootstrap.min.js"></script>
     <script src="../src/components/main.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-    const form = document.querySelector('.custom-form');
+<script src="../src/components/signup-Login/signin.js" type="module" ></script>
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        const email = document.getElementById('signin-email');
-        const password = document.getElementById('signin-password');
-
-        // Simple validation for example purposes, customize as needed
-        const emailValid = email.checkValidity();
-        const passwordValid = password.checkValidity();
-
-        if (emailValid && passwordValid) {
-            loadSignInScript();
-        } else {
-            // Trigger validation messages
-            email.reportValidity();
-            password.reportValidity();
-        }
-    });
-
-    function loadSignInScript() {
-        const script = document.createElement('script');
-        script.type = 'module';
-        script.src = '../src/components/signup-Login/signin.js';
-        script.defer = true;
-        document.body.appendChild(script);
-
-       
-    }
-});
-
-</script>
 </body>
 
 </html>

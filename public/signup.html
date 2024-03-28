@@ -288,57 +288,7 @@ T e m p l a t e M o
     <script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="../src/components/bootstrap/bootstrap.min.js"></script>
     <script src="../src/components/main.js"></script>
-    <script>
-        (function () {
-          'use strict';
-        
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.querySelectorAll('.needs-validation');
-        
-          // Function to dynamically load the signup.js script
-          function loadSignupScript() {
-            const script = document.createElement('script');
-            script.type = 'module';
-            script.src = "../src/components/signup-login/signup.js"; // Ensure this path is correct
-            document.head.appendChild(script); // Append to head
-          }
-        
-          // Custom function to check if any radio button is selected
-          function isAnyRadioButtonSelected() {
-            const radioButtons = document.querySelectorAll('input[name="radio-stacked"]');
-            return [...radioButtons].some(radio => radio.checked);
-          }
-        
-          // Loop over the forms and prevent submission if they are not valid
-          Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                // Check if form elements and radio buttons are valid
-                const isValidForm = form.checkValidity();
-                const isValidRadio = isAnyRadioButtonSelected();
-        
-                if (!isValidForm || !isValidRadio) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  // Show custom invalid feedback for radio buttons if not selected
-                  if (!isValidRadio) {
-                    const radioValidationFeedback = document.querySelector('#signup-role .invalid-feedback');
-                    radioValidationFeedback.style.display = 'block';
-                  }
-                } else {
-                  event.preventDefault(); // You might not want to preventDefault here if you're actually submitting the form
-                  // Hide custom invalid feedback for radio buttons as they are now valid
-                  const radioValidationFeedback = document.querySelector('#signup-role .invalid-feedback');
-                  radioValidationFeedback.style.display = 'none';
-        
-                  loadSignupScript(); // Load the signup script only if the form is valid
-                }
-        
-                form.classList.add('was-validated');
-              }, false);
-            });
-        })();
-        </script>
+  <script src="../src//components/signup-Login/signup.js" type="module"></script>
         
 </body>
 
