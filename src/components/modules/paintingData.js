@@ -67,28 +67,28 @@ const positionsAndRotations = [
   // Front Wall
   ...Array.from({ length: 8 }, (_, i) => ({
     x: -102 + 29 * i,
-    y: 2,
+    y: 4,
     z: -137,
     rotationY: 0,
   })),
   // Back Wall
   ...Array.from({ length: 8 }, (_, i) => ({
     x: -102 + 29 * i,
-    y: 2,
+    y: 4,
     z: 137,
     rotationY: Math.PI,
   })),
   // Left Wall
   ...Array.from({ length: 8 }, (_, i) => ({
     x: -136,
-    y: 2,
+    y: 4,
     z: -102 + 29 * i,
     rotationY: Math.PI / 2,
   })),
   // Right Wall
   ...Array.from({ length: 8 }, (_, i) => ({
     x: 138,
-    y: 2,
+    y: 4,
     z: -102 + 29 * i,
     rotationY: -Math.PI / 2,
     
@@ -97,7 +97,7 @@ const positionsAndRotations = [
   //center wall 1 front
   ...Array.from({ length: 2 }, (_, i) => ({
     x:-102 + 29 * i,
-    y: 2,
+    y: 4,
     z: 56,
     rotationY: Math.PI,
     
@@ -105,7 +105,7 @@ const positionsAndRotations = [
     //center wall 1 back
     ...Array.from({ length: 2 }, (_, i) => ({
       x:-102 + 29 * i,
-      y: 2,
+      y: 4,
       z: 58,
       rotationY: Math.PI*4,
       
@@ -114,7 +114,7 @@ const positionsAndRotations = [
   //center wall 2 front
   ...Array.from({ length: 2 }, (_, i) => ({
     x:-102 + 29 * i,
-    y: 2,
+    y: 4,
     z: -58,
     rotationY: Math.PI,
     
@@ -122,7 +122,7 @@ const positionsAndRotations = [
     //center wall 2 back
     ...Array.from({ length: 2 }, (_, i) => ({
       x:-102 + 29 * i,
-      y: 2,
+      y: 4,
       z: -56,
       rotationY: Math.PI*4,
       
@@ -131,7 +131,7 @@ const positionsAndRotations = [
   //center wall 2 front
   ...Array.from({ length: 2 }, (_, i) => ({
     x:83 + 29 * i,
-    y: 2,
+    y: 4,
     z: -58,
     rotationY: Math.PI,
     
@@ -139,7 +139,7 @@ const positionsAndRotations = [
     //center wall 3 back
     ...Array.from({ length: 2 }, (_, i) => ({
       x:83 + 29 * i,
-      y: 2,
+      y: 4,
       z: -56,
       rotationY: Math.PI*4,
       
@@ -147,7 +147,7 @@ const positionsAndRotations = [
          //center wall 4 front
   ...Array.from({ length: 2 }, (_, i) => ({
     x:83 + 29 * i,
-    y: 2,
+    y: 4,
     z: 56,
     rotationY: Math.PI,
     
@@ -155,7 +155,7 @@ const positionsAndRotations = [
     //center wall 4 back
     ...Array.from({ length: 2 }, (_, i) => ({
       x:83 + 29 * i,
-      y: 2,
+      y: 4,
       z: 58,
       rotationY: Math.PI*4,
       
@@ -163,7 +163,7 @@ const positionsAndRotations = [
       //center wall 5 front
   ...Array.from({ length: 1 }, (_, i) => ({
     x: 0+ 29 * i,
-    y: 2,
+    y: 4,
     z: 1,
     rotationY: Math.PI *4,
     
@@ -171,7 +171,7 @@ const positionsAndRotations = [
     //center wall 5 back
     ...Array.from({ length: 1 }, (_, i) => ({
       x:0+ 19 * i,
-      y: 2,
+      y: 4,
       z: -1,
       rotationY: Math.PI,
       

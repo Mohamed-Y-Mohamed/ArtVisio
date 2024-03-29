@@ -38,7 +38,7 @@ export const createCeiling = (scene, textureLoader) => {
 
     // Set the position and orientation of the ceiling
     ceilingPlane.rotation.x = Math.PI / 2; // Rotate to face downwards
-    ceilingPlane.position.y = 10; // Adjust the height as needed
+    ceilingPlane.position.y = 30; // Adjust the height as needed
 
     // Add the ceiling to the scene
     scene.add(ceilingPlane);

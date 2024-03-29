@@ -19,7 +19,7 @@ export function createWalls(scene, textureLoader) {
     // Set up each texture to repeat nicely on the walls.
     Object.values(textures).forEach(texture => {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.set(35, 5); // Adjust this to fit the texture nicely on your walls.
+        texture.repeat.set(35, 7); // Adjust this to fit the texture nicely on your walls.
     });
 
     // Create a material using the textures, ready to apply to the walls.
@@ -36,7 +36,7 @@ export function createWalls(scene, textureLoader) {
     // Determine the size of the walls based on the desired scale.
     const scaleFactor = Math.sqrt(3);
     const wallLength = 160 * scaleFactor;
-    const wallHeight = 20;
+    const wallHeight = 60;
     const wallDepth = 0.01;
 
     // Create each wall, apply the material, and position them around the room.
@@ -116,7 +116,7 @@ const centerWallMaterial = new THREE.MeshStandardMaterial({
 
     // Adjusted dimensions for the walls
     const centerWallLength = 89;
-    const centerWallHeight = 20;
+    const centerWallHeight = 40;
     const centerWallDepth = 0.5;
 
 
@@ -180,7 +180,7 @@ center4.position.z = -57;
     // Set texture parameters and separate repeat values for width and height
     [color5Texture, displacement5Texture, normal5Texture, roughness5Texture, aoTexture5].forEach(texture => {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.set(7, 4); // Set separate repeat values here
+        texture.repeat.set(7, 6); // Set separate repeat values here
     });
     
     const center5WallMaterial = new THREE.MeshStandardMaterial({
