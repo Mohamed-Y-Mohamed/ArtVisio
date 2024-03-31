@@ -104,7 +104,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-12 mx-auto">
-                    <h2 class="text-center mb-4" style="color: wheat;">sign in</h2>
+                    <h2 class="text-center mb-4" style="color: wheat;">reset your password</h2>
     
                     <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
@@ -112,16 +112,11 @@
                                 <div class="contact-form-body">
     
                                     <input type="email" name="contact-email" id="signin-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" style="height: 40px;" required>
-                                    <!-- Adjusted pattern for password validation -->
-                                    <input type="password" name="contact-password" id="signin-password" class="form-control" style="height: 40px;" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}" title="Password must be at least 8 characters long, include at least one uppercase letters, one lowercase letter, one number, and one special character." required>
     
                                     <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                        <button class="form-control text-white" id="signin-button">Login</button>
+                                        <button type="submit" class="form-control text-white" id="reset-password">Reset Password</button>
                                     </div>
     
-                                    <p class="text-center text-muted mt-5 mb-0"> <a href="/resetassword.html" class="fw-light text-body"><u>Forgot your password</u></a></p>
-                                    <br><br>
-                                    <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="/signup.html" class="fw-bold text-body"><u>Register</u></a></p>
                                 </div>
                             </form>
                         </div>
@@ -237,17 +232,12 @@
 
 
     </footer>
-
-    <!--
-
-T e m p l a t e M o
-
--->
+    <script type="module" src="../src/components/signup-Login/reset-password.js"></script>
+    
     <!-- JAVASCRIPT FILES -->
     <script src="../src/components/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="../src/components/bootstrap/bootstrap.min.js"></script>
     <script src="../src/components/main.js"></script>
-<script src="../src/components/signup-Login/signin.js" type="module" ></script>
 
 </body>
 

@@ -3,13 +3,13 @@ import {
 } from "../firebase-setup";
 import {
     getAuth,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    sendEmailVerification // Import sendEmailVerification
 } from "firebase/auth";
 import {
     getFirestore,
     doc,
-    getDoc,
-    updateDoc,setDoc
+    setDoc
 } from 'firebase/firestore/lite';
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -32,30 +32,33 @@ document.addEventListener('DOMContentLoaded', function () {
             createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                alert("Creating account. User ID: " + user.uid);
-    
-                // Format the current date as dd/mm/yyyy
-                const currentDate = new Date();
-                const signupDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
-                    (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
-                    currentDate.getFullYear();
-    
-                // Add user data to Firestore, including formatted signupDate and initializing signInCount
-                return setDoc(doc(db, "users", user.uid), {
-                    firstName: firstname,
-                    lastName: lastname,
-                    email: email,
-                    role: userType,
-                    signupDate: signupDate, // Storing the formatted signup date
-                    signInCount: 0 // Initializing the sign-in count
+                
+                // Send email verification
+                return sendEmailVerification(user).then(() => {
+                    // Format the current date as dd/mm/yyyy
+                    const currentDate = new Date();
+                    const signupDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+                        (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+                        currentDate.getFullYear();
+
+                    // Add user data to Firestore, including formatted signupDate and initializing signInCount
+                    return setDoc(doc(db, "users", user.uid), {
+                        firstName: firstname,
+                        lastName: lastname,
+                        email: email,
+                        role: userType,
+                        signupDate: signupDate, // Storing the formatted signup date
+                        signInCount: 0 // Initializing the sign-in count
+                    });
                 });
             })
             .then(() => {
-                alert("User data added successfully!");
+                alert("Signup successful! Please check your email to verify your account.");
+                window.location.href="/login.html"
             })
             .catch((error) => {
                 const errorCode = error.code;
-                 const errorMessage = error.message;
+                const errorMessage = error.message;
                 alert("Unable to create account.\n" + errorCode + "\n" + errorMessage);
             });
         } else {
@@ -68,9 +71,3 @@ document.addEventListener('DOMContentLoaded', function () {
         return Array.from(radioButtons).some(radio => radio.checked);
     }
 });
-
-// Make sure you have your Firebase app and auth modules initialized here
-// Example:
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
-// const db = getFirestore(app);
