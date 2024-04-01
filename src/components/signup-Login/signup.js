@@ -4,7 +4,8 @@ import {
 import {
     getAuth,
     createUserWithEmailAndPassword,
-    sendEmailVerification // Import sendEmailVerification
+    sendEmailVerification,
+    signOut // Import sendEmailVerification
 } from "firebase/auth";
 import {
     getFirestore,
@@ -54,7 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(() => {
                 alert("Signup successful! Please check your email to verify your account.");
-                window.location.href="/login.html"
+                signOut(auth).then(() => {
+                    window.location.href="/signin.html"
+                })
             })
             .catch((error) => {
                 const errorCode = error.code;

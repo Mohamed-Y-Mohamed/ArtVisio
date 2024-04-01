@@ -52,7 +52,6 @@ async function getArtworksWithDetails() {
       ...DEFAULT_ARTWORK_DETAILS,
     });
   }
-console.log(artworksAndDetails);
   return artworksAndDetails;
 }
 
