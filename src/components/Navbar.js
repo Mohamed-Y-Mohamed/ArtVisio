@@ -1,17 +1,23 @@
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
 import { app } from "./firebase-setup";
+
+// Initialize Firebase authentication and Firestore
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+// Function to get user role from Firestore
 const getUserRole = async (userId) => {
   const docRef = doc(db, "users", userId);
   const docSnap = await getDoc(docRef);
   if (docSnap.exists()) {
-    return docSnap.data().role; // Assuming there is a role field
+    return docSnap.data().role; 
   } else {
     return null;
   }
 };
+
+// Function to update navbar based on user authentication state
 const updateNavbar = async (user) => {
   const navContainer = document.getElementById("navbar");
   if (user) {
@@ -32,7 +38,7 @@ const updateNavbar = async (user) => {
                 <a class="dropdown-item" href="#">edit profile</a>
                 <a class="dropdown-item" href="#">reload scene</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">signout</a>
+                <a class="dropdown-item" href="#" id="user-signout">Sign Out</a>
             </div>
         </div>
 
@@ -60,24 +66,24 @@ const updateNavbar = async (user) => {
             </ul>
 
             <div class="dropdown">
-            <button class="btn  custom-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More Options
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="/viewProfileUser.html">view and edit profile</a>
-                <a class="dropdown-item" href="/gallery.html">visualise gallery</a>
-                <div class="replacement"></div>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" id="user-signout" href="#">signout</a>
+                <button class="btn  custom-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More Options
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/viewProfileUser.html">View and Edit Profile</a>
+                    <a class="dropdown-item" href="/gallery.html">Visualise Gallery</a>
+                    <div class="replacement"></div>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" id="user-signout" href="#">Sign Out</a>
+                </div>
             </div>
         </div>
     </div>
 </nav>`;
     if (userRole === 'artist') {
-      navContent = navContent.replace('<div class="replacement"></div>', `<a class="dropdown-item" href="/uploadArtwork.html">upload artwork</a>
-      <a class="dropdown-item" href="/viewArtwork.html">view upload artwork</a>
-`
-      );
+      navContent = navContent.replace('<div class="replacement"></div>', `<a class="dropdown-item" href="/uploadArtwork.html">Upload Artwork</a>
+      <a class="dropdown-item" href="/viewArtwork.html">View Uploaded Artwork</a>
+`);
     }
     navContainer.innerHTML = navContent;
   } else {
@@ -89,7 +95,7 @@ const updateNavbar = async (user) => {
             </svg>
             ARTVISIO
         </a>
-        <a href="/signup.html" class="btn custom-btn d-lg-none ms-auto me-4">Login / Singup</a>
+        <a href="/signup.html" class="btn custom-btn d-lg-none ms-auto me-4">Login / Signup</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="padding-right: 1rem;">
             <span class="navbar-toggler-icon"></span>
@@ -110,11 +116,11 @@ const updateNavbar = async (user) => {
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">contact us</a>
+                    <a class="nav-link click-scroll" href="/contactus.html" style="color: rgb(201, 247, 247);">Contact us</a>
                 </li>
             </ul>
 
-            <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Singup</a>
+            <a href="/signup.html" class="btn custom-btn d-lg-block d-none">Login / Signup</a>
         </div>
     </div>
 </nav>`;
@@ -147,10 +153,12 @@ const updateNavbar = async (user) => {
   });
 };
 
+// Event listener for Firebase authentication state changes
 onAuthStateChanged(auth, (user) => {
-  updateNavbar(user);
+  updateNavbar(user); 
 });
 
+// Event listener for DOMContentLoaded to ensure the page is loaded before running JavaScript
 document.addEventListener("DOMContentLoaded", function () {
   // Function to toggle dropdown
   function toggleDropdown(dropdownMenu) {
@@ -174,25 +182,38 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handling dropdown toggle
     let dropdownToggle = target.closest(".dropdown-toggle");
     if (dropdownToggle) {
-      event.preventDefault(); // Prevent default if it's a link or button
+      event.preventDefault(); 
       let dropdownMenu = dropdownToggle.nextElementSibling;
       if (dropdownMenu) {
         toggleDropdown(dropdownMenu);
-      }else{
-        dropdownMenu.remove(dropdownToggle)
       }
       return; // Stop further processing to avoid unintended sign out
-        }
+    }
 
-        // Handling sign-out action specifically
-        if (target.textContent.toLowerCase().includes('signout')) {
-            event.preventDefault(); // Prevent default action
-            signOut(auth).then(() => {
-                console.log('Sign-out successful.');
-                window.location.reload();
-            }).catch((error) => {
-                console.error('Sign-out failed:', error);
-            });
-        }
-    });
+    // Handling sign-out action specifically
+    if (target.matches("#user-signout")) {
+      event.preventDefault(); 
+      signOut(auth)
+        .then(() => {
+          console.log('Sign-out successful.');
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error('Sign-out failed:', error);
+        });
+    }
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function (event) {
+    let target = event.target;
+    // Check if the click occurred outside the dropdown menu
+    if (!target.closest(".dropdown") && !target.closest(".active-dropdown")) {
+      // Hide all active dropdown menus
+      const activeDropdowns = document.querySelectorAll(".active-dropdown");
+      activeDropdowns.forEach(function (menu) {
+        menu.classList.remove("active-dropdown");
+      });
+    }
+  });
 });
