@@ -9,7 +9,7 @@ or
 npm install --legacy-peers-deps
 
 
-once installation is complete. re the command below again.
+once installation is complete. re type the command on terminal as followed: 
 npx vite
 
 
