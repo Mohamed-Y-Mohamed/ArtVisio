@@ -5,5 +5,11 @@ npx vite
 
 if any error occurs, intall the node module by entering the following in terminal:
 npm install 
-then run it again 
+or 
+npm install --legacy-peers-deps
+
+
+once installation is complete. re the command below again.
+npx vite
+
 
