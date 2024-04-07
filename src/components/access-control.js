@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             // No user is signed in. Redirect the user to the sign-in page.
             console.log("No user is signed in.");
-            window.location.href = "/signin.html";
+            window.location.href = "/signin.html"
         }
     });
 });
