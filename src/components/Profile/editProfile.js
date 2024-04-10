@@ -45,7 +45,7 @@ async function fetchUserData(userId, db) {
             console.log("No such document!");
         }
     } catch (error) {
-        console.error("Error fetching user data:", error);
+        console.log("Error fetching user data:", error.message);
     }
 };
 

@@ -30,6 +30,9 @@ async function fetchAndDisplayArtworks(userId) {
         <td>${artwork.creationDate}</td>
         <td><a href="${artwork.imageUrl}" target="_blank">View</a></td>
         <td>
+
+
+
             <button type="button" class="btn btn-danger btn-sm px-3" onclick="deleteArtwork('${doc.id}')">
                 <i class="bi bi-trash"></i>
             </button>
@@ -39,22 +42,40 @@ async function fetchAndDisplayArtworks(userId) {
     });
   }
 }
-
 async function deleteArtwork(artworkId, userId) {
-    const db = getFirestore(app);
-    try {
-      // Specify the path to the artwork document
-      const artworkRef = doc(db, 'users', userId, 'artworks', artworkId);
-      // Delete the document
-      await deleteDoc(artworkRef);
-      // Remove the artwork row from the table or refresh the list
-      fetchAndDisplayArtworks(userId);
-     alert("artwork has been deleted seccessfully.")
-    } catch (error) {
-      console.error('Error deleting artwork:', error);
-    }
-  }
-  
+  // Show the confirmation modal
+  const confirmDeleteModal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
+  confirmDeleteModal.show();
+
+  // Handle confirmation button click
+  document.getElementById('confirmDeleteBtn').addEventListener('click', async () => {
+      const db = getFirestore(app);
+      try {
+          // Specify the path to the artwork document
+          const artworkRef = doc(db, 'users', userId, 'artworks', artworkId);
+          // Delete the document
+          await deleteDoc(artworkRef);
+          // Remove the artwork row from the table or refresh the list
+          fetchAndDisplayArtworks(userId);
+          alert("Artwork has been deleted successfully.");
+      } catch (error) {
+          console.error('Error deleting artwork:', error);
+      } finally {
+          // Hide the confirmation modal
+          confirmDeleteModal.hide();
+      }
+  });
+
+  // Handle cancel button click
+  document.getElementById("CancelDeleteBtn").addEventListener("click", function () {
+      confirmDeleteModal.hide();
+  });
+
+  // Handle close button click
+  document.getElementById("closeBtnConfirm").addEventListener("click", function () {
+      confirmDeleteModal.hide();
+  });
+}
   // Set up the auth state observer and fetch artworks when a user is signed in
   onAuthStateChanged(getAuth(app), (user) => {
     if (user) {
@@ -64,3 +85,51 @@ async function deleteArtwork(artworkId, userId) {
       console.error('No user is signed in.');
     }
   });
+
+
+   function editArtwork(artworkId, name, type, description, creationDate) {
+    // Populate the input fields with current values
+    document.getElementById('editArtworkName').value = name;
+    document.getElementById('editArtworkType').value = type;
+    document.getElementById('editArtworkDescription').value = description;
+    document.getElementById('editArtworkCreationDate').value = creationDate;
+
+    // Show the edit artwork modal
+    const editArtworkModal = new bootstrap.Modal(document.getElementById('editArtworkModal'));
+    editArtworkModal.show();
+
+    // Handle update button click
+    document.getElementById('updateArtworkBtn').addEventListener('click', async () => {
+        const newName = document.getElementById('editArtworkName').value;
+        const newType = document.getElementById('editArtworkType').value;
+        const newDescription = document.getElementById('editArtworkDescription').value;
+        const newCreationDate = document.getElementById('editArtworkCreationDate').value;
+
+        try {
+            const db = getFirestore(app);
+            const artworkRef = doc(db, 'users', userId, 'artworks', artworkId);
+            await setDoc(artworkRef, {
+                name: newName,
+                type: newType,
+                description: newDescription,
+                creationDate: newCreationDate
+            }, { merge: true });
+
+            // Hide the modal
+            editArtworkModal.hide();
+
+            // Refresh the table
+            fetchAndDisplayArtworks(userId);
+
+            // Show success message
+            alert("Artwork has been updated successfully.");
+        } catch (error) {
+            console.log('Error updating artwork:', error.message);
+        }
+    });
+    document.getElementById("CancelDeleteBtn").addEventListener(   "click", function() {
+      editArtworkModal.hide();
+
+})
+   
+}
