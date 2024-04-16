@@ -37,6 +37,7 @@ import {
 import {
     clickHandling
 } from "./modules/clickHandling.js";
+import { setupVR } from "./modules/VrSet.js";
 // Define the asynchronous function to setup the gallery environment.
 async function setupGallery() {
     // Initialize scene components (camera, controls, renderer).
@@ -65,6 +66,7 @@ async function setupGallery() {
     createBoundingBoxes(paintings);
     // Add the paintings to the scene.
     addObjectsToScene(scene, paintings);
+    setupVR(renderer);
 
     // Initialize event listeners for user interaction (e.g., camera controls).
     setupEventListeners(controls);

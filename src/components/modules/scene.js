@@ -10,7 +10,7 @@ let renderer;
 
 export const setupScene = () => {
     camera = new THREE.PerspectiveCamera(
-        60,
+        90,
         window.innerWidth / window.innerHeight,
         0.1,
         1000
