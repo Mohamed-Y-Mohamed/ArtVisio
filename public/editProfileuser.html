@@ -121,7 +121,7 @@
                                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                                         <!-- Profile picture upload button-->
                                         <div>
-                                            <input class="form-control form-control-lg" id="formFileLg" type="file" style="display:none" onchange="document.getElementById('fileName').textContent = this.files[0].name">
+                                            <input class="form-control form-control-lg" accept=".jpg, .jpeg, .png, .gif" id="formFileLg" type="file" style="display:none" onchange="document.getElementById('fileName').textContent = this.files[0].name">
                                             <button type="button" class="btn btn-primary" onclick="document.getElementById('formFileLg').click()">Choose File</button>
                                            
                                             <span id="fileName"></span>
@@ -135,14 +135,14 @@
 
                                     </div>
                                     <div class="col-sm-4 text-secondary">
-                                        <input type="text" class="form-control" id="user-firstname" placeholder="First name" value="">
+                                        <input type="text" class="form-control" id="user-firstname"  required pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" placeholder="First name" value="">
                                     </div>
                                     <div class="col-sm-2">
                                         <h6 class="mb-0">Last Name:</h6>
 
                                     </div>
                                     <div class="col-sm-4 text-secondary">
-                                        <input type="text" class="form-control" id="user-lastname" placeholder="Last name" value="">
+                                        <input type="text" class="form-control" id="user-lastname" required pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" placeholder="Last name" value="">
                                     </div>
                                 </div>
 

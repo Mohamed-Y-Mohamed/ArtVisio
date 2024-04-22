@@ -89,7 +89,7 @@
                         <h6 class="mb-0">Artwork Name:</h6>
                     </div>
                     <div class="col-sm-10 text-secondary">
-                        <input type="text" class="form-control" id="Artwork-Name" placeholder="Artwork Name" required>
+                        <input type="text" class="form-control" id="Artwork-Name" required pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" placeholder="Artwork Name" required>
                         <div class="invalid-feedback">Please provide the artwork name.</div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                         <h6 class="mb-0">Browse:</h6>
                     </div>
                     <div class="col-sm-10 text-secondary">
-                        <input type="file" class="form-control" id="user-Artwork" required>
+                        <input type="file" class="form-control" id="user-Artwork" accept=".jpg, .jpeg, .png, .gif" required>
                         <div class="invalid-feedback">Please upload an artwork file.</div>
                     </div>
                 </div>

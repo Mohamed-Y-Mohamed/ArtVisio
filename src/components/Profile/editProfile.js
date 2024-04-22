@@ -94,7 +94,7 @@ document.getElementById("userProfile-saveChange").addEventListener("click", asyn
     const user = auth.currentUser;
 
     // Proceed with file upload if a file is selected
-    if (file) {
+    if (file && ['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
         const storageRef = ref(storage, `profilePictures/${user.uid}`);
         try {
             await uploadBytes(storageRef, file);
