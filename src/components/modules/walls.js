@@ -19,7 +19,7 @@ export function createWalls(scene, textureLoader) {
     // Set up each texture to repeat nicely on the walls.
     Object.values(textures).forEach(texture => {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.set(35, 7); // Adjust this to fit the texture nicely on your walls.
+        texture.repeat.set(35, 7);
     });
 
     // Create a material using the textures, ready to apply to the walls.
@@ -29,7 +29,7 @@ export function createWalls(scene, textureLoader) {
         normalMap: textures.normalTexture,
         roughnessMap: textures.roughnessTexture,
         aoMap: textures.aoTexture,
-        displacementScale: 0.1, // This can be tweaked for a more 3D look.
+        displacementScale: 0.1, 
         side: THREE.DoubleSide,
     });
 
@@ -47,7 +47,7 @@ export function createWalls(scene, textureLoader) {
     new THREE.BoxGeometry(wallLength, wallHeight, wallDepth),
     wallMaterial
 );
-frontWall.position.z = -80 * scaleFactor; // Adjusted position
+frontWall.position.z = -80 * scaleFactor; 
 
 // Left Wall
 const leftWall = new THREE.Mesh(
@@ -57,7 +57,7 @@ const leftWall = new THREE.Mesh(
     wallMaterial
 );
 leftWall.rotation.y = Math.PI / 2;
-leftWall.position.x = -80 * scaleFactor; // Adjusted position
+leftWall.position.x = -80 * scaleFactor;
 
 // Right Wall
 const rightWall = new THREE.Mesh(
@@ -66,7 +66,7 @@ const rightWall = new THREE.Mesh(
     new THREE.BoxGeometry(wallLength, wallHeight, wallDepth),
     wallMaterial
 );
-rightWall.position.x = 80 * scaleFactor; // Adjusted position
+rightWall.position.x = 80 * scaleFactor;
 rightWall.rotation.y = Math.PI / 2;
 
 
@@ -79,8 +79,7 @@ const backWall = new THREE.Mesh(
     new THREE.BoxGeometry(wallLength, wallHeight, wallDepth),
     wallMaterial
 );
-backWall.position.z = 80 * scaleFactor; // Adjusted position
-
+backWall.position.z = 80 * scaleFactor; 
     // Add all the walls to the group.
 
 
@@ -99,7 +98,7 @@ const aoTexture = textureLoader.load("../../assets/walls_images/wall.jpg");
 // Set texture parameters and separate repeat values for width and height
 [colorTexture, displacementTexture, normalTexture, roughnessTexture, aoTexture].forEach(texture => {
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set(15, 5); // Set separate repeat values here
+    texture.repeat.set(15, 5); 
 });
 
 const centerWallMaterial = new THREE.MeshStandardMaterial({
@@ -127,7 +126,7 @@ const centerWallMaterial = new THREE.MeshStandardMaterial({
         new THREE.BoxGeometry(centerWallLength, centerWallHeight, centerWallDepth),
         centerWallMaterial
     );
-    center1.position.x = 55 * sscaleFactor; // Adjusted position
+    center1.position.x = 55 * sscaleFactor; 
     center1.rotation.y = Math.PI  ;
     center1.position.z = 57;
     
@@ -138,7 +137,7 @@ const center2 = new THREE.Mesh(
     new THREE.BoxGeometry(centerWallLength, centerWallHeight, centerWallDepth),
     centerWallMaterial
 );
-center2.position.x = -55 * sscaleFactor; // Adjusted position
+center2.position.x = -55 * sscaleFactor; 
 center2.rotation.y = Math.PI  ;
 center2.position.z = 57;
 
@@ -148,7 +147,7 @@ const center3 = new THREE.Mesh(
     new THREE.BoxGeometry(centerWallLength, centerWallHeight, centerWallDepth),
     centerWallMaterial
 );
-center3.position.x = 55 * sscaleFactor; // Adjusted position
+center3.position.x = 55 * sscaleFactor;
 center3.rotation.y = Math.PI  ;
 center3.position.z = -57;
 
@@ -157,7 +156,7 @@ const center4 = new THREE.Mesh(
 new THREE.BoxGeometry(centerWallLength, centerWallHeight, centerWallDepth),
 centerWallMaterial
 );
-center4.position.x = -55 * sscaleFactor; // Adjusted position
+center4.position.x = -55 * sscaleFactor;
 center4.rotation.y = Math.PI  ;
 center4.position.z = -57;
 
@@ -180,7 +179,7 @@ center4.position.z = -57;
     // Set texture parameters and separate repeat values for width and height
     [color5Texture, displacement5Texture, normal5Texture, roughness5Texture, aoTexture5].forEach(texture => {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.set(7, 6); // Set separate repeat values here
+        texture.repeat.set(7, 6);
     });
     
     const center5WallMaterial = new THREE.MeshStandardMaterial({
@@ -197,7 +196,7 @@ const center5 = new THREE.Mesh(
     new THREE.BoxGeometry(40, centerWallHeight, centerWallDepth),
     center5WallMaterial
     );
-    center5.position.x = 0 * sscaleFactor; // Adjusted position
+    center5.position.x = 0 * sscaleFactor; 
     center5.rotation.y = Math.PI  ;
     center5.position.z = 0;
     

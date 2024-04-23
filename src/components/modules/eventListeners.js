@@ -43,8 +43,7 @@ function onKeyDown(event, controls) {
     }
 
 
-    if (event.key === "p") {
-        // if the "SPACE" key is pressed
+    if (event.key === " ") {
         controls.unlock();
         lockPointer = false;
     }
@@ -52,7 +51,6 @@ function onKeyDown(event, controls) {
 
 
     if (event.key === " ") {
-        // if the "p" key is pressed
         togglePointerLock(controls);
 
     }
@@ -60,7 +58,6 @@ function onKeyDown(event, controls) {
 
 
     if (event.key === "r") {
-        // if the "r" key is pressed
         location.reload();
     }
 }

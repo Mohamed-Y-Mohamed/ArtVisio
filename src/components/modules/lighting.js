@@ -11,11 +11,11 @@ export const setupLighting = (scene, paintings) => {
         spotlight.position.set(x, y, z);
         spotlight.target.position.copy(targetPosition);
         spotlight.castShadow = true;
-        spotlight.angle = Math.PI / 6; // Wider angle for more coverage
-        spotlight.penumbra = 0.1; // Soften the edges a bit
-        spotlight.decay = 2; // Adjusted decay for more realistic falloff
-        spotlight.distance = distance; // Increased distance for wider coverage
-        spotlight.shadow.mapSize.width = 2048; // Higher resolution for shadows
+        spotlight.angle = Math.PI / 6;
+        spotlight.penumbra = 0.1; 
+        spotlight.decay = 2; 
+        spotlight.distance = distance; 
+        spotlight.shadow.mapSize.width = 2048; 
         spotlight.shadow.mapSize.height = 2048;
 
         scene.add(spotlight);
@@ -47,6 +47,7 @@ export const setupLighting = (scene, paintings) => {
     // Additional spotlights or adjustments may be needed depending on the layout of the scene
     // For example, a center spotlight for general illumination
     const centerSpotlight = createSpotlight(
-        0, 15, 0, 2, new THREE.Vector3(0, 0, 0), 150 // A higher intensity and wider coverage for the center of the room
+        /// A higher intensity and wider coverage for the center of the room
+        0, 15, 0, 2, new THREE.Vector3(0, 0, 0), 150 
     );
 };
