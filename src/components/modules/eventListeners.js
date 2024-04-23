@@ -45,7 +45,7 @@ function onKeyDown(event, controls) {
 
     if (event.key === " ") {
         controls.unlock();
-        lockPointer = false;
+        lockPointer = true;
     }
 
 
