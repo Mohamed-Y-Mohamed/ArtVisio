@@ -23,7 +23,7 @@ export const setupRendering = (
 
         updateMovement(delta, controls, camera, walls);
 
-        const distanceThreshold = 8;
+        const distanceThreshold = 24;
 
         let paintingToShow;
         paintings.forEach((painting) => {
@@ -54,7 +54,7 @@ export const setupRendering = (
 
 
 
-//vr adjustment attempt 
+// vr adjustment attempt 
 // import * as THREE from "three";
 // import {
 //         displayPaintingInfo,
