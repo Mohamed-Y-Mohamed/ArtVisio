@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 export const setupLighting = (scene, paintings) => {
     // Increased ambient light intensity for overall illumination
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff,1.2);
     scene.add(ambientLight);
 
     // Helper function to create and configure spotlights
@@ -24,30 +24,31 @@ export const setupLighting = (scene, paintings) => {
         return spotlight;
     }
 
-    // Calculate scale factor based on wall expansion (assuming similar logic as walls)
-    const scaleFactor = Math.sqrt(3);
+ 
 
-    // Adjusted positions and intensities for spotlights based on new scene dimensions
-    const frontWallSpotlight = createSpotlight(
-        0, 10, -30 * scaleFactor, 1.5, new THREE.Vector3(0, 0, -40 * scaleFactor), 120 * scaleFactor
-    );
+}
 
-    const backWallSpotlight = createSpotlight(
-        0, 10, 30 * scaleFactor, 1.5, new THREE.Vector3(0, 0, 40 * scaleFactor), 120 * scaleFactor
-    );
 
-    const leftWallSpotlight = createSpotlight(
-        -30 * scaleFactor, 10, 0, 1.5, new THREE.Vector3(-40 * scaleFactor, 0, 0), 120 * scaleFactor
-    );
+// const scaleFactor = Math.sqrt(3);
+// const frontWallSpotlight = createSpotlight(
+//   0, 10, -30 * scaleFactor, 1.5, new THREE.Vector3(0, 0, -40 * scaleFactor), 120 * scaleFactor
+// );
 
-    const rightWallSpotlight = createSpotlight(
-        30 * scaleFactor, 10, 0, 1.5, new THREE.Vector3(40 * scaleFactor, 0, 0), 120 * scaleFactor
-    );
+// const backWallSpotlight = createSpotlight(
+//   0, 10, 30 * scaleFactor, 1.5, new THREE.Vector3(0, 0, 40 * scaleFactor), 120 * scaleFactor
+// );
 
-    // Additional spotlights or adjustments may be needed depending on the layout of the scene
-    // For example, a center spotlight for general illumination
-    const centerSpotlight = createSpotlight(
-        /// A higher intensity and wider coverage for the center of the room
-        0, 15, 0, 2, new THREE.Vector3(0, 0, 0), 150 
-    );
-};
+// const leftWallSpotlight = createSpotlight(
+//   -30 * scaleFactor, 10, 0, 1.5, new THREE.Vector3(-40 * scaleFactor, 0, 0), 120 * scaleFactor
+// );
+
+// const rightWallSpotlight = createSpotlight(
+//   30 * scaleFactor, 10, 0, 1.5, new THREE.Vector3(40 * scaleFactor, 0, 0), 120 * scaleFactor
+// );
+
+// // Additional spotlights or adjustments may be needed depending on the layout of the scene
+// // For example, a center spotlight for general illumination
+// const centerSpotlight = createSpotlight(
+//   /// A higher intensity and wider coverage for the center of the room
+//   0, 15, 0, 2, new THREE.Vector3(0, 0, 0), 150 
+// );

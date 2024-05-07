@@ -23,7 +23,7 @@ export const setupRendering = (
 
         updateMovement(delta, controls, camera, walls);
 
-        const distanceThreshold = 24;
+        const distanceThreshold = 16;
 
         let paintingToShow;
         paintings.forEach((painting) => {

@@ -204,9 +204,9 @@ export async function fetchAndPreparePaintingData() {
 
 async function fetchUserData(userId) {
   let fullName = "";
-  const userRef = doc(db, "users", userId); // Use 'doc' from 'firebase/firestore'
+  const userRef = doc(db, "users", userId);
   try {
-    const docSnap = await getDoc(userRef); // Use 'getDoc' from 'firebase/firestore'
+    const docSnap = await getDoc(userRef); 
     if (docSnap.exists()) {
       const userData = docSnap.data();
       fullName = `${userData.firstName || "N/A"} ${userData.lastName || "."}`;
@@ -223,6 +223,8 @@ async function fetchUserData(userId) {
 
 
 
+
+
 //reset database artwork 
 // async function resetArtworkDisplayedCounts() {
 //   const artworksQuery = query(collectionGroup(db, "artworks"));
@@ -230,7 +232,7 @@ async function fetchUserData(userId) {
 //   const allDisplayed = querySnapshot.docs.every(doc => doc.data().displayed > 0);
 
 //   if (allDisplayed) {
-//     const batch = db.batch(); // Assuming you're using Firestore version 9 or above
+//     const batch = db.batch(); 
 
 //     querySnapshot.docs.forEach(doc => {
 //       const artworkRef = doc.ref;

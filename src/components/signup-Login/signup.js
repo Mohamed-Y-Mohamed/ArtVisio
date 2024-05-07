@@ -1,27 +1,29 @@
-import {
-    app
-} from "../firebase-setup";
-import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    sendEmailVerification,
-    signOut // Import sendEmailVerification
+import { app } from "../firebase-setup";
+import { 
+    getAuth, 
+    createUserWithEmailAndPassword, 
+    sendEmailVerification, 
+    signOut 
 } from "firebase/auth";
-import {
-    getFirestore,
-    doc,
-    setDoc
+import { 
+    getFirestore, 
+    doc, 
+    setDoc 
 } from 'firebase/firestore/lite';
+
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.needs-validation');
+    const radioError = document.getElementById('radio-error'); 
 
     // Event listener for the form submission
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         if (form.checkValidity() && isAnyRadioButtonSelected()) {
+            // If valid, hide the radio button error message
+            radioError.style.display = 'none';
             // Extract user input values
             const email = document.getElementById("Signup-Email").value;
             const password = document.getElementById("Signup-Pass").value;
@@ -48,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         lastName: lastname,
                         email: email,
                         role: userType,
-                        signupDate: signupDate, // Storing the formatted signup date
-                        signInCount: 0 // Initializing the sign-in count
+                        signupDate: signupDate, 
+                        signInCount: 0 
                     });
                 });
             })
@@ -65,7 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert("Unable to create account.\n" + errorCode + "\n" + errorMessage);
             });
         } else {
-            form.classList.add('was-validated'); // Trigger bootstrap validation feedback
+            // If not valid, show the radio button error message
+            radioError.style.display = 'block';
+            form.classList.add('was-validated'); 
         }
     });
 

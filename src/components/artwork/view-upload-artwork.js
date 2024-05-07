@@ -87,6 +87,8 @@ async function deleteArtwork(artworkId, userId) {
   });
 
 
+
+  //editr artwork upload details
    function editArtwork(artworkId, name, type, description, creationDate) {
     // Populate the input fields with current values
     document.getElementById('editArtworkName').value = name;
