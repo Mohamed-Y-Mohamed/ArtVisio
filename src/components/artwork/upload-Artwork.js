@@ -21,7 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
             if (!user) {
                 alert("Please sign in to upload artwork.");
-                return; // Stop execution if the user is not signed in
+                window.location.href = "/signin.html"; 
+                return;
+            } else if (user.role !== "artist") {
+               
+                window.location.href = "/galley.html"; 
+                return;
             }
     
             const artworkName = document.getElementById("Artwork-Name").value;

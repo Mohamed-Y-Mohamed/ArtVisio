@@ -111,8 +111,8 @@ document.getElementById("userProfile-saveChange").addEventListener("click", asyn
     try {
         await updateDoc(userRef, userDataToUpdate);
         alert("Profile updated successfully!");
-        window.location.reload();
-    } catch (error) {
+window.location.href="/viewProfileUser.html"  
+  } catch (error) {
         console.error("Error updating profile:", error);
         alert("Error updating profile: " + error.message);
     }
