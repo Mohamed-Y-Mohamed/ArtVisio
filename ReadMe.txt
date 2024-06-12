@@ -7,3 +7,4 @@ if any error occurs, intall the node module by entering the following in termina
 npm install 
 then run it again 
 
+in regarding the API, enter your own API key for firebase once the project is downloaded. 
