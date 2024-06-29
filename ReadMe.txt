@@ -80,11 +80,6 @@ Artists manage their portfolios through the View Uploaded Artworks page, facilit
 
 To run the Virtual Art Gallery project locally, follow these steps:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your/repository.git
-   cd repository-name
-Install dependencies:
 
 on terminal, type the following 
 npm install
