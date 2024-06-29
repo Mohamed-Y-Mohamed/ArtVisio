@@ -26,7 +26,7 @@ The Instructions page guides users on navigating the virtual gallery, whether us
 
 ![About Us Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/about%20us.png)
 
-Learn about the developers behind the project and their mission to revolutionize digital art consumption. This section includes insights into the project's vision, goals, and future enhancements, emphasizing our commitment to innovation and user satisfaction.
+the page is about me as developer and my mission to revolutionize digital art consumption. This section includes insights into the project's vision, goals, and future enhancements, emphasizing our commitment to innovation and user satisfaction.
 
 ### Contact Us
 
