@@ -18,7 +18,7 @@ The Home page serves as the entry point, featuring an introductory hero section 
 
 ### Instructions Page
 
-![Instructions Page](./screenshots/instruction.png)
+![Instructions Page](screenshots/instruction.png)
 
 The Instructions page guides users on navigating the virtual gallery, whether using VR headsets or standard PCs. It provides clear, step-by-step instructions tailored to both types of devices, ensuring a user-friendly experience for all visitors.
 
