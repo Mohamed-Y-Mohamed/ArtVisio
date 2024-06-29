@@ -8,7 +8,6 @@ Welcome to the Virtual Art Gallery project, a cutting-edge platform merging art 
 - **Backend**: Node.js
 - **Database**: Firebase
 
-
 ## Pages Overview
 
 ### Home Page
@@ -25,13 +24,13 @@ The Instructions page guides users on navigating the virtual gallery, whether us
 
 ### About Us
 
-<img src="screenshots/about20%us.png" alt="About Us Page">
+<img src="screenshots/about%20us.png" alt="About Us Page">
 
 Learn about the developers behind the project and their mission to revolutionize digital art consumption. This section includes insights into the project's vision, goals, and future enhancements, emphasizing our commitment to innovation and user satisfaction.
 
 ### Contact Us
 
-<img src="screenshots/contact20%us.png" alt="Contact Us Page">
+<img src="screenshots/contact%20us.png" alt="Contact Us Page">
 
 Connect with us through the Contact Us page, featuring a user-friendly form for inquiries and feedback. Additionally, a map view provides an overview of our virtual location, enhancing engagement with our audience.
 
@@ -48,13 +47,16 @@ Securely access the platform via the Sign In page, ensuring user authentication 
 New users can register via the Sign Up page, gaining access to personalized profiles and the virtual gallery.
 
 ### Profile Page
-View profile:
-<img src="screenshots/view20%profile.png" alt="edit Page">
 
-Edit Profile:
-<img src="screenshots/edit20%profile.png" alt="edit Page">
+#### View Profile
+
+<img src="screenshots/view%20profile.png" alt="View Profile Page">
 
 Upon login, users are directed to the Profile page, featuring personalized details and social links for enhanced visibility. Artists showcase their portfolios, facilitating connections with art enthusiasts and potential clients.
+
+#### Edit Profile
+
+<img src="screenshots/edit%20profile.png" alt="Edit Profile Page">
 
 ### Gallery
 
@@ -64,13 +66,29 @@ Step into the digital Gallery, where artworks are elegantly displayed on virtual
 
 ### Upload Artwork
 
-<img src="screenshots/upload20%page.png" alt="Upload Artwork Page">
+<img src="screenshots/upload%20page.png" alt="Upload Artwork Page">
 
 Artists can showcase their creations by uploading artworks via the Upload Artwork page. Integrated with Firebase, this feature enables seamless storage and display of artworks within the virtual gallery, expanding their reach and impact.
 
 ### View Uploaded Artworks
 
-<img src="screenshots/upload20%view.png" alt="View Uploaded Artworks Page">
+<img src="screenshots/view%20uploaded.png" alt="View Uploaded Artworks Page">
 
 Artists manage their portfolios through the View Uploaded Artworks page, facilitating editing or removal of artworks as needed. This centralized hub ensures artists maintain control over their displayed creations, fostering a dynamic and responsive gallery environment.
 
+## Running the Project
+
+To run the Virtual Art Gallery project locally, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your/repository.git
+   cd repository-name
+Install dependencies:
+
+on terminal, type the following 
+npm install
+
+
+Run the project using Vite:
+npx vite
