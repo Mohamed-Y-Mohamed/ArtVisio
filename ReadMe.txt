@@ -11,8 +11,7 @@ Welcome to the Virtual Art Gallery project, a cutting-edge platform merging art 
 ## Pages Overview
 
 ### Home Page
-![Alt text](screenshots/home.png)
-[Home Page](screenshots/home.png)
+![Alt text](https://github.com/Mohamed-Y-Mohamed/ArtVisio/blob/main/screenshots/home.png)
 
 The Home page serves as the entry point, featuring an introductory hero section that captivates visitors with a glimpse of showcased artworks. It highlights different types of artworks such as images, 3D creations, and videos, inviting users to explore further.
 
