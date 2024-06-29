@@ -8,7 +8,7 @@ Welcome to the Virtual Art Gallery project, a cutting-edge platform merging art 
 - **Backend**: Node.js
 - **Database**: Firebase
 
-## Pages Overview
+Pages Overview
 
 ### Home Page
 
