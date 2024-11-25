@@ -61,7 +61,7 @@ Reach out through an intuitive contact form or explore the virtual gallery's loc
 
 ### Authentication Pages
 #### Sign In
-![Sign In Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/signin.png)
+![Sign In Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/signin%20.png)
 
 Securely access the platform and enjoy personalized experiences.
 
@@ -79,14 +79,14 @@ New users can create an account to explore the gallery and manage their profiles
 View and manage your personalized profile, including social links and portfolio details.
 
 #### Edit Profile
-![Edit Profile Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/edit%20profile.png)
+![Edit Profile Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/edit%20profile%20.png)
 
 Update your profile information to stay connected and visible to other users.
 
 ---
 
 ### Gallery Page
-![Gallery Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/gallery.png)
+![Gallery Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/gallery%20.png)
 
 Explore curated exhibits, interact with artworks, and view detailed information via interactive pop-ups.
 
