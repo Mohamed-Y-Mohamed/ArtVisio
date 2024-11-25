@@ -129,10 +129,10 @@ To set up the Virtual Art Gallery on your local machine, follow these steps:
 ```
 
 ## Future Enhancements
-- ** VR Interaction Enhancements: Improve the VR experience with advanced navigation.
-- ** AI-Powered Artwork Recommendations: Personalized suggestions for users.
-- ** Multi-Language Support: Expand accessibility by adding support for additional languages.
-- ** Advanced Portfolio Tools: Analytics and feedback for artists to better understand audience engagement.
+- **VR Interaction Enhancements: Improve the VR experience with advanced navigation.
+- **AI-Powered Artwork Recommendations: Personalized suggestions for users.
+- **Multi-Language Support: Expand accessibility by adding support for additional languages.
+- **Advanced Portfolio Tools: Analytics and feedback for artists to better understand audience engagement.
 ## 📬 Feedback & Contributions
 We welcome feedback and contributions! Feel free to open an issue or submit a pull request to help improve the Virtual Art Gallery.
 
