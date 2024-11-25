@@ -74,7 +74,7 @@ New users can create an account to explore the gallery and manage their profiles
 
 ### Profile Page
 #### View Profile
-![View Profile Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/view%20profile.png)
+![View Profile Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/view%20profile%20.png)
 
 View and manage your personalized profile, including social links and portfolio details.
 
@@ -100,7 +100,7 @@ Artists can easily upload and display their creations within the virtual gallery
 ---
 
 ### View Uploaded Artworks Page
-![View Uploaded Artworks Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/view%20uploaded.png)
+![View Uploaded Artworks Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/upload%20view.png)
 
 Manage your portfolio by editing or removing artworks, ensuring a dynamic and responsive gallery environment.
 
