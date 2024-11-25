@@ -1,4 +1,4 @@
-### 🎨 Virtual Art Gallery
+###Virtual Art Gallery
 
 Welcome to the **Virtual Art Gallery**, a cutting-edge platform that merges art and technology to redefine digital art consumption. Built with modern technologies such as **Vite**, **Three.js**, **Node.js**, and **Firebase**, this project offers an immersive and interactive art viewing experience. Whether you're an art enthusiast or a creator, this gallery bridges the gap between traditional art and digital innovation.
 
