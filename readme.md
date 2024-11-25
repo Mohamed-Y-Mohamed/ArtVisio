@@ -86,7 +86,7 @@ Update your profile information to stay connected and visible to other users.
 ---
 
 ### Gallery Page
-![Gallery Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/main/screenshots/gallery.png)
+![Gallery Page](https://raw.githubusercontent.com/Mohamed-Y-Mohamed/ArtVisio/blob/main/screenshots/gallery.png)
 
 Explore curated exhibits, interact with artworks, and view detailed information via interactive pop-ups.
 
